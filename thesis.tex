@@ -5,7 +5,7 @@
 % Erstellt von Maximilian Nöthe, <maximilian.noethe@tu-dortmund.de>
 % ausgelegt für lualatex und Biblatex mit biber
 
-% Kompilieren mit 
+% Kompilieren mit
 % latexmk --lualatex --output-directory=build thesis.tex
 % oder einfach mit:
 % make
@@ -63,7 +63,7 @@
 \setmathfont{Latin Modern Math}
 
 % nice, small fracs for the text with \sfrac{}{}
-\usepackage{xfrac}  
+\usepackage{xfrac}
 
 
 %------------------------------------------------------------------------------
@@ -159,9 +159,11 @@
 \mainmatter
 % Hier beginnt der Inhalt mit Seite 1 in arabischen Ziffern
 \input{content/01_einleitung.tex}
-\input{content/02_struktur.tex}
-\input{content/03_grundlagen.tex}
-\input{content/04_figs_tabs.tex}
+\input{content/02_sources.tex}
+\input{content/03_data.tex}
+%\input{content/02_struktur.tex}
+%\input{content/03_grundlagen.tex}
+%\input{content/04_figs_tabs.tex}
 
 \appendix
 % Hier beginnt der Anhang, nummeriert in lateinischen Buchstaben
