@@ -1,7 +1,15 @@
 %sources
 \chapter{Source Catalogue}
-general: cascades and tracks
-what are the best sources and why
-probability of being of astrophysical origin
-History of EHE, HESE to bronze, gold alerts Thomas Kintschers gfu
-table of sources, skymaps
+general: cascades and tracks\\
+what are the best sources and why\\
+probability of being of astrophysical origin\\
+History of EHE, HESE to bronze, gold alerts Thomas Kintschers gfu\\
+what is a gfu\\
+hängt ab von zen, dec, track_len, bdt_up (upgoing oder nicht) oder bei donwgoing: truncated energy, qtot (deponierte Ladung)\\
+_zen_cut = np.radians(82.)\\
+pass_gold[m]   = pass_precut[m] & (qtot[m] > 10.**np.polyval(_coeff2, np.sin(dec[m])))\\
+_coeff2 = [  -4.06580, -10.60906,  -9.61048,   3.01219 ]\\
+pass_gold[m]   = pass_precut[m] & (logTruncated[m] > _cut2)\\
+_cut2   = 5.14\\
+
+table of sources, skymaps\\
