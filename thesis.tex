@@ -31,9 +31,9 @@
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}  % -- becomes en-dash etc.
 
-% german language
+% english language
 \usepackage{polyglossia}
-\setdefaultlanguage{german}
+\setdefaultlanguage{english}
 
 % for english abstract and english titles in the toc
 \setotherlanguages{english}
@@ -114,11 +114,11 @@
 \usepackage[
   backend=biber,   % use modern biber backend
   autolang=hyphen, % load hyphenation rules for if language of bibentry is not
-                   % german, has to be loaded with \setotherlanguages
+                   % english, has to be loaded with \setotherlanguages
                    % in the references.bib use langid={en} for english sources
 ]{biblatex}
 \addbibresource{references.bib}  % the bib file to use
-\DefineBibliographyStrings{german}{andothers = {{et\,al\adddot}}}  % replace u.a. with et al.
+\DefineBibliographyStrings{english}{andothers = {{et\,al\adddot}}}  % replace u.a. with et al.
 
 
 % Last packages, do not change order or insert new packages after these ones
@@ -130,14 +130,14 @@
 %-------------------------    Angaben zur Arbeit   ----------------------------
 %------------------------------------------------------------------------------
 
-\author{Maximilian Nöthe}
-\title{\LaTeX-Dokumentenklasse und Vorlage für Abschlussarbeiten an der TU Dortmund}
-\date{2014}
-\birthplace{Castrop-Rauxel}
+\author{Johannes Kollek}
+\title{Point Source Search for a Neutrino Contribution at Neutrino Alert Positions}
+\date{2022}
+\birthplace{Kamp-Lintfort}
 \chair{Lehrstuhl für Experimentelle Physik V}
 \division{Fakultät Physik}
-\thesisclass{Bachelor of Science}
-\submissiondate{31. September 2015}
+\thesisclass{Master of Science}
+\submissiondate{tba}
 \firstcorrector{Prof.~Dr.~Erstgutachter}
 \secondcorrector{Prof.~Dr.~Zweitgutachter}
 
