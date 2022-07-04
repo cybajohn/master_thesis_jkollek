@@ -20,3 +20,17 @@ Starting events are as the name suggests events starting inside the detector vol
 \cite{Aartsen_2017}
 
 \section{Gamma-Ray-Followup}
+
+The Gamma-Ray-Followup track selection, GFU for short, is a pretrained binary decision tree (BDT) identifying through going single track events from all directions that are likely neutrino induced.
+The required astrophysical purity of at least $\SI{50}{\percent}$ for the gold selection is obtained by tight cuts on muon energy and charge.\\
+The BDT consists of two basic cuts different for each hemisphere.
+Both, for upgoing and downgoing events, use a precut which is more like a sanity check outruling invalid events.
+All events having a tracklength greater than $\SI{0}{\meter}$ and a truncated energy greater than $\SI{0}{\electronvolt}$ pass this selection.
+Additionally all events have to be between $\SI{82}{\radian}$ and $\SI{-82}{\radian}$ zenith.
+Events from the northern sky must have a truncated energy higher than $\SI{1e5.14}{\giga\electronvolt}$ to pass the GFU selection.
+In the southern hemisphere, the deposited charge ($qtot$) of the events must meet the following condition as a function $d$,
+\begin{equation}
+  \log_{10}(qtot) > -4.06580\cdot d^3 - 10.60906\cdot d^2  -9.61048\cdot d + 3.01219,
+\end{equation}
+where $d$ is the sine of the declination of the events.
+The individual signalness is obtained through a grid interpolation based on the position of these events.
