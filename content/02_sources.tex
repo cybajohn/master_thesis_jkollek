@@ -1,21 +1,27 @@
 %sources
 \chapter{Event Topology and Datasets}
-%general: cascades and tracks\\
-what are the best sources and why\\
-probability of being of astrophysical origin\\
-History of EHE, HESE to bronze, gold alerts Thomas Kintschers gfu\\
-what is a gfu\\
-hängt ab von zen, dec, track\_len, bdt\_up (upgoing oder nicht) oder bei donwgoing: truncated energy, qtot (deponierte Ladung)\\
-\_zen\_cut = np.radians(82.)\\
-up: pass\_gold[m]   = pass\_precut[m] \& (qtot[m] > 10.\*\*np.polyval(\_coeff2, np.sin(dec[m])))\\
-\_coeff2 = [  -4.06580, -10.60906,  -9.61048,   3.01219 ]\\
-down: pass\_gold[m]   \= pass\_precut[m] \& (logTruncated[m] > \_cut2)\\
-\_cut2   = 5.14\\
 
-table of sources, skymaps\\
+%what are the best sources and why\\
+%probability of being of astrophysical origin\\
+%History of EHE, HESE to bronze, gold alerts Thomas Kintschers gfu\\
+%what is a gfu\\
+%hängt ab von zen, dec, track\_len, bdt\_up (upgoing oder nicht) oder bei donwgoing: truncated energy, qtot (deponierte Ladung)\\
+%\_zen\_cut = np.radians(82.)\\
+%up: pass\_gold[m]   = pass\_precut[m] \& (qtot[m] > 10.\*\*np.polyval(\_coeff2, np.sin(dec[m])))\\
+%\_coeff2 = [  -4.06580, -10.60906,  -9.61048,   3.01219 ]\\
+%down: pass\_gold[m]   \= pass\_precut[m] \& (logTruncated[m] > \_cut2)\\
+%\_cut2   = 5.14\\
+%
+%table of sources, skymaps\\
 
 Historically events were categorized between high energy starting events (HESE) and extremely high energy events (EHE).
 Starting events are as the name suggests events starting inside the detector volume (interaction vertex)
+
+Besides a few tweaks to the HESE and EHE channels, the new alert system introduced a breakdown into two different categories of events based on their probability of being of atrophysical origin.
+These are called gold and bronze events, with gold having at least a $\SI{50}{\percent}$ astrophysical purity in comparison to $\SI{30}{\percent}$ for bronze events.
+The latter were introduced to satisfy the demand for even more alerts.
+This new system also features a new event type, the Gamma-Ray-Followup (GFU), which is highest in the event categorization hierarchy, meaning that if an event is classified as a GFU event it is also possible for the event to be a HESE or EHE event additionally.
+This hierarchy is based on studies for angular resolution and astrophysical purity making GFU gold events the first stop for a search for astrophysical neutrino sources.
 
 \cite{Aartsen_2017}
 
@@ -34,3 +40,10 @@ In the southern hemisphere, the deposited charge ($qtot$) of the events must mee
 \end{equation}
 where $d$ is the sine of the declination of the events.
 The individual signalness is obtained through a grid interpolation based on the position of these events.
+
+\subsection{Sources}
+
+The selected sources in this analysis are part of the alert catalogue version 2 which features about 300 alerts in total.
+The GFU-gold alerts used as sources are displayed in table \ref{tab:sources}.
+These events are also visible in figure \ref{fig:skymap_1}.
+The sources used in the later introduced time-dependent analysis are shown in figure \ref{fig:skymap_2}.
