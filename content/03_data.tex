@@ -4,6 +4,18 @@ which dataset to use and why\\
 description of the set: table of various info (livetime, number of events)\\
 mention overlap in time due to testruns\\
 
+This dataset is based on Tessa's sample
+
+ps\_tracks version-p04-00
+
+general changes:
+More precise GRL because subruns that have been missing due to prevoius processing have been accounted for.
+It does not require the TruncatedEnergy fit to be successful leading to around 1\% more events than in prevous samples
+general improvements:
+pass 2 data and new mc file
+unified processing for the datasets from 2011 to 2019
+
+
 \begin{table}
   \centering
   \caption{Number of events and livetimes taken from the grl of the used datasets in this analysis.}
@@ -27,6 +39,7 @@ mention overlap in time due to testruns\\
   \end{tabular}
 \end{table}
 
+The temporal intervals of the samples overlap with each other due to testruns of the detector, there is however no real temporal overlap of the different runs.
 
 \section{Monte Carlo Pre-Processing}
 removing sources from data and mc\\
