@@ -47,3 +47,44 @@ The selected sources in this analysis are part of the alert catalogue version 2 
 The GFU-gold alerts used as sources are displayed in table \ref{tab:sources}.
 These events are also visible in figure \ref{fig:skymap_1}.
 The sources used in the later introduced time-dependent analysis are shown in figure \ref{fig:skymap_2}.
+It is worth mentioning that the time integrated analysis uses all sources listed in the table \ref{tab:sources}, regardless of the time interval of the dataset used.
+The sources in the time-dependent analysis, on the other hand, are all temporally located in the dataset presented in the chapter \ref{sec:data}.
+
+\begin{figure}
+    \centering
+    \includegraphics[draft=true,width=\linewidth]{Plots/02_sources/gfu_gold_skymap.pdf}
+    \label{fig:skymap_1}
+    \caption{skymap time int.}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[draft=true,width=\linewidth]{Plots/02_sources/gfu_gold_skymap_time_dep.pdf}
+    \label{fig:skymap_2}
+    \caption{skymap time dep.}
+\end{figure}
+
+\begin{table}[!htb]
+  \caption{Table of the 72 GFU-gold events used as sources in this analysis. Shown are the features time in MJD, declination $\delta$ in radian and right ascension $\alpha$ also in radian. The time-dependent analysis uses a subset of these sources.}
+  \label{tab:sources}
+  \begin{subtable}{.5\linewidth}
+  \centering
+  \begin{tabular}{cccc}
+    \toprule
+    Nr. & MJD &  $\delta$ in $\si{\radian}$ & $\alpha$ in $\si{\radian}$ \\
+    \toprule
+    \input{../tables/sources_table.tex}
+    \toprule
+  \end{tabular}
+\end{subtable}
+\begin{subtable}{.5\linewidth}
+\centering
+  \begin{tabular}{cccc}
+    \toprule
+    Nr. & MJD &  $\delta$ in $\si{\radian}$ & $\alpha$ in $\si{\radian}$ \\
+    \toprule
+    \input{../tables/sources_table_2.tex}
+    \toprule
+  \end{tabular}
+  \end{subtable}
+\end{table}
