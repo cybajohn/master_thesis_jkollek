@@ -1,20 +1,27 @@
 %data
 \section{Point Source Tracks Sample} \label{sec:data}
-which dataset to use and why\\
-description of the set: table of various info (livetime, number of events)\\
-mention overlap in time due to testruns\\
+%which dataset to use and why\\
+%description of the set: table of various info (livetime, number of events)\\
+%mention overlap in time due to testruns\\
+%
+%This dataset is based on Tessa's sample
+%
+%ps\_tracks version-p04-00
+%
+%general changes:
+%More precise GRL because subruns that have been missing due to prevoius processing have been accounted for.
+%It does not require the TruncatedEnergy fit to be successful leading to around 1\% more events than in prevous samples
+%general improvements:
+%pass 2 data and new mc file
+%unified processing for the datasets from 2011 to 2019
 
-This dataset is based on Tessa's sample
-
-ps\_tracks version-p04-00
-
-general changes:
-More precise GRL because subruns that have been missing due to prevoius processing have been accounted for.
-It does not require the TruncatedEnergy fit to be successful leading to around 1\% more events than in prevous samples
-general improvements:
-pass 2 data and new mc file
-unified processing for the datasets from 2011 to 2019
-
+The dataset used in this analysis is a subset of the so-called Point Source Tracks sample, which was first introduced in 2017 and has since undergone several, altogether 14, revised versions.
+Specially optimized for point source searches, this sample of muon neutrinos is the first port of call for analyses of this kind.
+The analysis in this work uses 9 years of version p04-00, which is the latest stable version of the datasets since this work began.
+This version contains $\SI{1}{\percent}$ more data than its predecessors because the truncated energy fit no longer needs to be successful.
+It also contains a more precise good run list (grl), since some subruns were lost in previous versions, which have now been taken into account.
+Although this version has 12 years of data, only the years after IC79 are used in this analysis, as the use of earlier datasets is discouraged. \cite{ps_tracks_v4_presentation}
+The key features of the data used can be seen in table \ref{tab:data}.
 
 \begin{table}
   \centering
@@ -39,12 +46,14 @@ unified processing for the datasets from 2011 to 2019
   \end{tabular}
 \end{table}
 
-The temporal intervals of the samples overlap with each other due to testruns of the detector, there is however no real temporal overlap of the different runs.
+It is to mention, that the temporal intervals of the samples overlap with each other due to testruns of the detector.
+There is however no real temporal overlap of the different runs. \cite{private_com}
+The advantage of using the years 2011 to 2019 is that the sets have all gone through the same processing pipeline and also all use the same monte carlo file, and thus can be treated the same on that basis.
 
 \section{Monte Carlo Pre-Processing}
-removing sources from data and mc\\
-show sindec distribution of mc and filtered mc, maybe sindec-energy 2d hist\\
-mention weighting (Powerlawflux)\\
+%removing sources from data and mc\\
+%show sindec distribution of mc and filtered mc, maybe sindec-energy 2d hist\\
+%mention weighting (Powerlawflux)\\
 
 Since GFU-gold events are treated as sources, keeping these events in the dataset would lead to a bias, due to essentially double counting them as events and sources.
 Alert events in general are excluded from the Point Source Tracks Sample starting with IC86.
