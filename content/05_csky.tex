@@ -25,12 +25,26 @@ The background space parametrization results in one plot only because all datase
 \section{Background Trials}
 
 The histogram of the background test statistic values can be seen in figure \ref{fig:bg_ts_time_int}.
+The number of trials processed is $\num{974000}$\footnote{Originally $\num{e6}$, but some jobs fail due to various technical reasons.}.
 Important features of the plot are that the $\chi^2$ distribution has as straight a tail as possible.
 This is reflected in the number of degrees of freedom $dof$ in the $\chi^2$ distribution.
 This should be as close to 1 as possible, which corresponds to a pure background statistic without signal.
-The test statistic should also be symmetrical about the zero point.
+The test statistic should also be symmetrical around the zero point.
 A shift around the zero point is an indication of an undesired bias of the statistic.
-Therefore, the value of the quotient of the number of positive and negative events should ideally be 0.5.
+Therefore, the value of the quotient of the number of positive and negative events should ideally be $\eta = \num{0.5}$.
+Apart from the fit parameters, the median and $5\sigma$ deviation value of the test statistic are necessary for the subsequent calculation of the sensitivity and the discovery potential.
+
+The fit parameters of the background test statistic are
+\begin{align}
+  dof &= \num{1.115},\\
+  \eta &= \num{0.656}
+\end{align}
+and the key values later to be processed are as follows\footnote{Some analyses use the $3\sigma$ value for the discovery potential}
+\begin{align}
+  median &= \num{0.140},\\
+  3\sigma &= \num{10.651},\\
+  5\sigma &= \num{28.060}.
+\end{align}
 
 \begin{figure}
     \centering
