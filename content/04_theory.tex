@@ -5,6 +5,16 @@ mention programs like skylab sky llh and yeah csky duh
 
 maybe mention other methods than likelihood
 
+Sensitivity and discovery potential correspond in principle to the number of signal events that must be injected, so that the resulting test statistic is $\SI{90}{\percent}$ above the median of the background statistic or $\SI{50}{\percent}$ above $\num{5}\sigma$ of the latter respectively.
+These conditions can be seen schematically in figure \ref{fig:sens_disc_schem}.
+Let the number of sufficient signal events then be $N_\text{sig}$, the sensitivity $sens$ and discovery potential $disc p$ then are
+\begin{align}
+  sens &= \frac{N_\text{sig,sens}}{A_\text{det}}E_0, \\
+  disc p &= \frac{N_\text{sig,disc p}}{A_\text{det}}E_0,
+\end{align}
+with the total signal acceptance of the detector $A_\text{det}$ and the reference energy $E_0$.
+The time-dependent sensitivity and discovery potential are given in a fluence rather than a flux by multiplying with $E_0^2$, these results can then be compared to other analyses.
+
 \section{Likelihood in csky}
 
 \begin{align}

@@ -131,6 +131,16 @@
 %-------------------------   Some commands ------------------------------------
 %------------------------------------------------------------------------------
 
+% tiks ticks ist kein zeichenprogramm :)
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,patterns}
+
+\usepackage{pgfplots}
+\pgfmathdeclarefunction{gauss}{3}{%
+  \pgfmathparse{#3*1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
 % some math stuff to make things easier, hate the left right stuff....
 \newcommand{\CL}{\ensuremath{\mathcal{L}}}
 \newcommand{\CS}{\ensuremath{\mathcal{S}}}
