@@ -89,7 +89,7 @@ Since the absence of a signal parameter produces the background test statistic, 
     \caption{Quantiles of the signal trials for the calculation of the discovery potential for different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the discovery potential at $\SI{50}{\percent}$.}
     \label{fig:cdf_disc}
 \end{figure}
-The sensitivities and discovery potentials from the CDFs can be seen in figure \ref{sens_disc_time_int} and additionally in table \ref{tab:sens_disc_time_int}.
+The sensitivities and discovery potentials from the CDFs can be seen in figure \ref{fig:sens_disc_time_int} and additionally in table \ref{tab:sens_disc_time_int}.
 The values rise for higher spectral indices since the signal looks more background like the closer the spectral index is to $\gamma = 3$.
 \begin{figure}
     \centering
@@ -98,6 +98,18 @@ The values rise for higher spectral indices since the signal looks more backgrou
     \label{fig:sens_disc_time_int}
 \end{figure}
 
+\begin{table}
+  \centering
+  \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$. Additionally the fitted number of signal events $N_\text{sig}$ satisfying the thresholds is shown.}
+  \begin{tabular}{crcrc}
+    \toprule
+    $\gamma$ & $N_\text{sig,sens}$ &  sens in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ & $N_\text{sig,disc}$ & disc in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ \\
+    \toprule
+      \input{../tables/res_time_int_table.tex}
+    \toprule
+    \label{tab:sens_disc_time_int}
+  \end{tabular}
+\end{table}
 
 \chapter{Time-Dependent Search}
 
