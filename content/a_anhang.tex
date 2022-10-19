@@ -73,3 +73,28 @@ grid = major]
     \label{tab:sig_time_int_table}
   \end{tabular}
 \end{table}
+
+\begin{table}
+  \caption{Table of the number of trials for each spectral index $\gamma$ and number of injected signal events $n_\text{sig}$, running $\num{10}$ jobs with $\num{5e4}$ trials per set of parameter pairs $\gamma$ and $n_\text{sig}$. Some jobs fail due to technical reasons.}
+  \label{tab:trials_sig_time_int_table}
+  \begin{subtable}{\linewidth}
+  \centering
+  \begin{tabular}{p{.9cm}|rrrrrrrrrr}
+    \toprule
+    \: $n_\text{sig}$ \newline $\gamma$ \: & \input{../tables/sig_time_int_table_2.tex}
+    \toprule
+    \input{../tables/trials_sig_time_int_table.tex}
+    \toprule
+  \end{tabular}
+\end{subtable}
+\begin{subtable}{\linewidth}
+\centering
+  \begin{tabular}{p{.9cm}|rrrrrrrrrr}
+    \toprule
+    \: $n_\text{sig}$ \newline $\gamma$ \: & \input{../tables/sig_time_int_table_3.tex}
+    \toprule
+    \input{../tables/trials_sig_time_int_table_2.tex}
+    \toprule
+  \end{tabular}
+  \end{subtable}
+\end{table}
