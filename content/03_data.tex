@@ -68,20 +68,21 @@ The temporal parameter can also not be used, since all event times in the final 
 The event times will be generated later in the analysis to match the analysis framework.
 The identification has to be done via other parameters like zenith and azimuth.
 Additionally the true energy was also taken as an identifying parameter to rule out any events coincidentially appearing from the same direction.
-A comparison of the sindec distribution of the real GFU-gold alerts and the GFU-gold simulation events can be seen in figure \ref{fig:gfu-gold-comp}.
+A comparison of the sindec distribution of the real GFU-gold alerts and the GFU-gold simulation events can be seen in figure \ref{fig:gfu_gold_comp}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/03_data/gfu_gold_comp.pdf}
-    \label{fig:gfu-gold-comp}
     \caption{The sine declination of the real GFU-gold alerts over 9 years used in this analysis (left) and the GFU-gold simulation events from the mc 2016 sample (right). The simulation events have been weighted with a livetime of 9 years and flux from \cite{flux}.}
+    \label{fig:gfu_gold_comp}
 \end{figure}
-
-The filtered events can also be seen in figure \ref{fig:energy}.
-
+Though the mc seems to have about twice as many events the overall form of the distribution is the same.
+In terms of their energy the filtered out events can also be seen in figure \ref{fig:energy}.
+Overall not a lot of events get filtered out, which is to be expected given their nature of being GFU-gold events.
+These events are mostly upgoing with high energy.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/03_data/cleaned_mc_energy_test.pdf}
+    \caption{One year weighted histogram in $\log_{10}(\text{trueE})$ and $\sin{(\text{true}\delta)}$ of the GFU-gold events (left column), the monte carlo without the GFU-gold events (middle column) and the original monte carlo with all events (right column) on a logarithmic scale (top row) and on a normal scale (buttom row) for the 2016 monte carlo set. The flux used for the weighting is the same as in figure \ref{fig:gfu_gold_comp}.}
     \label{fig:energy}
-    \caption{.}
 \end{figure}

@@ -1,25 +1,43 @@
 %csky stuff
 \chapter{Time-Integrated Search}
 
+This chapter describes the time-integrated stacking search, starting with the properties of the analysis, followed by a description of the background trials and finally the signal trials with the result of the sensitivity and the discovery potential.
+The search covers different spectral indices for the signal event emission.
+
 \section{Analysis properties}
 
+This section shows some of the underlying PDFs csky uses to calculate the test statistic values.
+Since csky is based on PDF ratios for practical reasons, not all individual PDFs can be shown clearly.
+Consequently, here are a few basic PDFs and ratios whose form is apriori important for the quality of the analysis.
 
 \subsection{Background space PDF}
 
+The background space PDF is generated with data and only depends on the declination $\delta$ of the events, given by the almost right ascension symmetry of the IceCube detector due to its position.
+It is normalized over the whole sky, hence satisfying the condition
+\begin{align}
+  \int d\Omega f = \int d\alpha \int d(\sin(\delta)) f = 1
+\end{align}
+and is shown in figure \ref{fig:bg_param_time_int}.
+Lastly a spline, interpolating between the bin centers, is used to evaluate the events.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/bg_space_pdf.pdf}
     \caption{Background space PDF used in this analysis in $\sin{(\delta)}$ for all $\num{9}$ years, 2011-2019.}
+    \label{fig:bg_param_time_int}
 \end{figure}
-
 The background space parametrization results in one plot only because all datasets underwent the same data processing pipeline.
+The PDF shows a lower contribution for downgoing events and a higher one for upgoing events coming from the sides.
+This result is compatible with other analyses, for example ...
 
 \subsection{Energy ratio PDF}
+
+The energy PDF ratios for different spectral indices $\gamma$ can be seen in figure \ref{fig:energy_ratio_time_int}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/energy_pdf_ratio.pdf}
-    \caption{Energy PDF ratios used in this analysis in $\sin{(\delta)}$ and $\sin{\log{(E)}}$ for all $\num{9}$ years, 2011-2019, for different spectral indices $gamma$.}
+    \caption{Energy PDF ratios used in this analysis in $\sin{(\delta)}$ and $\sin{\log{(E)}}$ for all $\num{9}$ years, 2011-2019, for different spectral indices $\gamma$.}
+    \label{fig:energy_ratio_time_int}
 \end{figure}
 
 Mention high values in upper right (okay since they bias towards lower sens values (weaken)) and lower left (bad, bias towards higher sens values)
@@ -68,6 +86,8 @@ Although there is a relatively flat maximum, the likelihood environment does not
     \label{fig:llh_scan_time_int}
 \end{figure}
 The method of the calculation of the contours comes from \cite{Blobel} and corresponds to the maximum of the negative log-likelihood after subtracting $\num{0.5}$ and $\num{2}$ accordingly to get the $1\sigma$ and $2\sigma$ range, respectively.
+
+insert fit bias plots here
 
 After the fit behaviour has been checked, the signal can be injected.
 With a higher number of signal events, the test statistic shifts to higher values, eventually reaching the thresholds set for the sensitivity and discovery potential.
