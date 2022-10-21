@@ -76,7 +76,7 @@ and the key values later to be processed are as follows\footnote{Some analyses u
 \section{Signal Trials}
 
 Before calculating the sensitivities and discovery potentials, certain properties of the likelihood or its behaviour should be investigated.
-Since the spectral index $\gamma$ and the signal parameter $n_\text{S}$ are fitted, it is advisable to look at the likelihood environment to check the quality of the fit and exclude any other unwanted maxima.
+Since the spectral index $\gamma$ and the signal parameter $n_\text{S}$ are fitted, it is advisable to look at the likelihood environment to check for a smooth landscape to ensure a fit is possible and to exclude any other unwanted local maxima.
 A scan of the parameter space for one likelihood can be seen in figure \ref{fig:llh_scan_time_int}.
 Although there is a relatively flat maximum, the likelihood environment does not show any strange behaviour.
 \begin{figure}
@@ -86,8 +86,6 @@ Although there is a relatively flat maximum, the likelihood environment does not
     \label{fig:llh_scan_time_int}
 \end{figure}
 The method of the calculation of the contours comes from \cite{Blobel} and corresponds to the maximum of the negative log-likelihood after subtracting $\num{0.5}$ and $\num{2}$ accordingly to get the $1\sigma$ and $2\sigma$ range, respectively.
-
-insert fit bias plots here
 
 After the fit behaviour has been checked, the signal can be injected.
 With a higher number of signal events, the test statistic shifts to higher values, eventually reaching the thresholds set for the sensitivity and discovery potential.
@@ -130,6 +128,29 @@ The values rise for higher spectral indices since the signal looks more backgrou
     \label{tab:sens_disc_time_int}
   \end{tabular}
 \end{table}
+
+\section{Examination of Fit Bias}
+
+Several crosschecks can be made to examine the quality of the analysis results.
+One of them is to check the fit of the parameters $\gamma$ and $n_\text{S}$ for bias.
+The fit behaviour of the analysis can be seen in figure \ref{fig:fit_bias_gamma} for $\gamma$ and in figure \ref{fig:fit_bias_ns} for $n_\text{S}$.
+The fitted spectral index is generally larger than the injected one and starts of at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events, because no signal events are equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
+The larger fitted spectral index makes the analysis more conservative and therefore is not harmful for the overall results at spectral indices up to $\gamma = \num{2.5}$.
+For higher spectral indices the fitted $\hat\gamma$ starts to sink below the set spectral index, since it is hard to fit for signal events that look like background. On the contrary this is harmful to the analysis results.
+Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{S}$.
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/05_csky/gamma_fit_auto_3.pdf}
+    \caption{Fitted spectral index $\hat\gamma$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$, shown with a horizontal black dashed line, for the trials used in the time integrated analysis.}
+    \label{fig:fit_bias_gamma}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/05_csky/ns_fit_auto_4.pdf}
+    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$. The black dashed line shows the equality of fitted and injected number of signal events.}
+    \label{fig:fit_bias_ns}
+\end{figure}
 
 \chapter{Time-Dependent Search}
 
