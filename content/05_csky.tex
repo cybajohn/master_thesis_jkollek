@@ -59,7 +59,7 @@ The fit parameters of the background test statistic are
   dof &= \num{1.115},\\
   \eta &= \num{0.656}
 \end{align}
-and the key values later to be processed are as follows\footnote{Some analyses use the $3\sigma$ value for the discovery potential}
+and the key values later to be processed are as follows\footnote{Some analyses use the $3\sigma$ value for the discovery potential.}
 \begin{align}
   median &= \num{0.140},\\
   3\sigma &= \num{10.651},\\
@@ -162,6 +162,21 @@ Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{
     \caption{.}
     \label{fig:bg_trials_time_dep}
 \end{figure}
+
+\begin{table}
+  \centering
+  \caption[]{median\footnotemark.}
+  \begin{tabular}{cccc}
+    \toprule
+    Nr. & median & $\num{3}\sigma$ & $\num{5}\sigma$ \\
+    \toprule
+      \input{../tables/time_dep_sigma_table.tex}
+    \toprule
+    \label{tab:sigma_time_dep}
+  \end{tabular}
+\end{table}
+\footnotetext{Some median values are very close to if not $\num{0}$.}
+
 
 \begin{figure}
     \centering
