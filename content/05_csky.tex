@@ -82,7 +82,7 @@ Although there is a relatively flat maximum, the likelihood environment does not
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan_time_int.pdf}
-    \caption{Scan of one likelihoodspace for the time integrated analysis. The number of induced signal events is $n_S = \num{100}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$.}
+    \caption{Scan of one likelihoodspace for the time integrated analysis in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{100}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$.}
     \label{fig:llh_scan_time_int}
 \end{figure}
 The method of the calculation of the contours comes from \cite{Blobel} and corresponds to the maximum of the negative log-likelihood after subtracting $\num{0.5}$ and $\num{2}$ accordingly to get the $1\sigma$ and $2\sigma$ range, respectively.
@@ -199,8 +199,14 @@ ns = 2 because the time box is set between 2 events, thus ns = 2 and maybe lower
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan.pdf}
-    \caption{Scan of the likelihoodspace for every source with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The source number corresponds to table \ref{tab:sources}.}
+    \caption{Scan of the likelihoodspace for every source with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to table \ref{tab:sources}.}
     \label{fig:llh_scan_time_dep}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{Plots/05_csky/time_dep_sens_disc_dec.pdf}
+    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependece of their position at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time-dependend analysis.}
+    \label{fig:sens_disc_time_dep}
 \end{figure}
 
 \begin{table}
@@ -215,6 +221,35 @@ ns = 2 because the time box is set between 2 events, thus ns = 2 and maybe lower
     \label{tab:sens_disc_time_dep}
   \end{tabular}
 \end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_sens_dt.pdf}
+    \caption{Histograms of the time window lengths $dt$ in days of all $\num{10}$ sources for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity.}
+    \label{fig:sens_dt}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_disc_dt.pdf}
+    \caption{Histograms of the time window lengths $dt$ in days of all $\num{10}$ sources for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the discovery potential.}
+    \label{fig:disc_dt}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/05_csky/time_window_ns_sens_time_dep.pdf}
+    \caption{Histograms of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of all $\num{10}$ sources for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity. The scale is the same as in figure \ref{fig:disc_ns_dt}.}
+    \label{fig:sens_ns_dt}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/05_csky/time_window_ns_disc_time_dep.pdf}
+    \caption{Histograms of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of all $\num{10}$ sources for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the discovery potential.}
+    \label{fig:disc_ns_dt}
+\end{figure}
+
 
 \section{Examination of Fit Bias}
 

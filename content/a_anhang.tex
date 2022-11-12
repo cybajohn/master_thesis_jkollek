@@ -75,7 +75,7 @@ grid = major]
 \end{table}
 
 \begin{table}
-  \caption{Table of the number of trials for each spectral index $\gamma$ and number of injected signal events $n_\text{sig}$, running $\num{10}$ jobs with $\num{5e4}$ trials per set of parameter pairs $\gamma$ and $n_\text{sig}$. Some jobs fail due to technical reasons.}
+  \caption{Table of the number of trials for each spectral index $\gamma$ and number of injected signal events $n_\text{sig}$, running $\num{10}$ jobs with $\num{5e3}$ trials per set of parameter pairs $\gamma$ and $n_\text{sig}$. Some jobs fail due to technical reasons.}
   \label{tab:trials_sig_time_int_table}
   \begin{subtable}{\linewidth}
   \centering
@@ -100,6 +100,20 @@ grid = major]
 \end{table}
 
 \section{Time-Dependent Search}
+
+\begin{table}
+  \centering
+  \caption{Table of the number of trials for each spectral index source index number and number of injected signal events $n_\text{sig}$, running $\num{5}$ jobs with $\num{e4}$ trials per set of parameter pairs of source and $n_\text{sig}$. Some jobs fail due to technical reasons.}
+  \label{tab:trials_sig_time_dep_table}
+  \begin{tabular}{>{\centering\arraybackslash}p{.9cm}|%
+                    cccccccccc}
+    \toprule
+    \: Nr. \newline $n_\text{sig}$ \: & \input{../tables/trials_sig_time_dep_src_table.tex}
+    \toprule
+    \input{../tables/trials_sig_time_dep_table.tex}
+    \toprule
+  \end{tabular}
+\end{table}
 
 \begin{figure}
     \centering
