@@ -44,6 +44,8 @@ Mention high values in upper right (okay since they bias towards lower sens valu
 
 \section{Background Trials}
 
+mention stacking
+
 The histogram of the background test statistic values can be seen in figure \ref{fig:bg_ts_time_int}.
 The number of trials processed is $\num{974000}$\footnote{Originally $\num{e6}$, but some jobs fail due to various technical reasons.}.
 Important features of the plot are that the $\chi^2$ distribution has as straight a tail as possible.
@@ -154,7 +156,19 @@ Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{
 
 \chapter{Time-Dependent Search}
 
+The time-dependent search examines $\num{10}$ sources independently of each other.
+Ideally, all gfu-gold alerts should be examined and, in addition, preferably stacked.
+However, time-dependent stacking is not yet sufficiently implemented in csky during the development of this thesis, and examining all sources individually would require too much computing capacity.
+Chapter \ref{sec:tdepps} contains more detailed information on the technical details of time-dependent stacking.
+Therefore, only the $\num{10}$ alerts with the highest signalness in the set are used as sources.
+These can be seen in table \ref{tab:sources_time_dep}.
+
 \section{Background Trials}
+
+The background trials for all $\num{10}$ sources can be seen in figure \ref{fig:bg_trials_time_dep}.
+Since the length $dt$ of the time windows is fitted, the number of degrees of freedom is generally greater than in the time integrated analysis.
+The $\chi^2$ distribution generated via the trials is thus somewhat more convex.
+The values to calculate the fluences can be seen in table \ref{tab:sigma_time_dep}.
 
 \begin{figure}
     \centering
