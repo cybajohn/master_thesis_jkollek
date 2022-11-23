@@ -21,9 +21,40 @@ bit more about doms
 
 
 \section{Detection Principle}
-cherenkov something something\\
-show interaction\\
-make a figure to cherenkov\\
+
+When neutrinos interact with a medium, charged secondary particles are produced.
+this occurs through a neutral current (NC) via a $Z^0$ boson or through a charged current (CC) via a $W$ boson
+\begin{equation}
+  \nu_l + N \rightarrow Z^0 \rightarrow \nu^{\prime}_l + X \text{ and }  \nu_l + N \rightarrow W \rightarrow l + X, \label{eq:nc_cc_int}
+\end{equation}
+with $N$ and $X$ being nuclei before and after the interaction \cite{Ahlers_2018}.
+If the charged secondary particles (the leptons $l$ in \eqref{eq:nc_cc_int}) now move through a medium at a speed faster than the speed of light in the medium, the charged secondary particles polarise the atoms along the direction of flight for a short time.
+The resulting light is called Cherenkov light and is emitted at an angle of
+\begin{equation}
+  \Theta = \arccos{\left(\frac{1}{\beta n}\right)}, \label{eq:cherenkov}
+\end{equation}
+with the relativistic velocity $\beta=v/c$ of the particle and the refractive index of the medium $n$ \cite{PhysRev52378} \cite{spiering}.
+A schematic representation of the Cherenkov effect is given in Figure \ref{fig:cherenkov}.
+So-called tracks are created by charged current interactions and cascades with both charged current and neutral current interactions.
+\begin{figure}
+  \centering
+  \scalebox{0.5}{
+  \begin{tikzpicture}[scale=1,
+    declare function={
+    b =  5*sin{45};
+    y = -1/(sqrt(25-(5*sin(45)))) +10/sqrt(25-(5*sin{45}));
+    }
+    ]
+    \draw[thick] (-3,0) -- (0,0);
+    %triangle
+    \draw[thick] (0,0) -- (10,0) -- (sqrt{25-5*sin{45}},5*sin{45}) -- cycle;
+    \draw[thick] (0,0) -- (10,0) -- (sqrt{25-5*sin{45}},-5*sin{45}) -- cycle;
+    %arrows
+    \draw[thick,blue,->] (5,y*5+b) -- (0,0);%(5,y*(5-sqrt{25-5*sin{45}})) -- (0,0);%(5+0.2*sqrt{25-5*sin{45}},y*(5-sqrt{25-5*sin{45}}+0.2*5*sin{45}));
+  \end{tikzpicture}}
+  \caption{work in progress.}
+  \label{fig:cherenkov}
+\end{figure}
 
 \section{Tracks and Cascades}
 
