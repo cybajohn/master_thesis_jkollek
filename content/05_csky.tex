@@ -221,16 +221,9 @@ Altogether, many possible numbers of signal events are represented in the backgr
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_cdf_sens.pdf}
-    \caption{Quantiles of the signal trials for the calculation of the sensitivity for the time-dependent analysis of all $\num{10}$ sources at a spectral index of $\gamma=\num{2}$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the sensitivity at $\SI{90}{\percent}$ represented via a dashed line.}
-    \label{fig:time_dep_cdf_sens}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_cdf_disc.pdf}
-    \caption{Quantiles of the signal trials for the calculation of the discovery potential for the time-dependent analysis of all $\num{10}$ sources at a spectral index of $\gamma=\num{2}$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the discovery potential at $\SI{50}{\percent}$ represented via a dashed line.}
-    \label{fig:time_dep_cdf_disc}
+    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_cdf_1.pdf}
+    \caption{Quantiles of the signal trials for the calculation of the sensitivity for the time-dependent analysis of source number $\num{11}$ on the left and discovery potential on the right at a spectral index of $\gamma=\num{2}$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the sensitivity at $\SI{90}{\percent}$ and discovery potential at $\SI{50}{\percent}$ respectively, both represented via a dashed line.}
+    \label{fig:time_dep_cdf_sens_disc_1}
 \end{figure}
 
 \begin{figure}
@@ -243,7 +236,7 @@ Altogether, many possible numbers of signal events are represented in the backgr
 \begin{table}
   \centering
   \caption{Sensitivities and discovery potentials for different sources at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ and a spectral index $\gamma=2$ for the time-dependent analysis. Additionally the sine of the source declination $\delta$ and the fitted number of signal events $N_\text{sig}$ satisfying the thresholds is shown.}
-  \begin{tabular}{crrcrc}
+  \begin{tabular}{ccrcrc}
     \toprule
     Nr. & $\sin{(\delta)}$ & $N_\text{sig,sens}$ &  sens in $\si{\giga\electronvolt\centi\meter\tothe{-2}}$ & $N_\text{sig,disc}$ & disc in $\si{\giga\electronvolt\centi\meter\tothe{-2}}$ \\
     \toprule
@@ -255,30 +248,16 @@ Altogether, many possible numbers of signal events are represented in the backgr
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_sens_dt_1.pdf}
-    \caption{Histogram of the time window lengths $dt$ in days of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity.}
-    \label{fig:sens_dt}
+    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_disc_sens_time_dep_dt_1.pdf}
+    \caption{Histograms of the time window lengths $dt$ in days of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potential on the right.}
+    \label{fig:sens_disc_dt_1}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_disc_dt_1.pdf}
-    \caption{Histogram of the time window lengths $dt$ in days of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the discovery potential.}
-    \label{fig:disc_dt}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/time_windows_ns_sens_time_dep_1.pdf}
-    \caption{Histogram of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity.}
-    \label{fig:sens_ns_dt}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/time_windows_ns_disc_time_dep_1.pdf}
-    \caption{Histogram of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the discovery potential.}
-    \label{fig:disc_ns_dt}
+    \includegraphics[width=\linewidth]{Plots/05_csky/time_window_ns_disc_sens_time_dep_1.pdf}
+    \caption{Histograms of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potnetial on the right.}
+    \label{fig:sens_disc_ns_dt_1}
 \end{figure}
 
 
@@ -286,14 +265,7 @@ Altogether, many possible numbers of signal events are represented in the backgr
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/gamma_fit_time_dep.pdf}
-    \caption{Fitted spectral index $\hat\gamma$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$, shown with a horizontal black dashed line, for the trials used in the time-dependent analysis.}
-    \label{fig:gamma_fit_time_dep}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{Plots/05_csky/ns_fit_time_dep.pdf}
-    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$ for the time-dependent analysis. The black dashed line shows the equality of fitted and injected number of signal events.}
-    \label{fig:ns_fit_time_dep}
+    \includegraphics[width=\linewidth]{Plots/05_csky/ns_gamma_fit_time_dep_1.pdf}
+    \caption{On the left: Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma = 2$ for the time-dependent analysis. The black dashed line shows the equality of fitted and injected number of signal events. On the right: Fitted spectral index $\hat\gamma$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma = 2$, shown with a horizontal black dashed line, for the trials used in the time-dependent analysis.}
+    \label{fig:ns_gamma_fit_time_dep_1}
 \end{figure}
