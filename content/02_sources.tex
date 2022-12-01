@@ -14,16 +14,18 @@
 %
 %table of sources, skymaps\\
 
-Historically events were categorized between high energy starting events (HESE) and extremely high energy events (EHE).
-Starting events are as the name suggests events starting inside the detector volume (interaction vertex)
-
+There are various approaches to examining different areas of the sky for neutrino point sources.
+While all-sky scans examine entire declination bands of the sky \cite{some_all_sky_scan}, there is also the alternative of examining individual points in the sky.
+This is done via a predefined source catalogue, which is often motivated by special signals coming from these directions, such as high-energy photons or, as in this thesis, neutrinos, which have a high probability of being of astrophysical origin.
+IceCube has a realtime alert system that reports and collects such special events.
+Originally, neutrino alerts were divided into High Energy Starting Event (HESE) and Extremely High Energy (EHE) signatures.
+The HESE events originate qualitatively from neutrinos that interact directly in the detector, meaning that the interaction starts there, while EHE events only have a very high energy.
+Eventually, the alert system was modified.
 Besides a few tweaks to the HESE and EHE channels, the new alert system introduced a breakdown into two different categories of events based on their probability of being of atrophysical origin.
 These are called gold and bronze events, with gold having at least a $\SI{50}{\percent}$ astrophysical purity in comparison to $\SI{30}{\percent}$ for bronze events.
 The latter were introduced to satisfy the demand for even more alerts.
 This new system also features a new event type, the Gamma-Ray-Followup (GFU), which is highest in the event categorization hierarchy, meaning that if an event is classified as a GFU event it is also possible for the event to be a HESE or EHE event additionally.
-This hierarchy is based on studies for angular resolution and astrophysical purity making GFU gold events the first stop for a search for astrophysical neutrino sources.
-
-\cite{Aartsen_2017}
+This hierarchy is based on studies for angular resolution and astrophysical purity making GFU gold events the first stop for a search for astrophysical neutrino sources \cite{Aartsen_2017}.
 
 \section{Gamma-Ray-Followup}
 
@@ -39,7 +41,7 @@ In the southern hemisphere, the deposited charge ($qtot$) of the events must mee
   \log_{10}(qtot) > -4.06580\cdot d^3 - 10.60906\cdot d^2  -9.61048\cdot d + 3.01219,
 \end{equation}
 where $d$ is the sine of the declination of the events.
-The individual signalness is obtained through a grid interpolation based on the position of these events.
+The individual signalness is obtained through a grid interpolation based on the position of these events \cite{source_tba}.
 
 \subsection{Sources}
 
