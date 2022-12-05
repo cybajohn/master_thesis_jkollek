@@ -1,11 +1,43 @@
 %theory
 \chapter{Point Source Searches in IceCube} \label{sec:theory}
 
-extended likelihood \cite{ex_likelihood}
+This chapter provides an insight into the theoretical formulas and principles used to perform a point source analysis.
+
+\section{Modelling the Test Statistic}
+
+Basically, a point source search consists of a hypothesis test based on two hypotheses \cite{likelihood_method}.
+The null hypothesis $H_0$ states that the examined data consist only of atmospheric background, while the hypothesis $H_\text{S}$ states that the data consist of background and astrophysical neutrino events, the latter emitted by a source of certain properties.
+The hypothesis $H_\text{S}$ uses the parameterspace $\Theta$ while the null hypothesis only uses a subset of this parameterspace $\Theta_0$
+The hypothesis test is the quotient of the underlying likelihoods of the hypotheses,
+\begin{equation}
+  \Lambda = \frac{\CL_{\Theta_0}}{\CL_\Theta}.
+\end{equation}
+Since the hypothesis $H_\text{S}$ contains the null hypothesis, the test statistic $TS$ can be expressed via Wilks' theorem \cite{wilk} as
+\begin{equation}
+  TS = -2\ln\Lambda = 2\ln\Gb{\sup_{\theta\in\Theta}\CL(\theta)} - 2\ln\Gb{\sup_{\theta\in\Theta_0}\CL(\theta)},
+\end{equation}
+with the set $\theta$ of parameters that maximizes the likelihoods.
+The test statistic now follows a $\chi^2$ distribution, given that the distribution is large enough.
+In general, the likelihoods are defined as
+\begin{equation}
+  \CL(\lambda) = \frac{\lambda^Ne^{-\lambda}}{N!}\prod^N_{i=1}P_i
+\end{equation}
+or
+\begin{equation}
+  \ln\CL(\lambda) = -\lambda + \sum^N_{i=1}\ln{(\lambda P_i)}
+\end{equation}
+in the the logarithmic form \cite{ex_likelihood} dropping the $\ln(N!)$ term, where $\lambda$ is the number of expected events and $N$ is the total number of individual events $i$, $P_i$ defines the per-event model distributions.
+In the case of stacking several sources $k$, the number of expected events is divided and the formula
+\begin{equation}
+  \ln\CL(\{\lambda_k\}) = -\sum^{N_\text{srcs}}_{k=1}\lambda_k + \sum^N_{i=1}\ln{\Gb{\sum^{N_\text{srcs}}_{k=1}\lambda_k P_{i,k}}},
+\end{equation}
+is obtained.
 
 mention programs like skylab sky llh and yeah csky duh
 
 maybe mention other methods than likelihood
+
+\section{Calculating Sensitivity and Discovery Potential}
 
 Sensitivity and discovery potential correspond in principle to the number of signal events that must be injected, so that the resulting test statistic is $\SI{90}{\percent}$ above the median of the background statistic or $\SI{50}{\percent}$ above $\num{5}\sigma$ of the latter respectively.
 These conditions can be seen schematically in figure \ref{fig:sens_disc_schem}.
