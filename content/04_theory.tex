@@ -7,7 +7,7 @@ The theoretical background gives a basic impression of the calculation and is ne
 
 Basically, a point source search consists of a hypothesis test based on two hypotheses \cite{likelihood_method}.
 The null hypothesis $H_0$ states that the examined data consist only of atmospheric background, while the hypothesis $H_\text{S}$ states that the data consist of background and astrophysical neutrino events, the latter emitted by a source of certain properties.
-The hypothesis $H_\text{S}$ uses the parameterspace $\Theta$ while the null hypothesis only uses a subset of this parameterspace $\Theta_0$
+The hypothesis $H_\text{S}$ uses the parameterspace $\Theta$ while the null hypothesis only uses a subset of this parameterspace $\Theta_0$.
 The hypothesis test is the quotient of the underlying likelihoods $\CL$ of the hypotheses,
 \begin{equation}
   \Lambda = \frac{\CL_{\Theta_0}}{\CL_\Theta}.
@@ -45,7 +45,9 @@ If a time-integrated search or a search in which the sources are independent of 
 \end{equation}
 This makes it possible to form per-event PDF ratios directly in the calculation, which reduces the computational effort.\\
 There is some software available to practically perform a point source search.
-Among the best known are \textbf{sky\_llh}, \textbf{skylab} and \textbf{csky}. The software \textbf{csky}, which is used in this thesis, has a simple application and, due to the outsourcing of computationally intensive steps to \textbf{C++}, a time-efficient calculation.
+Among the best known are \textbf{SkyLLH} \cite{sky_llh}, \textbf{skylab} \cite{https://github.com/coenders/skylab} and \textbf{csky} \cite{csky}.
+The software \textbf{csky}, which is used in this thesis, has a simple application and, due to the outsourcing of computationally intensive steps to \textbf{C++}, a time-efficient calculation.
+Unlike the others, which are implemented entirely in \textbf{Python}.
 
 \section{Likelihood in csky}
 
