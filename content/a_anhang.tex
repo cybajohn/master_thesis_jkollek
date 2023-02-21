@@ -378,3 +378,58 @@ This chapter contains additional understanding aids for the attempt to write sof
 \chapter{Reproduction}
 
 This chapter contains all the necessary information to reproduce the analyses.
+
+\section{Main Analyses}
+
+The analyse repo can be found at (git link).
+The analysis was written on the external server cobalt and is located at (analysis folder).
+It was written in \textbf{Python3} version 3.7.5 and uses \textbf{csky} version 1.1.7.
+To compile it, the shell under (shell directory) was used.
+This shell contains all the necessary dependencies to run the analysis.
+In order to be able to reproduce the analysis, the directories in the \textbf{\_paths.py} file must first be adapted to the user.
+The analysis should be done in three main steps, the data preparation, the time-integrated analysis and the time-dependent analysis.
+
+\subsection{Data Preparation}
+The first step is to create the source files for the neutrino sources through the \textbf{make\_source\_files\_from\_fits.py} file.
+The skymaps are created by the file \textbf{make\_skymap.py}.
+This is followed by the creation of the preprocessed datasets.
+The script \textbf{check\_gold\_filter\_jobs.py} creates job files which can be processed on the server condor, these use the script \textbf{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor (here: \textbf{bash ehe\_transient\_stacking.dag.start.sh}).
+Once the scripts have run, they can be collected via \textbf{check\_gold\_filter\_combine.py}.
+These datasets can now be inserted into \textbf{csky} into the \textbf{selections.py} file via creating a new dataset class.
+
+\begin{verbatim}
+class my_cleaned_data(PSDataSpec):
+    _user_path = os.path.join("/data","user","jkollek","csky_ehe_stacking",
+                              "rawout_tests","cleaned_datasets_new")
+    _path_sig = os.path.join(_user_path,'IC86_2016_MC.npy')
+    _path_data = [os.path.join(_user_path,'IC86_2011_exp.npy'),
+                  os.path.join(_user_path,'IC86_2012_exp.npy'),
+                  os.path.join(_user_path,'IC86_2013_exp.npy'),
+                  os.path.join(_user_path,'IC86_2014_exp.npy'),
+                  os.path.join(_user_path,'IC86_2015_exp.npy'),
+                  os.path.join(_user_path,'IC86_2016_exp.npy'),
+                  os.path.join(_user_path,'IC86_2017_exp.npy'),
+                  os.path.join(_user_path,'IC86_2018_exp.npy'),
+                  os.path.join(_user_path,'IC86_2019_exp.npy')]
+    _path_grls = [os.path.join(_user_path,'GRL','IC86_2011_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2012_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2013_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2014_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2015_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2016_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2017_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2018_exp.npy'),
+                  os.path.join(_user_path,'GRL','IC86_2019_exp.npy')]
+    _bins_sindec = np.unique(np.concatenate([
+                        np.linspace(-1, -0.93, 4 + 1),
+                        np.linspace(-0.93, -0.3, 10 + 1),
+                        np.linspace(-0.3, 0.05, 9 + 1),
+                        np.linspace(0.05, 1, 18 + 1) ]) )
+    _bins_logenergy = np.arange(1, 9.5 + 0.01, 0.125)
+\end{verbatim}
+
+\subsection{Time-integrated Analysis}
+
+\subsection{Time-dependent Analysis}
+
+\section{Time-Dependent Stacking Software Approach}
