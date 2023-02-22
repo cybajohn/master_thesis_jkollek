@@ -381,10 +381,17 @@ This chapter contains all the necessary information to reproduce the analyses.
 
 \section{Main Analyses}
 
-The analyse repo can be found at (git link).
-The analysis was written on the external server cobalt and is located at (analysis folder).
+The analysis repo can be found at (git link).
+The analysis was written on the external server cobalt and is located at
+\begin{verbatim}
+          /home/jkollek/punktquellensuche/csky_ehe_stacking.
+\end{verbatim}
 It was written in \textbf{Python3} version 3.7.5 and uses \textbf{csky} version 1.1.7.
-To compile it, the shell under (shell directory) was used.
+To compile it, the shell under
+\begin{verbatim}
+          /home/jkollek/venvs/py3v4/bin/python
+\end{verbatim}
+was used.
 This shell contains all the necessary dependencies to run the analysis.
 In order to be able to reproduce the analysis, the directories in the \textbf{\_paths.py} file must first be adapted to the user.
 The analysis should be done in three main steps, the data preparation, the time-integrated analysis and the time-dependent analysis.
@@ -394,7 +401,7 @@ The first step is to create the source files for the neutrino sources through th
 The skymaps are created by the file \textbf{make\_skymap.py}.
 This is followed by the creation of the preprocessed datasets.
 The script \textbf{check\_gold\_filter\_jobs.py} creates job files which can be processed on the server condor, these use the script \textbf{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor (here: \textbf{bash ehe\_transient\_stacking.dag.start.sh}).
-Once the scripts have run, they can be collected via \textbf{check\_gold\_filter\_combine.py}.
+Once the scripts have run, they can be collected via \textbf{check\_gold\_filter\_combine.py} and the actual prepared datasets can be created via the \textbf{remove\_gold\_from\_data.py} script.
 These datasets can now be inserted into \textbf{csky} into the \textbf{selections.py} file via creating a new dataset class.
 
 \begin{verbatim}
@@ -428,8 +435,23 @@ class my_cleaned_data(PSDataSpec):
     _bins_logenergy = np.arange(1, 9.5 + 0.01, 0.125)
 \end{verbatim}
 
-\subsection{Time-integrated Analysis}
+\subsection{Time-Integrated Analysis}
 
-\subsection{Time-dependent Analysis}
+Both analyses are basically structured in the same way.
+First the background trials are calculated and then the signal trials.
+Before the actual background trials, the trials can be tested with the help of the \textbf{bg\_trial.py} script.
+This is a simple setup to see how the trials work.
+However, this script is not required for the analysis.
+The analysis starts with the \textbf{bg\_trial\_jobs.py} script, which as before creates jobfiles for use on condor.
+As before, these are collected via the \textbf{bg\_trial\_combine.py} script.
+The signal trials have the same structure.
+
+\subsection{Time-Dependent Analysis}
+
+The same procedure as before applies here, the time-dependent scripts are identified by the \textbf{\_time\_dependent} suffix.
+The post-trials can be executed via the \textbf{post\_trial*} scripts.
+The scripts with the \textbf{inspect*} prefix are used to create additional plots and provide extra insight into the quantitative content of the analyses.
 
 \section{Time-Dependent Stacking Software Approach}
+
+Hier könnte Ihre Werbung stehen!
