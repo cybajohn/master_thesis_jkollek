@@ -3,6 +3,7 @@
 
 This chapter provides an insight into the theoretical formulas, principles and softwares used to perform a point source analysis.
 The theoretical background gives a basic impression of the calculation and is necessary for understanding chapter \ref{sec:tdepps}, where the general calculation of the test statistic is discussed.
+
 \section{Modelling the Test Statistic}
 
 Basically, a point source search consists of a hypothesis test based on two hypotheses \cite{likelihood_method}.
@@ -51,19 +52,25 @@ Unlike the others, which are implemented entirely in \textbf{Python}.
 
 \section{Likelihood in csky}
 
-The likelihood of a source in csky looks like this,
+The likelihood of a source in \textbf{csky} is shown in the equation below,
 \begin{equation}
   \CL(n_s,\Vmu)
   = \prod_i \Gb{
     \frac{n_s}{N} \CS(\Vx_i|\Vmu)
     + \Gp{1 - \frac{n_s}{N}} \CB(\Vx_i)
-  }.
+  },
   \label{eq:lh}
 \end{equation}
-
+with the total number of events $N$, the event parameters $\Vx_i$ and the analysis parameters
+\begin{align}
+  \Vmu &= \{\text{number of signal events }n_S, \text{ spectral index }\gamma\},
+\end{align}
+whereas the latter will be optimised \footnote{A representation of the likelihood can be found directly in the \textbf{csky} software package.}.
+The probability functions of the individual events are broken down into three different parts according to the event parameters, an energy, a spatial and a temporal PDF.
+However, the temporal PDF is only important for time-dependent searches,
 \begin{align}
   \CS(\Vx|\Vmu)
-  &= \CS_S(\alpha,\delta,\sigma)
+  &= \CS_S(\delta)
   \cdot \CS_E(E|\Vmu)
   \cdot \CS_T(t|\Vmu);
   \\
@@ -73,9 +80,12 @@ The likelihood of a source in csky looks like this,
   \cdot \CB_T(t).
   \label{eq:pdf}
 \end{align}
-
-mention fit parameters\\
-
+The energy PDF consists of a 2d histogram of energy and declination and is generated directly from the data for the background $\CB_E(E)$ and from simulations weighted with the spectral index $\gamma$ for the signal $\CS_E(E|\Vmu)$.
+Its ratio is calculated apriori.
+The spatial PDF of the signal $\CS_S(\delta)$ depends on the declination of the event and corresponds to a Kent distribution around the declination of the source.
+The background PDF $\CB_S(\delta)$, on the other hand, is obtained directly from the spatial distribution of the data, since most events are background events.
+The temporal PDF in case of this thesis is a simple box function, equal for both signal and background, that is unitary over a certain time interval.
+Only events that fall within this time window make a contribution.
 
 \section{Calculating Sensitivity and Discovery Potential}
 
