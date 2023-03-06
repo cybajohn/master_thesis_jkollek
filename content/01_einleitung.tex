@@ -1,20 +1,20 @@
 %introduction
 \chapter{Introduction}
-Talk about txs, short meaning if sources were found, thorbens analysis, my motivation, short summary of contents (talk about common thread)\\
-
-name some source catalogues\\
-blazar stacking\\
-martina karl\\
-what differs in this pss from others: csky, removing gfu-gold mc events, method of time dep search\\
-own attempt at software\\
-IceCube sensitivity and what to expect from analysis results\\
-short introduction to chapters\\
-
-blazarstacking2022:\\
-- multi-messenger astronomy: high-energy photons are likely to get absorbed and reemitted at lower energies\\
-- thus: time-integrated stacking of MeV-detected blazars using 10 years of IceCube data\\
-- upper flux limit is $E^2\phi_{\SI{1}{\tera\electronvolt}}=\SI{1.64e-12}{\tera\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}}$\\
-- \cite{blazar_stacking_2020}
+%Talk about txs, short meaning if sources were found, thorbens analysis, my motivation, short summary of contents (talk about common thread)\\
+%
+%name some source catalogues\\
+%blazar stacking\\
+%martina karl\\
+%what differs in this pss from others: csky, removing gfu-gold mc events, method of time dep search\\
+%own attempt at software\\
+%IceCube sensitivity and what to expect from analysis results\\
+%short introduction to chapters\\
+%
+%blazarstacking2022:\\
+%- multi-messenger astronomy: high-energy photons are likely to get absorbed and reemitted at lower energies\\
+%- thus: time-integrated stacking of MeV-detected blazars using 10 years of IceCube data\\
+%- upper flux limit is $E^2\phi_{\SI{1}{\tera\electronvolt}}=\SI{1.64e-12}{\tera\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}}$\\
+%- \cite{blazar_stacking_2020}
 
 The discovery of $\si{\peta\electronvolt}$-energy neutrinos \cite{pev_neutrino}, together with the argument that such high-energy neutrinos originate from some astrophysical process, was the starting signal for the search for astrophysical neutrino sources, commonly known as point source searches.
 
@@ -32,11 +32,11 @@ In addition to the approach of examining the entire data set for neutrino emissi
 In addition to the search at positions of known astrophysical objects, there is also the possibility of an untriggered search, according to the motivation that extremely high-energy neutrinos originate directly from a source.
 In this case, the direction of a special event type, for example high-energy photons or neutrinos, is used as a source position.
 Among the neutrinos detected by IceCube, for example, there are special alert groups that are characterised by high energy and a special signature of the event in the detector.
-Such a search was previously carried out with 22 high energy starting events (HESE) (here thorben).
-A current search is, for example, that of Martina Karl, which has investigated dudu.
-This breakdown is just a small example of the variety of approaches to point source searches, both in a-priori source selection and analysis calculation.
+Such a search was previously carried out with $\num{22}$ high energy starting events (HESE) by \textit{Thorben Menne} \cite{thorben}.
+A current search is, for example, that of \textit{Martina Karl}, working on a time-dependent search with a self-designed stacking model at IceCube alert positions with a preliminary fluence of about $\SI{2.7e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ regarding the $\num{3}\sigma$ discovery potential \cite{martina}.
+This breakdown is just a small example of the variety of approaches to point source searches, both in a priori source selection and analysis calculation.
 
-This thesis investigates the contribution of low-energy neutrinos at positions of $\num{72}$ gamma-ray-followup (gfu) alerts with $\num{9}$ years of IceCube data and using the software csky.
+This thesis investigates the contribution of low-energy neutrinos at positions of $\num{72}$ gamma-ray-followup (GFU) alerts with $\num{9}$ years of IceCube data and using the software csky.
 The basic idea is to perform a conservative search, making as few assumptions as possible about the emission of the neutrinos.
 In addition, the used data are separated from gfu-like events to prevent bias.
 The analysis itself consists of two parts, a time-integrated stacking search and a time-dependent search in which 10 selected sources are examined individually.
