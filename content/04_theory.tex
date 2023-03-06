@@ -70,7 +70,7 @@ The probability functions of the individual events are broken down into three di
 However, the temporal PDF is only important for time-dependent searches,
 \begin{align}
   \CS(\Vx|\Vmu)
-  &= \CS_S(\delta)
+  &= \CS_S(\delta,\alpha)
   \cdot \CS_E(E|\Vmu)
   \cdot \CS_T(t|\Vmu);
   \\
@@ -81,9 +81,10 @@ However, the temporal PDF is only important for time-dependent searches,
   \label{eq:pdf}
 \end{align}
 The energy PDF consists of a 2d histogram of energy and declination and is generated directly from the data for the background $\CB_E(E)$ and from simulations weighted with the spectral index $\gamma$ for the signal $\CS_E(E|\Vmu)$.
-Its ratio is calculated apriori.
-The spatial PDF of the signal $\CS_S(\delta)$ depends on the declination of the event and corresponds to a Kent distribution around the declination of the source.
+Its ratio is calculated a priori.
+The spatial PDF of the signal $\CS_S(\delta,\alpha)$ depends on the declination and right ascension of the event and corresponds to a Kent distribution around the position of the source.
 The background PDF $\CB_S(\delta)$, on the other hand, is obtained directly from the spatial distribution of the data, since most events are background events.
+It depends only on the declination, since the background is generally uniformly distributed in the sky and the distribution depends merely on the absorption of the earth.
 The temporal PDF in case of this thesis is a simple box function, equal for both signal and background, that is unitary over a certain time interval.
 Only events that fall within this time window make a contribution.
 
