@@ -3,8 +3,8 @@
 Cosmic particles have always offered an insight into the mechanisms of cosmic objects.
 For example, pulsars and quasars have been discovered through radio astronomy.
 Today, information is obtained from all kinds of cosmic particles, including weakly interacting neutrinos.
-The production of neutrinos is due to charged particles that have been accelerated by a type of shock front acceleration in magnetic fields.
-These are mainly charged hadronic particles such as the proton, which, in the framework of the standard model of particle physics, produces a pion mainly through interaction with other protons (protohadronic) or photons (photohadronic).
+The production of high-energy neutrinos is due to charged particles that have been accelerated by a type of shock front acceleration in magnetic fields.
+These are mainly charged hadronic particles such as the proton, which, in the framework of the standard model of particle physics, produces a pion mainly through interaction with other protons (hadronuclear) or photons (photohadronic).
 In the course of the pion's decay, neutrinos are ultimately created \cite{pdg},
 \begin{align}
   &p+p \rightarrow p+n+\pi^+ \quad \text{or} \quad p\gamma \rightarrow n+\pi^+,\\
@@ -26,17 +26,24 @@ Two examples are described below, blazars and starburstgalaxies.
 %- inner jets cannot explain sub-PeV neutrino events cause of low energy cutoff \\
 %- needs more complicated models \\
 %\cite{blazar}\\
-%- using a high particle density in the emission volume to obtain a neutrino flux at $\si{\tera\electronvolt}$ energies in the protohadronic channel.\\
+%- using a high particle density in the emission volume to obtain a neutrino flux at $\si{\tera\electronvolt}$ energies in the hadronuclear channel.\\
 %\cite{eichmann}
 - mention txs here, again? \\
-Blazars are a subclass of active galactic nuclei.
+Blazars are a subclass of radioloud active galactic nuclei.
 Among other things, AGN are defined by their orientation to the observer.
-For blazars, the angle of observation relative to the propagation of the jet of the AGN is less than $\SI{10}{\degree}$.
+For blazars, the angle of observation relative to the propagation of the jet of the radioloud AGN is less than $\SI{10}{\degree}$.
 A diagram of the unified AGN scheme can be found in the appendix \ref{fig:agn}.
 Photohadronic interactions are responsible for the production of neutrinos in most models.
 In those models, however, neutrinos have an energy above that of the knee of the astrophysical flux.
-Accordingly, without more complex models, blazars cannot be responsible for neutrinos with energies below $\si{\peta\electronvolt}$ \cite{blazar}.
-Approaches for neutrinos of smaller energies include the approach of the protohadronic channel by assuming a high particle density in the emission volume of the blazar \cite{eichmann}.
+The spectral energy distribution (SED) of blazars is shown in figure \ref{fig:sed}.
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{Plots/01_5_astroparticle/sed.jpeg}
+    \caption{Different components of the blazar SED. The black dashed line on the right shows the neutrino emission spectrum around $\si{\peta\electronvolt}$ energies \cite{sed}.}
+    \label{fig:sed}
+\end{figure}
+Accordingly, without more complex models, blazars cannot be significantly responsible for neutrinos with energies below $\si{\peta\electronvolt}$ \cite{blazar}.
+Approaches for neutrinos of smaller energies include the approach of the hadronuclear channel by assuming a high particle density in the emission volume of the blazar \cite{eichmann}.
 Better sources for neutrinos in the $\si{\tera\electronvolt}$ range are starburstgalaxies.
 
 \subsection{Starburstgalaxies}
@@ -57,3 +64,10 @@ These are galaxies in which stars form at extreme levels.
 One example is Arp 220, an object consisting of two nuclei surrounded by dense molecular gas.
 The gas turns the object almost completely into a cosmic ray calorimeter.
 Under certain model assumptions, the $pp$-interactions provide a neutrino flux for the first part of the interaction of about $\num{6e-12}\si{\giga\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}}$ at $\SI{0.1}{\peta\electronvolt}$ \cite{starburst}.
+The neutrino emission spectrum can be seen in figure \ref{fig:starburst} showing an emission of neutrinos in a wide energy range.
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{Plots/01_5_astroparticle/starburst_flux.png}
+    \caption{Neutrino emission spectrum bands as a function of energy in starburstgalaxies. The different colours represent different combinations of fractions of the two nuclei of Arp 220 and are not important here. Important is the steady emission of low-energy to high-energy neutrinos \cite{starburst}.}
+    \label{fig:starburst}
+\end{figure}
