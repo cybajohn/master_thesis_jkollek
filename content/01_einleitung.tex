@@ -15,28 +15,33 @@
 %- thus: time-integrated stacking of MeV-detected blazars using 10 years of IceCube data\\
 %- upper flux limit is $E^2\phi_{\SI{1}{\tera\electronvolt}}=\SI{1.64e-12}{\tera\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}}$\\
 %- \cite{blazar_stacking_2020}
-
+The universe is full of objects whose inner mechanisms have not yet been fully understood or confirmed.
+The detection of certain messenger particles of these objects provides an insight into the inner physics of the object.
+Charged particles, as well as photons, however are deflected and scattered until they can be observed from Earth.
+Weakly interacting neutrinos, on the other hand, are not deflected but are difficult to detect.
+The affiliation of neutrinos to a source would be the confirmation of many theoretical models.
 The discovery of $\si{\peta\electronvolt}$-energy neutrinos \cite{pev_neutrino}, together with the argument that such high-energy neutrinos originate from some astrophysical process, was the starting signal for the search for astrophysical neutrino sources, commonly known as point source searches.
 
-In general, point source searches are divided into two types, allsky scans and catalogue searches.
-Allsky scans divide the sky into declination bands and thus examine the whole sky for a neutrino excess \cite{all_sky_paper}.
+In general, point source searches are divided into two types, all-sky scans and catalogue searches.
+All-sky scans divide the sky into declination bands and thus examine the whole sky for a neutrino excess \cite{all_sky_paper}.
 Catalogue searches, on the other hand, are motivated by theoretical assumptions, such as that certain astrophysical objects should emit neutrinos based on theoretical models.
 Popular candidates for possible neutrino sources are active galactic nuclei.
 For example, a high-energy neutrino was assigned to the blazar TXS 0506+056 in 2018 \cite{txs}.
 This is one of the leading arguments for catalogue searches with blazars, in which a low-energy neutrino excess is sought.
 Stacking the source positions enables a higher sensitivity \cite{stacking_argument}.
-The blazar stackings performed prior however \cite{blazar_stacking_2017} showed no significant excess with an upper limit of $\phi_{\SI{1}{\tera\electronvolt}}=\SI{1.5e-9}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}\steradian\tothe{-1}}$ for $\num{862}$ stacked blazars.
+The blazar stackings performed previously however \cite{blazar_stacking_2017} showed no significant excess with an upper limit of $\phi_{\SI{1}{\tera\electronvolt}}=\SI{1.5e-9}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}\steradian\tothe{-1}}$ for $\num{862}$ stacked blazars.
 A more recent search \cite{blazar_stacking_2020} uses blazars of low-energy photons, motivated by the theory that high-energy photons related to neutrino production are absorbed and reemitted at lower energies.
 This search with $\num{137}$ $\si{\mega\electronvolt}$-detected blazars and $\num{11}$ years of IceCube data yields an upper limit of $E^2\phi_{\SI{1}{\tera\electronvolt}}=\SI{1.64e-12}{\tera\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}}$.
+
 In addition to the approach of examining the entire data set for neutrino emission in the time-integrated searches just mentioned, there is also the possibility of examining smaller time intervals for neutrino flares in a so-called time-dependent search.
 In addition to the search at positions of known astrophysical objects, there is also the possibility of an untriggered search, according to the motivation that extremely high-energy neutrinos originate directly from a source.
 In this case, the direction of a special event type, for example high-energy photons or neutrinos, is used as a source position.
 Among the neutrinos detected by IceCube, for example, there are special alert groups that are characterised by high energy and a special signature of the event in the detector.
-Such a search was previously carried out with $\num{22}$ high energy starting events (HESE) by \textit{Thorben Menne} \cite{thorben}.
-A current search is, for example, that of \textit{Martina Karl}, working on a time-dependent search with a self-designed stacking model at IceCube alert positions with a preliminary fluence of about $\SI{2.7e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ regarding the $\num{3}\sigma$ discovery potential \cite{martina}.
+Such a search was previously carried out with $\num{22}$ high energy starting events (HESE) in \cite{thorben}.
+A current search is, for example \cite{martina} working on a time-dependent search with a self-designed stacking model at IceCube alert positions with a preliminary fluence of about $\SI{2.7e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ regarding the $\num{3}\sigma$ discovery potential.
 Although the basic approach to point source searches is the same in these analyses, this breakdown is just a small example of the variety of the hyperparameters, both in a priori source selection and analysis calculation.
 
-This thesis investigates the contribution of low-energy neutrinos at positions of $\num{72}$ gamma-ray-followup (GFU) alerts with $\num{9}$ years of IceCube data using the software \textbf{csky}.
+This thesis investigates the contribution of low-energy neutrinos at positions of $\num{72}$ gamma-ray-followup (GFU) alerts with $\num{9}$ years of IceCube data using the software \texttt{csky}.
 The basic idea is to perform a conservative search, making as few assumptions as possible about the emission of the neutrinos.
 In addition, the used datasets are separated from source-like events to prevent bias.
 The analysis itself consists of two parts, a time-integrated stacking search and a time-dependent search in which 10 selected sources are examined individually.
@@ -48,7 +53,7 @@ Chapter \ref{sec:astro} describes the basic physical processes that generate neu
 Chapter \ref{sec:icecube} outlines the IceCube Observatory and how neutrinos are detected, as well as the appearance and classification of the detector signatures.
 The underlying methodology of the point source search is provided in the theory-oriented Chapter \ref{sec:theory}.
 Chapter \ref{sec:events_data} describes the data sets used and processed, as well as the source catalogue.
-The next two chapters,\ref{sec:csky_time_int} and \ref{sec:csky_time_dep} , contain the time-integrated and the time-dependent analyses.
+The next two chapters, \ref{sec:csky_time_int} and \ref{sec:csky_time_dep}, contain the time-integrated and the time-dependent analyses.
 This is followed by chapter \ref{sec:tdepps}, which deals with the problem of time-dependent stacking and the attempt to solve this problem.
 Finally, chapter \ref{sec:outlook} provides a summary and a discussion of the results as well as ideas for further evaluations.
-Additional material for further understanding and reproducibility of the thesis is listed in the appendix \ref{sec:appendix}.
+Additional material for further understanding and reproducibility of this thesis is listed in the appendix \ref{sec:appendix}.

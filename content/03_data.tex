@@ -46,7 +46,7 @@ The key features of the data used can be seen in table \ref{tab:data}.
   \end{tabular}
 \end{table}
 
-It is to mention, that the temporal intervals of the samples overlap with each other due to testruns of the detector.
+The temporal intervals of the samples overlap with each other due to testruns of the detector.
 There is however no real temporal overlap of the different runs. \cite{private_com}
 The advantage of using the years 2011 to 2019 is that the sets have all gone through the same processing pipeline and also all use the same monte carlo file, and thus can be treated the same on that basis.
 
@@ -59,7 +59,8 @@ Since GFU-gold events are treated as sources, keeping these events in the datase
 Alert events in general are excluded from the Point Source Tracks Sample starting with IC86.
 Some alerts do appear in IC76 and previous runs because these datasets are too old, but are excluded in this analysis since it starts with the year 2011.
 Following a conservative approach, GFU-gold like events also have to be identified and removed from the simulation files.
-Luckily all datasets from the years 2011 to 2019 use the monte carlo file from the year 2016, so this is the only simulation set that needs to be worked with.\\
+Luckily all datasets from the years 2011 to 2019 use the monte carlo file from the year 2016, so this is the only simulation set that needs to be worked with.
+
 To identify the GFU-gold events from the monte carlo set, the original i3 simulation files and the corresponding geometry file (GCD: geometry, something c, detector configuration) file need to be found and processed using the alertfilter from realtime.
 The matching simulation files are 21002 and 21220.
 Information about these sets can be found at \cite{sim} and \cite{gcd} for the geometry file.
@@ -82,7 +83,7 @@ Overall not a lot of events get filtered out, which is to be expected given thei
 These events are mostly upgoing with high energy.
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{Plots/03_data/cleaned_mc_energy_test.pdf}
+    \includegraphics[width=16cm]{Plots/03_data/cleaned_mc_energy_test.pdf}
     \caption{One year weighted histogram in $\log_{10}(\text{trueE})$ and $\sin{(\text{true}\delta)}$ of the GFU-gold events (left column), the monte carlo without the GFU-gold events (middle column) and the original monte carlo with all events (right column) on a logarithmic scale (top row) and on a normal scale (buttom row) for the 2016 monte carlo set. The flux used for the weighting is the same as in figure \ref{fig:gfu_gold_comp}.}
     \label{fig:energy}
 \end{figure}

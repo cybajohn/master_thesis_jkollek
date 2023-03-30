@@ -18,7 +18,7 @@ Since the hypothesis $H_\text{S}$ contains the null hypothesis, the test statist
   TS = -2\ln\hat{\Lambda} = 2\ln\Gb{\sup_{\theta\in\Theta}\CL(\theta)} - 2\ln\Gb{\sup_{\theta\in\Theta_0}\CL(\theta)}, \label{eq:TS}
 \end{equation}
 with the set $\theta$ of parameters that maximizes the likelihoods.
-The test statistic now follows a $\chi^2$ distribution, given that the distribution is large enough.
+The test statistic now follows a $\chi^2$ distribution, given that the sample size is large enough.
 In general, the likelihoods are defined as
 \begin{equation}
   \CL(\lambda) = \frac{\lambda^Ne^{-\lambda}}{N!}\prod^N_{i=1}P_i
@@ -38,21 +38,22 @@ If the likelihoods are inserted into formula \eqref{eq:TS}, the general formula 
     TS = -2\ln{\hat\Lambda} = -2\sum_{k=1}^{N_{srcs}}\hat\lambda_{k,S} + 2\sum_{i=1}^{N_{\text{evts}}}\ln{\Gb{\frac{\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S}S_{i,k}}{\sum_{k=1}^{N_{\text{srcs}}}\langle\lambda_{k,B}\rangle B_{i,k}}+1}},
 \end{equation}
 with the $\hat\lambda$ maximizing the test statistic value.
-The expected number of background events $\langle\lambda_{k,B}\rangle$ is estimated a priori.\\
+The expected number of background events $\langle\lambda_{k,B}\rangle$ is estimated a priori integrated over the rate of background events.
+
 The further form of the test statistic depends on the choice of probability models $S$ and $B$.
 If a time-integrated search or a search in which the sources are independent of each other in terms of different temporal intervals is carried out, the formula simplifies to
 \begin{equation}
     TS = -2\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S} + 2\sum_{i=1}^{N_{\text{evts}}}\sum_{k=1}^{N_{\text{srcs}}}\ln{\Gb{\frac{\hat\lambda_{k,S}S_{i,k}}{\langle\lambda_{k,B}\rangle B_{i,k}}+1}}.
 \end{equation}
-This makes it possible to form per-event PDF ratios directly in the calculation, which reduces the computational effort.\\
+This makes it possible to form per-event probability density functions (PDF) ratios directly in the calculation, which reduces the computational effort.
+
 There is some software available to practically perform a point source search.
-Among the best known are \textbf{SkyLLH}\footnote{\url{https://github.com/icecube/skyllh}}, \textbf{skylab}\footnote{\url{https://github.com/coenders/skylab}} and \textbf{csky}\footnote{\url{https://github.com/icecube/csky}, private repository}.
-The software \textbf{csky}, which is used in this thesis, has a simple application and, due to the outsourcing of computationally intensive steps to \textbf{C++}, a time-efficient calculation.
-Unlike the others, which are implemented entirely in \textbf{Python}.
+Among the best known are \texttt{SkyLLH}\footnote{\url{https://github.com/icecube/skyllh}}, \texttt{skylab}\footnote{\url{https://github.com/coenders/skylab}} and \texttt{csky}\footnote{\url{https://github.com/icecube/csky}, private repository}.
+The software \texttt{csky}, which is used in this thesis, is easy to use and, due to the outsourcing of computationally intensive steps to \texttt{C++}, a time-efficient calculation in comparison to the other mentioned softwares, which are implemented entirely in \texttt{Python}.
 
 \section{Likelihood in csky}
 
-The likelihood of a source in \textbf{csky} is shown in the equation below,
+The likelihood of a source in \texttt{csky} is shown in the equation below,
 \begin{equation}
   \CL(n_s,\Vmu)
   = \prod_i \Gb{
@@ -65,7 +66,7 @@ with the total number of events $N$, the event parameters $\Vx_i$ and the analys
 \begin{align}
   \Vmu &= \{\text{number of signal events }n_S, \text{ spectral index }\gamma\},
 \end{align}
-whereas the latter will be optimised \footnote{A representation of the likelihood can be found directly in the \textbf{csky} software package.}.
+where $\Vmu$ will be optimised\footnote{A representation of the likelihood can be found directly in the \texttt{csky} software package.}.
 The probability functions of the individual events are broken down into three different parts according to the event parameters, an energy, a spatial and a temporal PDF.
 However, the temporal PDF is only important for time-dependent searches,
 \begin{align}
@@ -81,7 +82,7 @@ However, the temporal PDF is only important for time-dependent searches,
   \label{eq:pdf}
 \end{align}
 The energy PDF consists of a 2d histogram of energy and declination and is generated directly from the data for the background $\CB_E(E)$ and from simulations weighted with the spectral index $\gamma$ for the signal $\CS_E(E|\Vmu)$.
-Its ratio is calculated a priori.
+Its ratio does not depent on individual event properties and is calculated a priori.
 The spatial PDF of the signal $\CS_S(\delta,\alpha)$ depends on the declination and right ascension of the event and corresponds to a Kent distribution around the position of the source.
 The Kent distribution is the equivalent of a normal distribution on a sphere \cite{kent}.
 The background PDF $\CB_S(\delta)$, on the other hand, is obtained directly from the spatial distribution of the data, since most events are background events.
