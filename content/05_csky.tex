@@ -160,10 +160,10 @@ Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{
 \chapter{Time-Dependent Search} \label{sec:csky_time_dep}
 
 The time-dependent search examines $\num{10}$ sources independently of each other.
-Ideally, all gfu-gold alerts should be examined and, in addition, preferably stacked.
+Ideally, all GFU-gold alerts should be examined and, in addition, preferably stacked.
 However, time-dependent stacking is not yet sufficiently implemented in csky during the development of this thesis, and examining all sources individually would require too much computing capacity.
 Chapter \ref{sec:tdepps} contains more detailed information on the technical details of time-dependent stacking.
-Therefore, only the $\num{10}$ alerts with the highest signalness in the set are used as sources.
+Therefore, only the $\num{10}$ alerts with the highest \textbf{signalness} parameter in the set are used as sources.
 These can be seen in table \ref{tab:sources_time_dep}.
 
 This analysis uses an untriggered flare procedure in which the temporal centre of the flare $t_0$ is set to the time of the source while the length $dt$ of the flare in shape of a box is fitted.
@@ -195,6 +195,7 @@ Altogether, many possible numbers of signal events are represented in the backgr
     \caption{Histogram of the background test statistic values for source number $\num{11}$ used in the time-dependent analysis. Shown are also the number of degrees of freedom $dof$ and the ratio of positive and negative values $\eta$. The id of the source corresponds to table \ref{tab:sources} or \ref{tab:sources_time_dep} respectively.}
     \label{fig:bg_trials_time_dep_1}
 \end{figure}
+\footnotetext{Some median values are very close to if not $\num{0}$.}
 \begin{table}
   \centering
   \caption[]{Table of number of trials, degrees of freedom $dof$, symmetry parameter $\eta$, median\footnotemark, $\num{3}\sigma$ and $\num{5}\sigma$ values of the background test statistics for the time-dependent analysis for all $\num{10}$ sources seen in figure \ref{fig:bg_trials_time_dep}.}
@@ -207,7 +208,6 @@ Altogether, many possible numbers of signal events are represented in the backgr
     \label{tab:sigma_time_dep}
   \end{tabular}
 \end{table}
-\footnotetext{Some median values are very close to if not $\num{0}$.}
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_bg_dt_1.pdf}
@@ -241,11 +241,19 @@ The resulting CDFs in terms of sensitivity and discovery potential are shown in 
     \label{fig:time_dep_cdf_sens_disc_1}
 \end{figure}
 From this, the fluences for the sensitivity and the discovery potential can be calculated. These are listed in table \ref{tab:sens_disc_time_dep} for all sources and additionally presented in dependence on their position in the sky in figure \ref{fig:sens_disc_time_dep}.
+A zoomed-in version with the exact declination inaccuracies can be seen in the appendix in figure \ref{fig:sens_disc_time_dep_dec}.
+Furthermore, the temporal position of the sources in relation to the individual data sets is shown in figure \ref{fig:sources_and_datasets}.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_dep_sens_disc_dec_time.pdf}
     \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependece of their position at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time-dependent analysis. The colour represents the arrival time of the source event and the size of the grey circle is proportional to the location uncertainty of the source. The direct location uncertainty would be too small to show in this plot.}
-    \label{fig:sens_disc_time_dep}
+    \label{fig:sources_and_datasets}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/05_csky/time_dep_sens_disc_time.pdf}
+    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependece of their temporal position at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time-dependent analysis. The marker colour represents the declination of the source event and the errorbars have a total length of $\SI{200}{\day}$ corresponding to the maximum injection interval. The alternating colour represents the temporal intervals of the different data sets.}
+    \label{fig:sens_disc_time_dep_dec}
 \end{figure}
 \begin{table}
   \centering
@@ -259,6 +267,7 @@ From this, the fluences for the sensitivity and the discovery potential can be c
     \label{tab:sens_disc_time_dep}
   \end{tabular}
 \end{table}
+
 In addition, as with the background trials, the distribution of the time window lengths can be studied.
 Here, the set of signal trials is considered for which the injected signal parameter is closest to the required signal for the satisfaction of the condition for sensitivity and the discovery potential seen in table \ref{tab:sens_disc_time_dep}.
 The resulting test statistics are additionally given in the appendix in plots \ref{fig:time_dep_sig_sens_ts} and \ref{fig:time_dep_sig_disc_ts}.
