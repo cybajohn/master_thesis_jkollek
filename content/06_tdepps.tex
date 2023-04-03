@@ -147,7 +147,34 @@ The energy distribution can be extracted from the summation of events and calcul
 The time pdf is effectively a heavyside function that attributes the events to the sources weighted by the number of sources they can be attributed to.
 With these thoughts in mind, a new injection model needs to be built that injects the right number of background events depending on the temporal position.
 
-To achieve all of the above, the point source software \texttt{tdepps} by \textit{Thorben Menne} \cite{tdepps_1} was modified.
+To achieve all of the above, the point source software \texttt{tdepps} \cite{tdepps_1} was modified.
 The modified version can be found at \cite{tdepps_2}.
 
-here few plots and show and tell why it didnt work
+However, after the implementation was completed, test results showed strange behaviour compared to other software.
+The biggest issue is the large values of the test statistics.
+A simple example is shown in figure \ref{fig:fail_example}.
+Since the correctness of the shape of the test statistic is difficult to assess in the case of a specific time window, in the example the time window is extended over a single complete data set with only one source being investigated.
+The behaviour should therefore correspond to a time-integrated search, a $\Chi^2$-distribution with only one degree of freedom would be expected, in other words a flat, straight distribution.
+However, the modified software still produces too high, signal-like test statistic values, comparable to these of figure \ref{fig:time_dep_sig_sens_ts} in the appendix.
+In addition, the behaviour of the \texttt{skylab} software was considered, which is similar to the original behaviour of the unmodified \texttt{tdepps} software.
+The \texttt{skylab} result can be seen in figure \ref{fig:skylab}.
+\begin{figure}%
+    \centering
+    \subfloat[\centering Background trials using the reworked \texttt{tdepps} software.]{{\includegraphics[width=6cm]{Plots/06_tdepps/tdepps_version3_single_bg_pdfs_close.png} }}%
+    \qquad
+    \subfloat[\centering Background trials using the \texttt{tdepps} software.]{{\includegraphics[width=6cm]{Plots/06_tdepps/torben_bg_pdfs_close_real.png} }}%
+    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set.}%
+    \label{fig:fail_example}%
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{Plots/06_tdepps/skylab_bg_pdf_one_source.pdf}
+    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set using the software \texttt{skylab} version $\num{2.2}$.}
+    \label{fig:skylab}
+\end{figure}
+
+The main focus of the subsequent research was on the weights that distribute the contribution of the events among the individual sources.
+However, this feature works as intended.
+Deeper investigations led to the thought that there might be something fundamentally wrong with the tdepps software.
+However, errors in the software could not be confirmed.
+With these investigations being without results, termination of the usage of the modified \texttt{tdepps} software was imminent.
