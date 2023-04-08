@@ -32,7 +32,7 @@
 \KOMAoption{headsepline}{0.5pt}
 \if@tucolor%
   \addtokomafont{title}{\color{tugreen}}          % title on titlepage
-  \addtokomafont{chapter}{\color{tugreen}}     % headlines of the chapters, sections etc. 
+  \addtokomafont{chapter}{\color{tugreen}}     % headlines of the chapters, sections etc.
   \addtokomafont{pagenumber}{\color{tugreen}}     % page number in the footer
   \addtokomafont{chapterentry}{\color{tugreen}}   % chapters in the table of contents
   \setkomafont{headsepline}{\color{tugreen}}        % line between header and text body
@@ -81,7 +81,7 @@
 
 % set title page elements
 \subject{Arbeit zur Erlangung des akademischen Grades\\ \thethesisclass}
-\publishers{\thechair \\ \thedivision \\ Technische Universität Dortmund}
+\publishers{\thedivision \\ Technische Universität Dortmund}
 
 % page for the correctors
 \newcommand{\makecorrectorpage}{%
