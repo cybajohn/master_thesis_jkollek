@@ -1,9 +1,32 @@
 %both results
 \chapter{Conclusion and Outlook} \label{sec:outlook}
 
-Hier vorher Martina Karl und davor zeitintegrierter stuff.
+The time-integrated analysis provides a sensitivity of
+\begin{align}
+  \SI{1.68e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}
+\end{align}
+and a $\num{5}\sigma$ discovery potential of
+\begin{align}
+  \SI{6.81e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}
+\end{align}
+per source at a spectral index of $\gamma=\num{2}$ and a reference energy of $E_0=\SI{100}{\tera\electronvolt}$.
+This result is about one order of magnitude below the results of the all-sky scan \cite{all_sky_paper} referenced in figure \ref{fig:all_sky_plot}.
+The time-dependent analysis further provides a best sensitivity of
+\begin{align}
+  \SI{4.63e-2}{\giga\electronvolt\centi\meter\tothe{-2}}
+\end{align}
+and a $\num{5}\sigma$ discovery potential of
+\begin{align}
+  \SI{1.32e-1}{\giga\electronvolt\centi\meter\tothe{-2}}
+\end{align}
+for the GFU-gold event with id $\num{55820225}$ corresponding to source number $\num{58}$ also with a spectral index of $\gamma=2$ and at a reference energy of $E_0=\SI{100}{\tera\electronvolt}$.
+A comparable analysis \cite{martina} provides a preliminary discovery potential at $\num{3}\sigma$ of
+\begin{align}
+  \SI{2.7e-2}{\giga\electronvolt\centi\meter\tothe{-2}}
+\end{align}
+The results in this thesis are slightly worse but are also in this region, considering that $\num{5}\sigma$ results are available here.
 
-It is possible to compare these results with the diffuse astrophysical muon neutrino flux as is done, for example, in \cite{thorben}.
+It is also possible to compare these results with the diffuse astrophysical muon neutrino flux as is done, for example, in \cite{thorben}.
 Using the flux model from $\num{10}$ years of IceCube data \cite{flux_2},
 \begin{align}
   \Phi^{\nu_\mu + \bar{\nu}_\mu} &= 1.44\cdot\left(\frac{E_\nu}{\SI{100}{\tera\electronvolt}}\right)^{-2.28}\cdot\SI{e-18}{\giga\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}\steradian\tothe{-1}},
@@ -30,14 +53,14 @@ The result indicates that only a small fraction of the total flux originates fro
 The next step would be to unblind the results. Although this step does not require any further work in the analysis, the unblinding process requires a group of reviewers from the IceCube collaboration to work meticulously through the analysis and question the analysis in a very time-consuming process. At this stage, however, this step is beyond the scope of the Master's thesis and will therefore not be carried out.
 
 In addition, the trial correction via post trials is missing for the time-dependent search.
-The reason for the trial correction is that only one source position is examined at a time on the basis of a GFU-Gold event from a selected number of events, although the signal can also come from another GFU-Gold event position.
+The reason for the trial correction is that only one source position is examined at a time on the basis of a GFU-gold event from a selected number of events, although the signal can also come from another GFU-gold event position.
 The results are therefore actually somewhat worse than they initially appear.
 An attempt was made to use the post-trial method of \cite{thorben}.
 The strange course of the trial correction, which can be seen in the appendix in figure \ref{fig:post_trials}, indicates an incorrect implementation in this analysis.
 
 It is also striking that in the simulation sample about twice the amount of GFU-gold events is identified and filtered out, which can be observed in figure \ref{fig:gfu_gold_comp}.
 This could be due to the fact that particles and antiparticles are taken into account.
-In addition, the events were identified using simulation sets 21002 and 21220. However, these sets have small errors, which are addressed in the analysis of \cite{estes}.
+In addition, the events were identified using simulation sets 21002 and 21220. However, these sets have small errors, which are addressed in the analysis of SnowStorm \cite{snowstorm}.
 
 The most striking observation of this work, however, is the strong scattering of the results of sensitivities and discovery potentials, which can be seen in figure \ref{fig:sens_disc_time_dep_dec}.
 Normally, the sources would roughly follow a line corresponding to the all-sky survey, see figure \ref{fig:all_sky_plot}.
@@ -53,31 +76,38 @@ In general, more trials may ensure a better result.
 Another argument could also be an outlier event that is scrambled unfortunately.
 However, identifying such events is beyond the scope of this thesis.
 
+% This is the start of the "outlook"
+There are some aspects that can be improved in the analysis.
+For instance, a more recent, improved point source dataset version with additional years of data can be used.
+It would certainly also be interesting to set the spectral index of the source emission to that of the GFU-gold events.
+Also the spatial uncertainties of the source positions could be accounted for.
+Another point would be to investigate more than $\num{10}$ sources, which is certainly also possible later as stacking in \texttt{csky}.
+A time-dependent stacking analysis would be more sensitive and would not require as much computing capacity as if all sources were examined individually.
 
-are the results measurable?\\
-time-int sens: $\SI{1.68e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}$ per source\\
-time-int disc $\num{5}\sigma$: $\SI{6.81e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}$ per source\\
-one magnitude under all-sky\\
-time-int total flux of $\SI{4.11}{\giga\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}}$ calculated as thorben at $\SI{100}{\tera\electronvolt}$ reference\\
-time-dep sens, best: $\SI{4.63e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ at $\SI{100}{\tera\electronvolt}$ reference\\
-time-dep disc $\num{5}\sigma$, best: $\SI{1.32e-1}{\giga\electronvolt\centi\meter\tothe{-2}}$ at $\SI{100}{\tera\electronvolt}$ reference\\
-time-dep weighted per burst fluence of $\SI{34.91}{\giga\electronvolt\centi\meter\tothe{-2}}$ calculated as thorben at $\SI{100}{\tera\electronvolt}$ reference\\
-martina karl: disc $\SI{2.7e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ with $\num{3}\sigma$ but \textbf{what reference energy?}\\
-compare both analyses, \textbf{but how?}\\
-compare with other analyses\\
-
-what could have been done better, whats weird:\\
-- mc gfu gold events about times 2: 21002 21220 are weird\\
-- source 37 has few trials\\
-- more trials; timewindow distribution could be smoother\\
-- maybe theres a background event which is an outlier that gets badly scrambled\\
-- post trials should be done or all sources\\
-- different gammas\\
-- take gamma of gfu gold events\\
-- spatial errors of sources could be accounted for\\
-- take newest version of ps\_tracks\\
-why no unblinding?\\
-- takes too long\\
-
-All in all, this work provides a good basis for getting started with point source searches using \texttt{csky} and can be used for further analyses by making minor changes.
+All in all, this thesis provides a good basis for getting started with point source searches using \texttt{csky} and can be used for further analyses by making minor changes.
 For example, the data set can be enlarged or additional or different source locations can be investigated.
+
+%are the results measurable?\\
+%time-int sens: $\SI{1.68e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}$ per source\\
+%time-int disc $\num{5}\sigma$: $\SI{6.81e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}$ per source\\
+%one magnitude under all-sky\\
+%time-int total flux of $\SI{4.11}{\giga\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}}$ calculated as thorben at $\SI{100}{\tera\electronvolt}$ %reference\\
+%time-dep sens, best: $\SI{4.63e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ at $\SI{100}{\tera\electronvolt}$ reference\\
+%time-dep disc $\num{5}\sigma$, best: $\SI{1.32e-1}{\giga\electronvolt\centi\meter\tothe{-2}}$ at $\SI{100}{\tera\electronvolt}$ reference\\
+%time-dep weighted per burst fluence of $\SI{34.91}{\giga\electronvolt\centi\meter\tothe{-2}}$ calculated as thorben at $\SI{100}{\tera\electronvolt}$ %reference\\
+%martina karl: disc $\SI{2.7e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ with $\num{3}\sigma$ but \textbf{what reference energy?}\\
+%compare both analyses, \textbf{but how?}\\
+%compare with other analyses\\
+
+%what could have been done better, whats weird:\\
+%- mc gfu gold events about times 2: 21002 21220 are weird\\
+%- source 37 has few trials\\
+%- more trials; timewindow distribution could be smoother\\
+%- maybe theres a background event which is an outlier that gets badly scrambled\\
+%- post trials should be done or all sources\\
+%- different gammas\\
+%- take gamma of gfu gold events\\
+%- spatial errors of sources could be accounted for\\
+%- take newest version of ps\_tracks\\
+%why no unblinding?\\
+%- takes too long\\
