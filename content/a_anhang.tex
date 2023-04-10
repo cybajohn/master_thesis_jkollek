@@ -411,23 +411,23 @@ The analysis was written on the external server cobalt and is located at
 \begin{verbatim}
           /home/jkollek/punktquellensuche/csky_ehe_stacking.
 \end{verbatim}
-It was written in \textbf{Python3} version 3.7.5 and uses \textbf{csky} version 1.1.7.
+It was written in \texttt{Python3} version 3.7.5 and uses \texttt{csky} version 1.1.7.
 To compile it, the shell under
 \begin{verbatim}
           /home/jkollek/venvs/py3v4/bin/python
 \end{verbatim}
 was used.
 This shell contains all the necessary dependencies to run the analysis.
-In order to be able to reproduce the analysis, the directories in the \textbf{\_paths.py} file must first be adapted to the user.
+In order to be able to reproduce the analysis, the directories in the \texttt{\_paths.py} file must first be adapted to the user.
 The analysis should be done in three main steps, the data preparation, the time-integrated analysis and the time-dependent analysis.
 
 \subsection{Data Preparation}
-The first step is to create the source files for the neutrino sources through the \textbf{make\_source\_files\_from\_fits.py} file.
-The skymaps are created by the file \textbf{make\_skymap.py}.
+The first step is to create the source files for the neutrino sources through the \texttt{make\_source\_files\_from\_fits.py} file.
+The skymaps are created by the file \texttt{make\_skymap.py}.
 This is followed by the creation of the preprocessed datasets.
-The script \textbf{check\_gold\_filter\_jobs.py} creates job files which can be processed on the server condor, these use the script \textbf{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor (here: \textbf{bash ehe\_transient\_stacking.dag.start.sh}).
-Once the scripts have run, they can be collected via \textbf{check\_gold\_filter\_combine.py} and the actual prepared datasets can be created via the \textbf{remove\_gold\_from\_data.py} script.
-These datasets can now be inserted into \textbf{csky} into the \textbf{selections.py} file via creating a new dataset class.
+The script \texttt{check\_gold\_filter\_jobs.py} creates job files which can be processed on the server condor, these use the script \texttt{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor (here: \texttt{bash ehe\_transient\_stacking.dag.start.sh}).
+Once the scripts have run, they can be collected via \texttt{check\_gold\_filter\_combine.py} and the actual prepared datasets can be created via the \texttt{remove\_gold\_from\_data.py} script.
+These datasets can now be inserted into \texttt{csky} into the \texttt{selections.py} file via creating a new dataset class.
 
 \begin{verbatim}
 class my_cleaned_data(PSDataSpec):
@@ -464,19 +464,22 @@ class my_cleaned_data(PSDataSpec):
 
 Both analyses are basically structured in the same way.
 First the background trials are calculated and then the signal trials.
-Before the actual background trials, the trials can be tested with the help of the \textbf{bg\_trial.py} script.
+Before the actual background trials, the trials can be tested with the help of the \texttt{bg\_trial.py} script.
 This is a simple setup to see how the trials work.
 However, this script is not required for the analysis.
-The analysis starts with the \textbf{bg\_trial\_jobs.py} script, which as before creates jobfiles for use on condor.
-As before, these are collected via the \textbf{bg\_trial\_combine.py} script.
+The analysis starts with the \texttt{bg\_trial\_jobs.py} script, which as before creates jobfiles for use on condor.
+As before, these are collected via the \texttt{bg\_trial\_combine.py} script.
 The signal trials have the same structure.
 
 \subsection{Time-Dependent Analysis}
 
-The same procedure as before applies here, the time-dependent scripts are identified by the \textbf{\_time\_dependent} suffix.
-The post-trials can be executed via the \textbf{post\_trial*} scripts.
-The scripts with the \textbf{inspect*} prefix are used to create additional plots and provide extra insight into the quantitative content of the analyses.
+The same procedure as before applies here, the time-dependent scripts are identified by the \texttt{\_time\_dependent} suffix.
+The post-trials can be executed via the \texttt{post\_trial*} scripts.
+The scripts with the \texttt{inspect*} prefix are used to create additional plots and provide extra insight into the quantitative content of the analyses.
 
 \section{Time-Dependent Stacking Software Approach}
 
-Hier könnte Ihre Werbung stehen!
+The repository for the attempted analysis can be found at \url{https://github.com/cybajohn/ehe_transient_stacking_analysis_tests} and the modified \texttt{tdepps} software at \url{https://github.com/cybajohn/tdepps}.
+The order of the scripts can be inferred from their name, other than that, formalities like adjusting path names need to be done first like explained in the other analyses.
+This analysis repository was formed by the constant tests of the performance of the new \texttt{tdepps} software and is therefore unfortunately not so clearly comprehensible.
+An important point worth mentioning is that the analysis parameters can be adjusted in the script .

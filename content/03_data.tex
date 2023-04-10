@@ -20,7 +20,7 @@ Specially optimized for point source searches, this sample of muon neutrinos is 
 The analysis in this work uses 9 years of version p04-00, which is the latest stable version of the datasets since this work began.
 This version contains $\SI{1}{\percent}$ more data than its predecessors because the truncated energy fit no longer needs to be successful.
 It also contains a more precise good run list (grl), since some subruns were lost in previous versions, which have now been taken into account.
-Although this version has 12 years of data, only the years after IC79 are used in this analysis, as the use of earlier datasets is discouraged. \cite{ps_tracks_v4_presentation}
+Although this version has 12 years of data, only the years after IC79 are used in this analysis, as the use of earlier datasets is discouraged\footnote{This information comes stems from the dataset description and several presentations on updates to these sets.}.
 The key features of the data used can be seen in table \ref{tab:data}.
 
 \begin{table}
@@ -47,7 +47,7 @@ The key features of the data used can be seen in table \ref{tab:data}.
 \end{table}
 
 The temporal intervals of the samples overlap with each other due to testruns of the detector.
-There is however no real temporal overlap of the different runs. \cite{private_com}
+There is however no real temporal overlap of the different runs \cite{private_com}.
 The advantage of using the years 2011 to 2019 is that the sets have all gone through the same processing pipeline and also all use the same monte carlo file, and thus can be treated the same on that basis.
 
 \section{Monte Carlo Pre-Processing}
@@ -61,9 +61,9 @@ Some alerts do appear in IC76 and previous runs because these datasets are too o
 Following a conservative approach, GFU-gold like events also have to be identified and removed from the simulation files.
 Luckily all datasets from the years 2011 to 2019 use the monte carlo file from the year 2016, so this is the only simulation set that needs to be worked with.
 
-To identify the GFU-gold events from the monte carlo set, the original i3 simulation files and the corresponding geometry file (GCD: geometry, something c, detector configuration) file need to be found and processed using the alertfilter from realtime.
+To identify the GFU-gold events from the monte carlo set, the original i3 simulation files and the corresponding geometry file (GCD: geometry, calibration, detector configuration) file need to be found and processed using the alertfilter from realtime.
 The matching simulation files are 21002 and 21220.
-Information about these sets can be found at \cite{sim} and \cite{gcd} for the geometry file.
+%Information about these sets can be found at \cite{sim} and \cite{gcd} for the geometry file.
 It is important to mention that the events in the final monte carlo set cannot be identified by their ids, since these values were replaced by the job-id of the corresponding iceprod job which processed these to the final level. An exeption is the run-id.
 The temporal parameter can also not be used, since all event times in the final monte carlo are set to \num{0}.
 The event times will be generated later in the analysis to match the analysis framework.
