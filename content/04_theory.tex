@@ -19,7 +19,7 @@ Since the hypothesis $H_\text{S}$ contains the null hypothesis, the test statist
 \end{equation}
 with the set $\theta$ of parameters that maximizes the likelihoods.
 The test statistic now follows a $\chi^2$ distribution, given that the sample size is large enough.
-In general, the likelihoods are defined as
+In point source searches, the likelihoods are defined as
 \begin{equation}
   \CL(\lambda) = \frac{\lambda^Ne^{-\lambda}}{N!}\prod^N_{i=1}P_i
 \end{equation}
@@ -27,7 +27,8 @@ or
 \begin{equation}
   \ln\CL(\lambda) = -\lambda + \sum^N_{i=1}\ln{(\lambda P_i)}
 \end{equation}
-in the the logarithmic form \cite{ex_likelihood} dropping the $\ln(N!)$ term, where $\lambda$ is the number of expected events and $N$ is the total number of individual events $i$, $P_i$ defines the per-event model distributions.
+in the the logarithmic form \cite{ex_likelihood} dropping the $\ln(N!)$ term, where $\lambda$ is the number of expected events and $N$ is the total number of individual events $i$.
+$P_i$ defines the per-event model distributions.
 In the case of stacking several sources $k$, the number of expected events is divided and the formula
 \begin{equation}
   \ln\CL(\{\lambda_k\}) = -\sum^{N_\text{srcs}}_{k=1}\lambda_k + \sum^{N_\text{evts}}_{i=1}\ln{\Gb{\sum^{N_\text{srcs}}_{k=1}\lambda_k P_{i,k}}},
@@ -37,7 +38,7 @@ If the likelihoods are inserted into formula \eqref{eq:TS}, the general formula 
 \begin{equation}
     TS = -2\ln{\hat\Lambda} = -2\sum_{k=1}^{N_{srcs}}\hat\lambda_{k,S} + 2\sum_{i=1}^{N_{\text{evts}}}\ln{\Gb{\frac{\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S}S_{i,k}}{\sum_{k=1}^{N_{\text{srcs}}}\langle\lambda_{k,B}\rangle B_{i,k}}+1}},
 \end{equation}
-with the $\hat\lambda$ maximizing the test statistic value.
+where $\hat\lambda$ maximizes the test statistic value.
 The expected number of background events $\langle\lambda_{k,B}\rangle$ is estimated a priori integrated over the rate of background events.
 
 The further form of the test statistic depends on the choice of probability models $S$ and $B$.
@@ -81,18 +82,18 @@ However, the temporal PDF is only important for time-dependent searches,
   \cdot \CB_T(t).
   \label{eq:pdf}
 \end{align}
-The energy PDF consists of a 2d histogram of energy and declination and is generated directly from the data for the background $\CB_E(E)$ and from simulations weighted with the spectral index $\gamma$ for the signal $\CS_E(E|\Vmu)$.
+The energy PDF can be constructed of a 2d histogram of energy and declination and is generated directly from the data for the background $\CB_E(E)$ and from simulations weighted with the spectral index $\gamma$ for the signal $\CS_E(E|\Vmu)$.
 Its ratio does not depent on individual event properties and is calculated a priori.
 The spatial PDF of the signal $\CS_S(\delta,\alpha)$ depends on the declination and right ascension of the event and corresponds to a Kent distribution around the position of the source.
 The Kent distribution is the equivalent of a normal distribution on a sphere \cite{kent}.
 The background PDF $\CB_S(\delta)$, on the other hand, is obtained directly from the spatial distribution of the data, since most events are background events.
 It depends only on the declination, since the background is generally uniformly distributed in the sky and the distribution depends merely on the absorption of the earth.
-The temporal PDF in case of this thesis is a simple box function, equal for both signal and background, that is unitary over a certain time interval.
+The temporal PDF in case of this thesis is a simple box function, equal for both signal and background, that corresponds to $\CS_T(t|\Vmu)=1$ over a certain time interval.
 Only events that fall within this time window make a contribution.
 
 \section{Calculating Sensitivity and Discovery Potential}
 
-Sensitivity and discovery potential correspond in principle to the number of signal events that must be injected, so that the resulting test statistic is $\SI{90}{\percent}$ above the median of the background statistic or $\SI{50}{\percent}$ above $\num{5}\sigma$ of the latter respectively.
+Sensitivity and discovery potential are defined by the number of signal events that must be injected, so that the resulting test statistic is $\SI{90}{\percent}$ above the median of the background statistic or $\SI{50}{\percent}$ above $\num{5}\sigma$ of the latter respectively.
 These conditions can be seen schematically in figure \ref{fig:sens_disc_schem}.
 Let the number of sufficient signal events then be $N_\text{sig}$, the sensitivity $sens$ and discovery potential $disc p$ then are
 \begin{align}
@@ -100,4 +101,4 @@ Let the number of sufficient signal events then be $N_\text{sig}$, the sensitivi
   disc p &= \frac{N_\text{sig,disc p}}{A_\text{det}}E_0,
 \end{align}
 with the total signal acceptance of the detector $A_\text{det}$ and the reference energy $E_0$.
-The time-dependent sensitivity and discovery potential are given in a fluence rather than a flux by multiplying with $E_0^2$, these results can then be compared to other analyses.
+The time-dependent sensitivity and discovery potential are given in a fluence rather than a flux.% by multiplying with $E_0^2$, these results can then be compared to other analyses.

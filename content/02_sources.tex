@@ -13,35 +13,35 @@
 %\_cut2   = 5.14\\
 %
 %table of sources, skymaps\\
-The problem is, which points in the sky should be examined and how.
+
 There are various approaches to examining different areas of the sky for neutrino point sources.
 While all-sky scans examine entire declination bands of the sky \cite{all_sky_paper}, there is also the alternative of examining individual points in the sky.
 This is done via a predefined source catalogue, which is either motivated by the prior knowledge of the position of specific objects or untriggered via special signals coming from certain directions, such as high-energy photons or, as in this thesis, neutrinos, which have a high probability of being of astrophysical origin.
 IceCube has a realtime alert system that reports and collects such special events.
 Originally, neutrino alerts were divided into High Energy Starting Event (HESE) and Extremely High Energy (EHE) signatures.
-The HESE events originate qualitatively from neutrinos that interact directly in the detector, meaning that the interaction starts there, while EHE events only have a very high energy.
+The HESE filter rejects the atmospheric muon background by selecting high energy events interacting directly in the detector, while EHE events target throughgoing events and rejects the atmospheric background by a very high energy threshold.
 
-Eventually, the alert system was modified.
+However, this old system has been improved.
 Besides a few tweaks to the HESE and EHE channels, the new alert system introduced a breakdown into two different categories of events based on their probability of being of atrophysical origin.
 These are called gold and bronze events, with gold having at least a $\SI{50}{\percent}$ astrophysical purity in comparison to $\SI{30}{\percent}$ for bronze events.
 The latter were introduced to satisfy the demand for even more alerts.
 This new system also features a new event type, the Gamma-Ray-Followup (GFU), which is highest in the event categorization hierarchy, meaning that if an event is classified as a GFU event it is also possible for the event to be a HESE or EHE event additionally.
-This hierarchy is based on studies for angular resolution and astrophysical purity making GFU gold events the first stop for a search for astrophysical neutrino sources \cite{Aartsen_2017}.
+This hierarchy is based on studies on angular resolution and astrophysical purity making GFU gold events a promising starting point for a search for astrophysical neutrino sources \cite{Aartsen_2017}.
 
 \section{Gamma-Ray-Followup}
 
-The Gamma-Ray-Followup track selection, GFU for short, is a pretrained binary decision tree (BDT) identifying through going single track events from all directions that are likely neutrino induced.
+The Gamma-Ray-Followup track selection, GFU for short, is a pretrained boosted decision tree (BDT) identifying through going single track events from all directions that are likely neutrino induced.
 The required astrophysical purity of at least $\SI{50}{\percent}$ for the gold selection is obtained by tight cuts on muon energy and deposited charge.\\
 The BDT consists of two basic cuts different for each hemisphere.
-Both, for upgoing and downgoing events, use a precut which is more like a sanity check outruling invalid events.
+For both up- and downgoing events, a precut is used which is more like a sanity check outruling invalid events.
 All events having a tracklength greater than $\SI{0}{\meter}$ and a truncated energy greater than $\SI{0}{\electronvolt}$ pass this selection.
 Additionally all events have to be between $\SI{82}{\degree}$ and $\SI{-82}{\degree}$ zenith.
 Events from the northern sky must have a truncated energy higher than $\SI{1e5.14}{\giga\electronvolt}$ to pass the GFU selection.
-In the southern hemisphere, the deposited charge ($qtot$) of the events must meet the following condition as a function $d$,
+In the southern hemisphere, the deposited charge ($qtot$) of the events must meet the following condition as a function $d=\sin{(\delta)}$,
 \begin{equation}
   \log_{10}(qtot) > -4.06580\cdot d^3 - 10.60906\cdot d^2  -9.61048\cdot d + 3.01219,
 \end{equation}
-where $d$ is the sine of the declination of the events.
+where $\delta$ is the declination of the events.
 The individual signalness is obtained through a grid interpolation based on the position of these events \cite{track_alert_paper}.
 
 \subsection{Sources}
@@ -49,7 +49,7 @@ The individual signalness is obtained through a grid interpolation based on the 
 The selected sources in this analysis are part of the alert catalogue version 2 which features about $\num{300}$ alerts in total.
 The GFU-gold alerts used as sources are displayed in table \ref{tab:sources}.
 These events are also visible in figure \ref{fig:skymap_1}.
-All events used are in an energy range of $\SI{174}{\tera\electronvolt}$ to $\SI{5960}{\tera\electronvolt}$.
+All events used are in an energy range from $\SI{174}{\tera\electronvolt}$ to $\SI{5960}{\tera\electronvolt}$.
 The sources used in the later introduced time-dependent analysis are shown in figure \ref{fig:skymap_2}.
 It is worth mentioning that the time integrated analysis uses all sources listed in the table \ref{tab:sources}, regardless of the time interval of the dataset used.
 The sources in the time-dependent analysis, on the other hand, are all temporally located in the dataset presented in the chapter \ref{sec:data} and can additionally be seen in table \ref{tab:sources_time_dep}.
