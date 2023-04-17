@@ -6,13 +6,13 @@ The search covers different spectral indices for the signal event emission.
 
 \section{Analysis properties}
 
-This section shows some of the underlying PDFs csky uses to calculate the test statistic values.
+This section shows some of the underlying PDFs \texttt{csky} uses to calculate the test statistic values.
 Since \texttt{csky} is based on PDF ratios for practical reasons, not all individual PDFs can be shown clearly.
 Consequently, here are a few basic PDFs and ratios whose form is a priori important for the quality of the analysis.
 
 \subsection{Background space PDF}
 
-The background space PDF is generated with data and only depends on the declination $\delta$ of the events, given by the almost right ascension symmetry of the IceCube detector due to its position.
+The background space PDF is generated with data and only depends on the declination $\delta$ of the events, because the IceCube detector is almost symmetric with regard to right ascension due to its position at the geographic South Pole.
 It is normalized over the whole sky, hence satisfying the condition
 \begin{align}
   \int d\Omega f = \int d\alpha \int d(\sin(\delta)) f = 1
@@ -40,9 +40,9 @@ The energy PDF ratios for different spectral indices $\gamma$ can be seen in fig
     \label{fig:energy_ratio_time_int}
 \end{figure}
 
-All energy ratios show a local maximum at low sinus declinations and smaller energies.
+All energy ratios show a local maximum at low values of $\sin{(\delta)}$ and smaller energies.
 This could provide an unintended bias towards better sensitivities, which is undesirable in a conservative approach, which is followed in this thesis.
-At low spectral indices, a local maximum is also seen at high sinus declinations and high energies.
+At low spectral indices, a local maximum is also seen at high values of $\sin{(\delta)}$ and high energies.
 However, this is not a problem for a conservative approach, as the sensitivities only become worse as a result.
 %Mention high values in upper right (okay since they bias towards lower sens values (weaken)) and lower left (bad, bias towards higher sens values)
 
@@ -51,7 +51,7 @@ However, this is not a problem for a conservative approach, as the sensitivities
 The time-integrated search contains all $\num{72}$ sources in a stacked form.
 The histogram of the background test statistic values can be seen in figure \ref{fig:bg_ts_time_int}.
 The number of trials processed is $\num{974000}$\footnote{Originally $\num{e6}$, but some jobs fail due to various technical reasons.}.
-Important features of the plot are that the $\chi^2$-distribution has as straight a tail as possible.
+Important features of the plot should first be that the $\chi^2$-distribution has as straight a tail as possible.
 This is reflected in the number of degrees of freedom $dof$ in the $\chi^2$ distribution.
 This should be as close to 1 as possible, which corresponds to a pure background statistic without signal.
 The test statistic should also be symmetrical around the zero point.
@@ -62,15 +62,15 @@ Apart from the fit parameters, the median and $5\sigma$ deviation value of the t
 The fit parameters of the background test statistic are
 \begin{align}
   dof &= \num{1.115},\\
-  \eta &= \num{0.656}
+  \eta &= \num{0.656}.
 \end{align}
-and the key values later to be processed are as follows\footnote{Some analyses use the $3\sigma$ value for the discovery potential.}
+These parameters meet the requirements that were described previously.
+The key values later to be processed are as follows\footnote{Some analyses use the $3\sigma$ value for the discovery potential.}
 \begin{align}
   median &= \num{0.140},\\
   3\sigma &= \num{10.651},\\
   5\sigma &= \num{28.060}.
 \end{align}
-
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_bg_new.pdf}
@@ -94,7 +94,7 @@ The method of the calculation of the contours comes from \cite{Blobel} and corre
 
 After the fit behaviour has been checked, the signal can be injected.
 With a higher number of signal events, the test statistic shifts to higher values, eventually reaching the thresholds set for the sensitivity and discovery potential.
-Practically csky provides methods to a priori get an estimation of the number of signal events that have to be injected to satisfy certain thresholds without having to run a lot of trials on a cluster first.
+Conveniently \texttt{csky} provides methods to a priori get an estimation of the number of signal events that have to be injected to satisfy certain thresholds without having to run a lot of trials on a cluster first.
 The determined list of the number of signal events injected for the trials can be seen in table \ref{tab:trials_sig_time_int_table}.
 The resulting CDFs for the time integrated sensitivities and discovery potentials can be seen in figure \ref{fig:cdf_sens} and \ref{fig:cdf_disc}.
 Each point corresponds to the percentage of the test statistic being passed the thresholds mentioned in chapter \ref{sec:theory}.
@@ -141,7 +141,8 @@ One of them is to check the fit of the parameters $\gamma$ and $n_\text{S}$ for 
 The fit behaviour of the analysis can be seen in figure \ref{fig:fit_bias_gamma} for $\gamma$ and in figure \ref{fig:fit_bias_ns} for $n_\text{S}$.
 The fitted spectral index is generally larger than the injected one and starts of at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events, because no signal events are equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
 The larger fitted spectral index makes the analysis more conservative and therefore is not harmful for the overall results at spectral indices up to $\gamma = \num{2.5}$.
-For higher spectral indices the fitted $\hat\gamma$ starts to sink below the set spectral index, since it is hard to fit for signal events that look like background. On the contrary this is harmful to the analysis results.
+For higher spectral indices the fitted $\hat\gamma$ starts to sink below the set spectral index, since it is hard to fit for signal events that look like background.
+On the contrary this is harmful to the conservative analysis approach by creating a bias towards better results.
 Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{S}$.
 \begin{figure}
     \centering
@@ -161,7 +162,7 @@ Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{
 
 The time-dependent search examines $\num{10}$ sources independently of each other.
 Ideally, all GFU-gold alerts should be examined and, in addition, preferably stacked.
-However, time-dependent stacking is not yet sufficiently implemented in csky during the development of this thesis, and examining all sources individually would require too much computing capacity.
+However, time-dependent stacking is not yet sufficiently implemented in \texttt{csky} during the development of this thesis, and examining all sources individually would require too much computing capacity.
 Chapter \ref{sec:tdepps} contains more detailed information on the technical details of time-dependent stacking.
 Therefore, only the $\num{10}$ alerts with the highest \textbf{signalness} parameter in the set are used as sources.
 These can be seen in table \ref{tab:sources_time_dep}.
