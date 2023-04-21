@@ -95,6 +95,39 @@ Only events that fall within this time window make a contribution.
 
 Sensitivity and discovery potential are defined by the number of signal events that must be injected, so that the resulting test statistic is $\SI{90}{\percent}$ above the median of the background statistic or $\SI{50}{\percent}$ above $\num{5}\sigma$ of the latter respectively.
 These conditions can be seen schematically in figure \ref{fig:sens_disc_schem}.
+\begin{figure}\centering
+  \begin{tikzpicture}[
+declare function={gamma(\z)=
+2.506628274631*sqrt(1/\z)+ 0.20888568*(1/\z)^(1.5)+ 0.00870357*(1/\z)^(2.5)- (174.2106599*(1/\z)^(3.5))/25920- (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z;},
+declare function={gammapdf(\x,\k,\theta) = 1/(\theta^\k)*1/(gamma(\k))*\x^(\k-1)*exp(-\x/\theta);}]
+\begin{axis}[ymode=log, ymin=0,
+no markers, domain=0:9, samples=100,
+axis lines=left, xlabel=$\text{TS}$, ylabel=$\#\text{trials}$,
+y label style={at={(axis description cs:0.1,.5)},anchor=north},
+x label style={dashed,at={(axis description cs:0.95,0.05)},anchor=west},
+height=5cm, width=9cm,
+xtick={6,14.87}, ytick=\empty,
+xticklabels={$\text{bg median}$,$5\sigma$},
+%xticklabels={$\bar n (\theta_t)$},
+enlargelimits=false, clip=false,% axis on top,
+grid = major]
+\addplot [very thick,cyan!20!black,domain=0:20, draw=none] {gammapdf(x,0.2,5)};
+\addplot [very thick,cyan!20!black,domain=0.5:19.5] {gammapdf(x,0.2,5)};
+%\addplot [domain= 0.5:4.5]{gauss(2.5,0.6,2)};
+%\addplot [fill=cyan!20, draw=none, domain=0:6.0] {gammapdf(x,2,2)} \closedcycle;
+%\addplot [very thick, fill=white!20!white, draw=none, domain=6.01:20] {gammapdf(x,2,2)} \closedcycle;
+\end{axis}
+\node at (2.5,1.7) {\begin{tikzpicture} \begin{axis}[hide axis,enlargelimits=false, ymax = 1,height=5cm, width=4cm,domain=2.65:3.35]\addplot [domain= 2.65:3.35,smooth,thick,green]{gauss(3,0.1,0.2)}; \end{axis} \end{tikzpicture}};
+\node at (5.5,1.7) {\begin{tikzpicture} \begin{axis}[hide axis,enlargelimits=false, ymax = 1,height=5cm, width=3.5cm,domain=2.7:3.3]\addplot [domain= 2.7:3.3,smooth,thick,red]{gauss(3,0.07,0.14)}; \end{axis} \end{tikzpicture}};
+\node[green] at (2.7,3) {$\xrightarrow{\text{90\%}}$};
+\node[red] at (6,3) {$\xrightarrow{\text{50\%}}$};
+\node at (0.5,3) {$\text{bg}$};
+\node[green] at (2.7,4) {$\text{sensitivity}$};
+\node[red] at (6,4) {$\text{discovery}$};
+\end{tikzpicture}
+\caption{Schematic showing the conditions to calculate the sensitivity and discovery potential. The background test statistic is shown in black, the signal test statistic satisfying the sensitivity conditions in green and the one for the discovery potential in red. Note that the curves dont actually look like these shown here. They have been simplified for explanatory purpose.}
+\label{fig:sens_disc_schem}
+\end{figure}
 Let the number of sufficient signal events then be $N_\text{sig}$, the sensitivity $sens$ and discovery potential $disc p$ then are
 \begin{align}
   sens &= \frac{N_\text{sig,sens}}{A_\text{det}}E_0, \\

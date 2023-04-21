@@ -114,13 +114,13 @@ Since the absence of a signal parameter produces the background test statistic, 
 \end{figure}
 The sensitivities and discovery potentials from the CDFs can be seen in figure \ref{fig:sens_disc_time_int} and additionally in table \ref{tab:sens_disc_time_int}.
 The values rise for higher spectral indices since the signal looks more background like the closer the spectral index is to $\gamma = 3$.
+This result is about one order of magnitude below the results of the all-sky scan \cite{all_sky_paper} referenced in figure \ref{fig:all_sky_plot}.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_int_sens_gfu_gold_9_years_new.pdf}
     \caption{Sensitivities and discovery potentials of the time integrated analysis for different spectral indices $\gamma$. The reference energy is $E_0 = \SI{1}{\tera\electronvolt}$.}
     \label{fig:sens_disc_time_int}
 \end{figure}
-
 \begin{table}
   \centering
   \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time integrated analysis. Additionally the fitted number of signal events $N_\text{sig}$ satisfying the thresholds is shown.}
@@ -133,6 +133,12 @@ The values rise for higher spectral indices since the signal looks more backgrou
     \label{tab:sens_disc_time_int}
   \end{tabular}
 \end{table}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Plots/appendix/10_year_all_sky_results.png}
+    \caption{Sensitivities and discovery potentials of the all-sky scan found in \cite{all_sky_paper}.}
+    \label{fig:all_sky_plot}
+\end{figure}
 
 \section{Examination of Fit Bias}
 
@@ -268,6 +274,30 @@ Furthermore, the temporal position of the sources in relation to the individual 
     \label{tab:sens_disc_time_dep}
   \end{tabular}
 \end{table}
+
+It is also possible to compare these results with the diffuse astrophysical muon neutrino flux as is done, for example, in \cite{thorben}.
+Using the flux model from $\num{10}$ years of IceCube data \cite{flux_2},
+\begin{align}
+  \Phi^{\nu_\mu + \bar{\nu}_\mu} &= 1.44\cdot\left(\frac{E_\nu}{\SI{100}{\tera\electronvolt}}\right)^{-2.28}\cdot\SI{e-18}{\giga\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}\steradian\tothe{-1}},
+\end{align}
+a fluence upper limit can be generated.
+It is assumed that the entire flux comes from these $\num{10}$ sources in the form of a burst emission.
+The burst rate $R$ can be calculated with the total lifetime $T$ taken from table \ref{tab:data}
+\begin{align}
+  R &= \frac{N_\text{srcs}}{4\pi\cdot T}
+\end{align}
+and the fluence at a refernece energy of $\SI{100}{\tera\electronvolt}$ is about
+\begin{align}
+  E^2_\nu\Phi_0^{\nu_\mu + \bar{\nu}_\mu} &\approx \SI{1.44e-8}{\giga\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}\steradian\tothe{-1}}.
+\end{align}
+The per-burst fluence with the burst time window $\Delta T$ canceling out then becomes
+\begin{align}
+  E^2_\nu\Phi_\text{GFU}^\text{diff} &= \frac{\Delta T \cdot E^2_\nu\Phi_0^{\nu_\mu + \bar{\nu}_\mu} \cdot 4\pi}{\Delta T \cdot R \cdot 4\pi},\\
+  &\approx \SI{4.98}{\giga\electronvolt\centi\meter\tothe{-2}}.
+\end{align}
+
+This limit is far above even the most insensitive result of $\SI{1.99e-1}{\giga\electronvolt\centi\meter\tothe{-2}}$, although the flux of $\num{10}$ years is used for comparison and only $\num{9}$ years of data have been studied in this thesis.
+The result indicates that only a small fraction of the total flux originates from these $10$ source positions, and a larger result would mean that more signal would be needed to identify these sources than has been measured so far.
 
 In addition, as with the background trials, the distribution of the time window lengths can be studied.
 Here, the set of signal trials is considered for which the injected signal parameter is closest to the required signal for the satisfaction of the condition for sensitivity and the discovery potential seen in table \ref{tab:sens_disc_time_dep}.
