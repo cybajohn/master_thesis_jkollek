@@ -1,6 +1,29 @@
 %both results
 \chapter{Conclusion and Outlook} \label{sec:outlook}
 
+This thesis presented two types of analyses in the field of neutrino point source searches of time-integrated and time-dependent nature using the software \texttt{csky} and gave insight into the difficulties of time-dependent stacking.
+Both analyses provide preliminary results on the contribution of neutrinos at neutrino alert positions of the gamma-ray-followup gold type.
+$\num{9}$ years of IceCube data were used for this.
+The simulation data has been cleaned of GFU-gold like events to prevent a bias, since all events of the GFU-gold like events count as source events.
+
+The first analysis is time-integrated and examined the stacked contribution of $\num{72}$ sources.
+For this purpose, the implementation of the analysis was checked in the form of background and signal trials.
+In addition, the fit behaviour of the spectral index of the signal emission and the number of signal events was examined.
+Finally, the time-integrated analysis yields a sensitivity of $\SI{1.68e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}$ and a $\num{5}\sigma$ discovery potential of $\SI{6.81e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}$, which are about one order of magnitude below the all-sky search \cite{all_sky_paper}.
+
+The time-dependent analysis examined the contribution at $\num{10}$ selected source positions individually and is based on a new, conservative approach in which the temporal centre of the neutrino emission is fixed to the arrival time of the source event and the width can vary freely over a period of up to $\num{200}$ days.
+Accordingly, fewer assumptions are made about the emission behaviour of the source, making the analysis even more conservative.
+The resulting distributions of the time windows in signal and background trials were examined and additionally broken down in connection with the fitted number of signal events.
+Here, again, the examination of the fit parameters provides indications of the correct implementation and functionality of the analysis.
+The emerging preliminary results of sensitivity and discovery potential were presented in dependence of their spatial and temporal position.
+The best results here are a sensitivity of $\SI{4.63e-2}{\giga\electronvolt\centi\meter\tothe{-2}}$ and a $\num{5}\sigma$ discovery potential of $\SI{1.32e-1}{\giga\electronvolt\centi\meter\tothe{-2}}$, which are in the range of a comparable analysis \cite{martina} and far below the total measurable flux of IceCube.
+
+Finally, the difficulties of time-dependent stacking were discussed.
+For this purpose, a model was developed for calculation, implemented on the \texttt{tdepps} software and checked for correct functionality.
+However, the unusual results led to the use of \texttt{csky} for the computation of the main analyses in this thesis.
+
+Nochmal darauf eingehen was die entdeckung einer Neutrinoquelle bedeutet
+
 The time-integrated analysis provides a sensitivity of
 \begin{align}
   \SI{1.68e-14}{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-1}\second\tothe{-1}}
