@@ -171,7 +171,7 @@ Ideally, all GFU-gold alerts should be examined and, in addition, preferably sta
 However, time-dependent stacking is not yet sufficiently implemented in \texttt{csky} during the development of this thesis, and examining all sources individually would require too much computing capacity.
 Chapter \ref{sec:tdepps} contains more detailed information on the technical details of time-dependent stacking.
 Therefore, only the $\num{10}$ alerts with the highest \textbf{signalness} parameter in the set are used as sources.
-These can be seen in table \ref{tab:sources_time_dep}.
+These can be seen in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix highlighted in red.
 
 This analysis uses an untriggered flare procedure in which the temporal centre of the flare $t_0$ is set to the time of the source while the length $dt$ of the flare in shape of a box is fitted.
 The time window is qualitatively expanded between two events at which the test statistic is maximised.
@@ -199,7 +199,7 @@ Altogether, many possible numbers of signal events are represented in the backgr
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_bg_t0_1.pdf}
-    \caption{Histogram of the background test statistic values for source number $\num{11}$ used in the time-dependent analysis. Shown are also the number of degrees of freedom $dof$ and the ratio of positive and negative values $\eta$. The id of the source corresponds to table \ref{tab:sources} or \ref{tab:sources_time_dep} respectively.}
+    \caption{Histogram of the background test statistic values for source number $\num{11}$ used in the time-dependent analysis. Shown are also the number of degrees of freedom $dof$ and the ratio of positive and negative values $\eta$. The id of the source corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2}.}
     \label{fig:bg_trials_time_dep_1}
 \end{figure}
 \begin{table}
@@ -234,7 +234,7 @@ This scan is shown for source number $\num{11}$ in figure \ref{fig:llh_scan_time
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan_1.pdf}
-    \caption{Scan of the likelihoodspace for source number $\num{11}$ with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to table \ref{tab:sources}.}
+    \caption{Scan of the likelihoodspace for source number $\num{11}$ with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.}
     \label{fig:llh_scan_time_dep}
 \end{figure}
 After a proper likelihood environment is ensured, the signal trials can be started.

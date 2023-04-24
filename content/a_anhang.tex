@@ -7,25 +7,44 @@ Everything is arranged chronologically according to occurrence in the main secti
 
 \section{Sources}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{Plots/appendix/sources_energy.pdf}
-    \caption{Histogram of the energy of the used sources seen in table \ref{tab:sources} in $\si{\tera\electronvolt}$.}
-    \label{fig:sources_energy}
-\end{figure}
-
 \begin{table}
   \centering
-  \caption{Table of the sources used in the time-dependent analysis. Additionally the signalness parameter is shown after which the sources were selected.}
-  \label{tab:sources_time_dep}
+  \caption{Table of the first half of the $\num{72}$ GFU-gold events used as sources in this analysis. Shown are the features time in MJD, declination $\delta$ in degrees, right ascension $\alpha$ also in degrees and signalness in percent. The time-dependent analysis uses a subset of these sources highlighted in red. The order of the sources corresponds to the processing order in the analysis pipeline.}
+  \label{tab:sources_v2}
   \begin{tabular}{ccrrc}
     \toprule
     Nr. & MJD &  $\delta$ in $\si{\degree}$ & $\alpha$ in $\si{\degree}$ & signalness in $\si{\percent}$ \\
     \toprule
-      \input{../tables/sources_table_time_dep.tex}
+      \input{../tables/sources_table_v2.tex}
     \toprule
   \end{tabular}
 \end{table}
+
+\begin{table}
+  \centering
+  \caption{Table of the second half of the $\num{72}$ GFU-gold events used as sources in this analysis. Shown are the features time in MJD, declination $\delta$ in degrees, right ascension $\alpha$ also in degrees and signalness in percent. The time-dependent analysis uses a subset of these sources highlighted in red. The order of the sources corresponds to the processing order in the analysis pipeline.}
+  \label{tab:sources_v2_2}
+  \begin{tabular}{ccrrc}
+    \toprule
+    Nr. & MJD &  $\delta$ in $\si{\degree}$ & $\alpha$ in $\si{\degree}$ & signalness in $\si{\percent}$ \\
+    \toprule
+      \input{../tables/sources_table_v2_2.tex}
+    \toprule
+  \end{tabular}
+\end{table}
+
+%\begin{table}
+%  \centering
+%  \caption{Table of the sources used in the time-dependent analysis. Additionally the signalness parameter is shown after which the sources were selected.}
+%  \label{tab:sources_time_dep}
+%  \begin{tabular}{ccrrc}
+%    \toprule
+%    Nr. & MJD &  $\delta$ in $\si{\degree}$ & $\alpha$ in $\si{\degree}$ & signalness in $\si{\percent}$ \\
+%    \toprule
+%      \input{../tables/sources_table_time_dep.tex}
+%    \toprule
+%  \end{tabular}
+%\end{table}
 
 \section{Time-Integrated Search}
 
@@ -76,7 +95,7 @@ In this chapter the complete results for all $\num{10}$ sources can be found.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth-2cm]{Plots/05_csky/9_years_gfu_gold_time_dep_bg_t0.pdf}
-    \caption{Histograms of the background test statistic values for all $\num{10}$ sources used in the time-dependent analysis. Shown are also the number of degrees of freedom $dof$ and the ratio of positive and negative values $\eta$. The id of the sources corresponds to table \ref{tab:sources} or \ref{tab:sources_time_dep} respectively.}
+    \caption{Histograms of the background test statistic values for all $\num{10}$ sources used in the time-dependent analysis. Shown are also the number of degrees of freedom $dof$ and the ratio of positive and negative values $\eta$. The id of the sources corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2}.}
     \label{fig:bg_trials_time_dep}
 \end{figure}
 
@@ -114,7 +133,7 @@ In this chapter the complete results for all $\num{10}$ sources can be found.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/appendix/llh_scan.pdf}
-    \caption{Scan of the likelihoodspace for all $\num{10}$ sources with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to table \ref{tab:sources}.}
+    \caption{Scan of the likelihoodspace for all $\num{10}$ sources with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.}
     \label{fig:llh_scan_time_dep_all}
 \end{figure}
 

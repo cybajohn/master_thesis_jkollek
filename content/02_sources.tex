@@ -47,48 +47,48 @@ The individual signalness is obtained through a grid interpolation based on the 
 \subsection{Sources}
 
 The selected sources in this analysis are part of the alert catalogue version 2 which features about $\num{300}$ alerts in total.
-The GFU-gold alerts used as sources are displayed in table \ref{tab:sources}.
+The GFU-gold alerts used as sources are displayed in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.
 These events are also visible in figure \ref{fig:skymap_1}.
 All events used are in an energy range from $\SI{174}{\tera\electronvolt}$ to $\SI{5960}{\tera\electronvolt}$.
 The sources used in the later introduced time-dependent analysis are shown in figure \ref{fig:skymap_2}.
-It is worth mentioning that the time integrated analysis uses all sources listed in the table \ref{tab:sources}, regardless of the time interval of the dataset used.
-The sources in the time-dependent analysis, on the other hand, are all temporally located in the dataset presented in the chapter \ref{sec:data} and can additionally be seen in table \ref{tab:sources_time_dep}.
+It is worth mentioning that the time integrated analysis uses all sources listed in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2}, regardless of the time interval of the dataset used.
+The sources of the time-dependent analysis, on the other hand, are all temporally located in the dataset presented in the chapter \ref{sec:data} and are highlighted in the source tables in the appendix.
 
 \begin{figure}
     \centering
     \includegraphics[draft=false,width=\linewidth]{Plots/02_sources/gfu_gold_skymap.png} %change to pdf in final
-    \caption{Skymap showing the GFU-gold events used as sourcepositions in the time integrated analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in table \ref{tab:sources}. The grey dot represents the centre of the galactic plane.}
+    \caption{Skymap showing the GFU-gold events used as sourcepositions in the time integrated analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix. The grey dot represents the centre of the galactic plane.}
     \label{fig:skymap_1}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[draft=false,width=\linewidth]{Plots/02_sources/gfu_gold_skymap_time_dep.png} %change to pdf in final
-    \caption{Skymap showing the $\num{10}$ GFU-gold events used as sourcepositions in the time-dependent analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in table \ref{tab:sources_time_dep} in the appendix. The grey dot represents the centre of the galactic plane.}
+    \caption{Skymap showing the $\num{10}$ GFU-gold events used as sourcepositions in the time-dependent analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix highlighted in red. The grey dot represents the centre of the galactic plane.}
     \label{fig:skymap_2}
 \end{figure}
 
-\begin{table}[!htb]
-  \caption{Table of the $\num{72}$ GFU-gold events used as sources in this analysis. Shown are the features time in MJD, declination $\delta$ in degrees and right ascension $\alpha$ also in degrees. The time-dependent analysis uses a subset of these sources. The order of the sources corresponds to the processing order in the analysis pipeline.}
-  \label{tab:sources}
-  \begin{subtable}{.5\linewidth}
-  \centering
-  \begin{tabular}{ccrr}
-    \toprule
-    Nr. & MJD &  $\delta$ in $\si{\degree}$ & $\alpha$ in $\si{\degree}$ \\
-    \toprule
-    \input{../tables/sources_table.tex}
-    \toprule
-  \end{tabular}
-\end{subtable}
-\begin{subtable}{.5\linewidth}
-\centering
-  \begin{tabular}{ccrr}
-    \toprule
-    Nr. & MJD &  $\delta$ in $\si{\degree}$ & $\alpha$ in $\si{\degree}$ \\
-    \toprule
-    \input{../tables/sources_table_2.tex}
-    \toprule
-  \end{tabular}
-  \end{subtable}
-\end{table}
+%\begin{table}[!htb]
+%  \caption{Table of the $\num{72}$ GFU-gold events used as sources in this analysis. Shown are the features time in MJD, declination $\delta$ in degrees and right ascension $\alpha$ also in degrees. The time-dependent analysis uses a subset of these sources. The order of the sources corresponds to the processing order in the analysis pipeline.}
+%  \label{tab:sources}
+%  \begin{subtable}{.5\linewidth}
+%  \centering
+%  \begin{tabular}{ccrr}
+%    \toprule
+%    Nr. & MJD &  $\delta$ in $\si{\degree}$ & $\alpha$ in $\si{\degree}$ \\
+%    \toprule
+%    \input{../tables/sources_table.tex}
+%    \toprule
+%  \end{tabular}
+%\end{subtable}
+%\begin{subtable}{.5\linewidth}
+%\centering
+%  \begin{tabular}{ccrr}
+%    \toprule
+%    Nr. & MJD &  $\delta$ in $\si{\degree}$ & $\alpha$ in $\si{\degree}$ \\
+%    \toprule
+%    \input{../tables/sources_table_2.tex}
+%    \toprule
+%  \end{tabular}
+%  \end{subtable}
+%\end{table}
