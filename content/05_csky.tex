@@ -57,7 +57,7 @@ This should be as close to 1 as possible, which corresponds to a pure background
 The test statistic should also be symmetrical around the zero point.
 A shift around the zero point is an indication of an undesired bias of the statistic.
 Therefore, the value of the quotient of the number of positive and negative events should ideally be $\eta = \num{0.5}$.
-Apart from the fit parameters, the median and $5\sigma$ deviation value of the test statistic are necessary for the subsequent calculation of the sensitivity and the discovery potential.
+Apart from the fit parameters, the median and $5\sigma$ deviation value of the test statistic are necessary for the subsequent calculation of the sensitivity and the discovery potential shown in the equations \eqref{eq:sens} and \eqref{eq:disc}.
 
 The fit parameters of the background test statistic are
 \begin{align}
@@ -87,7 +87,7 @@ Although there is a relatively flat maximum, the likelihood environment does not
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan_time_int.pdf}
-    \caption{Scan of one likelihoodspace for the time integrated analysis in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{100}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$.}
+    \caption{Scan of one likelihood space for the time integrated analysis in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{100}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$.}
     \label{fig:llh_scan_time_int}
 \end{figure}
 The method of the calculation of the contours comes from \cite{Blobel} and corresponds to the maximum of the negative log-likelihood after subtracting $\num{0.5}$ and $\num{2}$ accordingly to get the $1\sigma$ and $2\sigma$ range, respectively.
@@ -123,7 +123,7 @@ This result is about one order of magnitude below the results of the all-sky sca
 \end{figure}
 \begin{table}
   \centering
-  \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time integrated analysis. Additionally the fitted number of signal events $N_\text{sig}$ satisfying the thresholds is shown.}
+  \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time integrated analysis. Additionally the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
   \begin{tabular}{crcrc}
     \toprule
     $\gamma$ & $N_\text{sig,sens}$ &  sens in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ & $N_\text{sig,disc}$ & disc in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ \\
@@ -168,12 +168,12 @@ Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{
 
 The time-dependent search examines $\num{10}$ sources independently of each other.
 Ideally, all GFU-gold alerts should be examined and, in addition, preferably stacked.
-However, time-dependent stacking is not yet sufficiently implemented in \texttt{csky} during the development of this thesis, and examining all sources individually would require too much computing capacity.
+However, time-dependent stacking is not yet fully implemented in \texttt{csky} during the development of this thesis, and examining all sources individually would require too much computing capacity.
 Chapter \ref{sec:tdepps} contains more detailed information on the technical details of time-dependent stacking.
 Therefore, only the $\num{10}$ alerts with the highest \textbf{signalness} parameter in the set are used as sources.
 These can be seen in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix highlighted in red.
 
-This analysis uses an untriggered flare procedure in which the temporal centre of the flare $t_0$ is set to the time of the source while the length $dt$ of the flare in shape of a box is fitted.
+This analysis uses an untriggered flare procedure in which the time window of the flare is centered around the time $t_0$ of the source while the length $dt$ of the flare in shape of a box is fitted.
 The time window is qualitatively expanded between two events at which the test statistic is maximised.
 The maximum length of the time window is allowed to be $\SI{200}{\day}$.
 This conservative approach results from the fact that no assumptions are made about the temporal emission behaviour of the source.
@@ -192,9 +192,9 @@ These are shown in figure \ref{fig:bg_trials_time_dep_time_windows_1} and \ref{f
 The shape of the time window distribution results from the fact that the time window prior prefers larger time windows, while the data allows for several shorter flares.
 Therefore, there are more short time windows, fewer in the middle range, and again more closing in at the maximum time window limit of $\num{200}$ days.
 This behaviour can be additionally observed in figure \ref{fig:bg_trials_time_dep_time_windows_ns_1} or \ref{fig:bg_trials_time_dep_time_windows_ns} for all sources, showing the fitted signal parameter $\hat{n}_\text{sig}$ in dependence of the fitted time window length $dt$.
-Larger timewindows allow for more potential signal events.
+Larger time windows allow for more potential signal events.
 Generally a time window gets defined by the temporal space between $\num{2}$ events, which means a time window already consists of at least $\num{2}$ events.
-However, this does not mean the fitted value of the signal parameter is atleast $2$, but it explains why the majority of trials are above a signal parameter of zero, especially for extremely short time windows.
+However, this does not mean the fitted value of the signal parameter is at least $2$, but it explains why the majority of trials are above a signal parameter of zero, especially for extremely short time windows.
 Altogether, many possible numbers of signal events are represented in the background trials, but most of them are logically in the lower range.
 \begin{figure}
     \centering
@@ -204,7 +204,7 @@ Altogether, many possible numbers of signal events are represented in the backgr
 \end{figure}
 \begin{table}
   \centering
-  \caption[]{Table of number of trials, degrees of freedom $dof$, symmetry parameter $\eta$, median, $\num{3}\sigma$ and $\num{5}\sigma$ values of the background test statistics for the time-dependent analysis for all $\num{10}$ sources seen in figure \ref{fig:bg_trials_time_dep}. Some median values are very close to if not $\num{0}$.}
+  \caption[]{Table of number of trials, degrees of freedom $dof$, symmetry parameter $\eta$, median, $\num{3}\sigma$ and $\num{5}\sigma$ values of the background test statistics for the time-dependent analysis for all $\num{10}$ sources seen in figure \ref{fig:bg_trials_time_dep}. Some median values are very close or equal to $\num{0}$.}
   \begin{tabular}{crccccc}
     \toprule
     Nr. & trials & $dof$ & $\eta$ & median & $\num{3}\sigma$ & $\num{5}\sigma$ \\
@@ -234,7 +234,7 @@ This scan is shown for source number $\num{11}$ in figure \ref{fig:llh_scan_time
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan_1.pdf}
-    \caption{Scan of the likelihoodspace for source number $\num{11}$ with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.}
+    \caption{Scan of the likelihood space for source number $\num{11}$ with a time window of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.}
     \label{fig:llh_scan_time_dep}
 \end{figure}
 After a proper likelihood environment is ensured, the signal trials can be started.
@@ -253,18 +253,18 @@ Furthermore, the temporal position of the sources in relation to the individual 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_dep_sens_disc_dec_time.pdf}
-    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependece of their position at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ for the time-dependent analysis. The colour represents the arrival time of the source event and the size of the grey circle is proportional to the location uncertainty of the source. The direct location uncertainty would be too small to show in this plot.}
+    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependence of their position at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ for the time-dependent analysis. The colour represents the arrival time of the source event and the size of the grey circle is proportional to the location uncertainty of the source. The direct location uncertainty would be too small to show in this plot.}
     \label{fig:sources_and_datasets}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_dep_sens_disc_time.pdf}
-    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependece of their temporal position at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ for the time-dependent analysis. The marker colour represents the declination of the source event and the errorbars have a total length of $\SI{200}{\day}$ corresponding to the maximum injection interval. The alternating colour represents the temporal intervals of the different data sets.}
+    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependence of their temporal position at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ for the time-dependent analysis. The marker colour represents the declination of the source event and the errorbars have a total length of $\SI{200}{\day}$ corresponding to the maximum injection interval. The alternating colour represents the temporal intervals of the different data sets.}
     \label{fig:sens_disc_time_dep_dec}
 \end{figure}
 \begin{table}
   \centering
-  \caption{Sensitivities and discovery potentials for different sources at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ and a spectral index $\gamma=2$ for the time-dependent analysis. Additionally the sine of the source declination $\delta$ and the fitted number of signal events $N_\text{sig}$ satisfying the thresholds is shown.}
+  \caption{Sensitivities and discovery potentials for different sources at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ and a spectral index $\gamma=2$ for the time-dependent analysis. Additionally the sine of the source declination $\delta$ and the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
   \begin{tabular}{ccrcrc}
     \toprule
     Nr. & $\sin{(\delta)}$ & $N_\text{sig,sens}$ &  sens in $\si{\giga\electronvolt\centi\meter\tothe{-2}}$ & $N_\text{sig,disc}$ & disc in $\si{\giga\electronvolt\centi\meter\tothe{-2}}$ \\
@@ -316,7 +316,7 @@ The fitted signal parameter in dependence of the time window length can be seen 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_window_ns_disc_sens_time_dep_1.pdf}
-    \caption{Histograms of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potnetial on the right.}
+    \caption{Histograms of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potential on the right.}
     \label{fig:sens_disc_ns_dt_1}
 \end{figure}
 As expected, it can be seen that the determination of sensitivity requires less signal than the determination of the discovery potential.
