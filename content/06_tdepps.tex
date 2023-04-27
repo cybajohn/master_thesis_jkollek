@@ -5,7 +5,7 @@ As already indicated in chapter \ref{sec:csky_time_dep}, a different likelihood 
 The test statistic shown in chapter \ref{sec:theory} benefits from the fact that each event is independent of each other and thus pdf ratios can be used directly to calculate the likelihood ratio.
 This also benefits the computational capacity.
 If, on the other hand, there are several events in the same time window from different sources, these are counted several times and the background is also overestimated.
-For a correct calculation, the original test statistic, which is shown in equation \eqref{eq:general_ts}, must be considered,
+For a correct calculation, the original test statistic derived in \eqref{eq:TS_general}, which is again shown in equation \eqref{eq:general_ts}, must be considered,
 \begin{equation}
     -2\ln{\hat{\Lambda}} = -2\sum_{k=1}^{N_{srcs}}\hat{\lambda}_{k,S} + 2\sum_{i=1}^{N_{evts}}\ln{\left(\frac{\sum_{k=1}^{N_{srcs}}\hat{\lambda}_{k,S}S_{i,k}}{\sum_{k=1}^{N_{srcs}}\langle\lambda_{k,B}\rangle B_{i,k}}+1\right)} \label{eq:general_ts}, \\
 \end{equation}
@@ -127,11 +127,11 @@ The diagram in figure \ref{fig:new_method} illustrates the problem and the appro
   \label{fig:new_method}
 \end{figure}
 
-So for the single event $i$ the test statistic becomes,
+So for the single event $i$ and two sources the test statistic\footnote{The parameter $w_k$ is the source weight, which is not important for the demonstration in this chapter.} becomes,
 \begin{equation}
     -2\ln{\hat{\Lambda}} =-2n_S +2\ln\left(\frac{\frac{n_S}{2}(w_{k=1}\cdot S_{k=1} + w_{k=2} \cdot S_{k=2})}{\langle\lambda_{B,\{k=1\cup k=2\}}\rangle \cdot B_{\{k=1\cup k=2\}}}+1\right) \label{eq:simple_example},
 \end{equation}
-assuming that $\SI{50}{\percent}$ of the event is attributed to the two sources.
+assuming that $\SI{50}{\percent}$ of the event is attributed evenly to the two sources.
 Of course, this ratio could be adjusted to the temporary proximity to the sources, but without further assumptions, the distribution is simply the same.
 The basic idea now is that the time interval from which the background is estimated now corresponds to the union of the time windows of the two sources, $B_{\{k=1\cup k=2\}}$ and for the expected number of background events respectively $\langle\lambda_{B,\{k=1\cup k=2\}}\rangle$.
 This means that for each possible constellation of time windows and overlaps, a background model must be set up.
@@ -276,17 +276,17 @@ with the number of sources $N_{srcs}$.
 So in the worst case scenario this calculation may become about two times slower.
 Fortunately, this only affects the spatial pdf and not the energy distribution, as the spatial background depends on the position of the time window due to seasonal variations.
 The energy distribution can be extracted from the summation of events and calculated as before.
-The time pdf is effectively a heavyside function that attributes the events to the sources weighted by the number of sources they can be attributed to.
+The time pdf is effectively a Heaviside function that attributes the events to the sources weighted by the number of sources they can be attributed to.
 With these thoughts in mind, a new injection model needs to be built that injects the right number of background events depending on the temporal position.
 
 To achieve all of the above, the point source software \texttt{tdepps} \cite{tdepps_1} was modified.
 The modified version can be found at \cite{tdepps_2}.
 
 However, after the implementation was completed, test results showed strange behaviour compared to other software.
-The biggest issue is the large values of the test statistics.
+The biggest issue are the large values of the test statistics.
 A simple example is shown in figure \ref{fig:fail_example}.
 Since the correctness of the shape of the test statistic is difficult to assess in the case of a specific time window, in the example the time window is extended over a single complete data set with only one source being investigated.
-The behaviour should therefore correspond to a time-integrated search, a $\Chi^2$-distribution with only one degree of freedom would be expected, in other words a flat, straight distribution.
+The behaviour should therefore correspond to a time-integrated search, a $\chi^2$-distribution with only one degree of freedom would be expected, in other words a flat, straight distribution.
 However, the modified software still produces too high, signal-like test statistic values, comparable to these of figure \ref{fig:time_dep_sig_sens_ts} in the appendix.
 In addition, the behaviour of the \texttt{skylab} software was considered, which is similar to the original behaviour of the unmodified \texttt{tdepps} software.
 The \texttt{skylab} result can be seen in figure \ref{fig:skylab}.
@@ -301,12 +301,11 @@ The \texttt{skylab} result can be seen in figure \ref{fig:skylab}.
 \begin{figure}
     \centering
     \includegraphics[width=10cm]{Plots/06_tdepps/skylab_bg_pdf_one_source.pdf}
-    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set using the software \texttt{skylab} version $\num{2.2}$.}
+    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set using the software \texttt{skylab} version $\num{2.2}$. The vertical red line indicates the beginning of the straightest possible tail of the statistic determined by various statistical criteria.}
     \label{fig:skylab}
 \end{figure}
 
 The main focus of the subsequent research was on the weights that distribute the contribution of the events among the individual sources.
 However, this feature works as intended.
-Deeper investigations led to the thought that there might be something fundamentally wrong with the tdepps software.
-However, errors in the software could not be confirmed.
-With these investigations being without results, termination of the usage of the modified \texttt{tdepps} software was imminent.
+Suspicions that this unexpected behaviour could be due to mistakes in the original tdepps software could not be confirmed.
+However, as no solution was found to alleviate these problems, the usage of modified \texttt{tdepps} was abandoned.
