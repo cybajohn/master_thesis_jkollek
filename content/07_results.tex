@@ -1,8 +1,7 @@
 %both results
 \chapter{Conclusion and Outlook} \label{sec:outlook}
 
-hier mehr aufs tempus achten!
-
+%hier mehr aufs tempus achten!
 This thesis presented two types of analyses in the field of neutrino point source searches of time-integrated and time-dependent nature using the software \texttt{csky} and gave insight into the difficulties of time-dependent stacking.
 Both main analyses provided preliminary results on the contribution of neutrinos at neutrino alert positions of the gamma-ray-followup gold type.
 $\num{9}$ years of IceCube data were used for this.
@@ -83,20 +82,22 @@ The next step would be to unblind the results.
 Although this step does not require any further work in the analysis, the unblinding process requires a group of reviewers from the IceCube collaboration to work meticulously through the analysis and question the analysis in a very time-consuming process.
 At this stage, however, this step was beyond the scope of the Master's thesis and was therefore not be carried out.
 
-In addition, the trial correction via post trials is missing for the time-dependent search.
+In addition, the trial correction via post-trials is missing for the time-dependent search.
 The reason for the trial correction is that only one source position was examined at a time on the basis of a GFU-gold event from a selected number of events, although the signal can also come from another GFU-gold event position.
 The results are therefore actually somewhat worse than they initially appear.
-An attempt was made to use the post-trial method of \cite{thorben}.
+An attempt was made to use the post-trial method presented in \cite{thorben}.
 The strange course of the trial correction, which can be seen in the appendix in figure \ref{fig:post_trials}, indicates an incorrect implementation in this analysis.
 
 It is also striking that in the simulation sample only about half the amount of GFU-gold events was identified and filtered out, which can be observed in figure \ref{fig:gfu_gold_comp}.
-This could be due to the fact that particles and antiparticles were not taken into account.
+This could be due to the fact that antiparticles were not taken into account in the simulation files.
 In addition, the events were identified using simulation sets 21002 and 21220.
-However, these sets have small errors, which are addressed in the analysis of SnowStorm \cite{snowstorm}.
+However, these sets are impacted by a known bug.
+Although the effects of this bug are expected to be small, it is advised to be cautious when comparing these sets to data.
+This bug is addressed in the SnowStorm project \cite{snowstorm}.
 
 The most striking observation of this work, however, is the strong scattering of the results of sensitivities and discovery potentials, which can be seen in figure \ref{fig:sens_disc_time_dep_dec}.
 Normally, the sources would roughly follow a line corresponding to the all-sky survey, see figure \ref{fig:all_sky_plot}.
-The origin of this scatter can have many reasons.
+This scatter can be due to several causes.
 One reason could be the spatial inaccuracy of the source positions, but this does not show a clear trend.
 In addition, the analysis time windows could be in different data sets and even overlap two.
 But even with this, no clear correlation can be discerned.
