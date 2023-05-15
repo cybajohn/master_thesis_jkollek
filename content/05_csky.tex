@@ -25,7 +25,7 @@ Lastly a spline, interpolating between the bin centers, is used to evaluate the 
     \caption{Background space PDF used in this analysis in $\sin{(\delta)}$ for all $\num{9}$ years, 2011-2019.}
     \label{fig:bg_param_time_int}
 \end{figure}
-The background space parametrization results in one plot only because all datasets underwent the same data processing pipeline.
+The background space parametrization results in only one PDF because all datasets underwent the same data processing pipeline.
 The PDF shows a lower contribution for downgoing events and a higher one for upgoing events coming from the sides.
 %This result is compatible with other analyses, for example ...
 
@@ -83,7 +83,7 @@ The key values later to be processed are as follows\footnote{Some analyses use t
 Before calculating the sensitivities and discovery potentials, certain properties of the likelihood or its behaviour should be investigated.
 Since the spectral index $\gamma$ and the signal parameter $n_\text{S}$ are fitted, it is advisable to look at the likelihood environment to check for a smooth landscape to ensure a fit is possible and to exclude any other unwanted local maxima.
 A scan of the parameter space for one likelihood can be seen in figure \ref{fig:llh_scan_time_int}.
-Although there is a relatively flat maximum, the likelihood environment does not show any strange behaviour.
+Although there is a relatively flat maximum, the likelihood environment does not show any unexpected behaviour.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan_time_int.pdf}
@@ -322,7 +322,8 @@ The fitted signal parameter in dependence of the time window length can be seen 
 As expected, it can be seen that the determination of sensitivity requires less signal than the determination of the discovery potential.
 The distribution of sensitivity shows a clear tendency towards smaller signal parameters, whereas the distribution of discovery potential is much broader.
 It is interesting to note, however, that for both distributions an arc around signal parameters just above $\hat{n}_\text{S}=0$ can be observed for medium time windows.
-Larger time windows allow for more signal, but the fact that the possible signal parameter decreases again towards the maximum length is strange and could have something to do with the combinatorics of the length of the time window and the signal or with the time window fit in general, since signal parameter and the setting of the time window are not independent of each other.
+Larger time windows allow for more signal, but the fact that the possible signal parameter decreases again towards the maximum length is unexpected.
+This could have something to do with the combinatorics of the length of the time window and the signal or with the time window fit in general, since signal parameter and the setting of the time window are not independent of each other.
 
 \section{Examination of Fit Bias}
 
