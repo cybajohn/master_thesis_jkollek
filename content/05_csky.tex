@@ -8,11 +8,11 @@ The search covers different spectral indices for the signal event emission.
 
 This section shows some of the underlying PDFs \texttt{csky} uses to calculate the test statistic values.
 Since \texttt{csky} is based on PDF ratios for practical reasons, not all individual PDFs can be shown clearly.
-Consequently, here are a few basic PDFs and ratios whose form is a priori important for the quality of the analysis.
+Consequently, here are a few basic PDFs and ratios from equations \eqref{eq:signal_pdfs} and \eqref{eq:background_pdfs} whose form is a priori important for the quality of the analysis.
 
 \subsection{Background space PDF}
 
-The background space PDF is generated with data and only depends on the declination $\delta$ of the events, because the IceCube detector is almost symmetric with regard to right ascension due to its position at the geographic South Pole.
+The background space PDF $\CB_S(\delta)$ is generated with data and only depends on the declination $\delta$ of the events, because the IceCube detector is almost symmetric with regard to right ascension due to its position at the geographic South Pole.
 It is normalized over the whole sky, hence satisfying the condition
 \begin{align}
   \int d\Omega f = \int d\alpha \int d(\sin(\delta)) f = 1
@@ -31,7 +31,7 @@ The PDF shows a lower contribution for downgoing events and a higher one for upg
 
 \subsection{Energy ratio PDF}
 
-The energy PDF ratios for different spectral indices $\gamma$ can be seen in figure \ref{fig:energy_ratio_time_int}.
+The energy PDF ratios $\CS_E(E|\Vmu)/\CB_E(E)$ for different spectral indices $\gamma$ can be seen in figure \ref{fig:energy_ratio_time_int}.
 
 \begin{figure}
     \centering
@@ -49,6 +49,7 @@ However, this is not a problem for a conservative approach, as the sensitivities
 \section{Background Trials}
 
 The time-integrated search contains all $\num{72}$ sources in a stacked form.
+The background test statistic values are generated via formula \eqref{eq:ts_simple} without signal events being injected.
 The histogram of the background test statistic values can be seen in figure \ref{fig:bg_ts_time_int}.
 The number of trials processed is $\num{974000}$\footnote{Originally $\num{e6}$, but some jobs fail due to various technical reasons.}.
 Important features of the plot should first be that the $\chi^2$-distribution has as straight a tail as possible.
@@ -112,7 +113,7 @@ Since the absence of a signal parameter produces the background test statistic, 
     \caption{Quantiles of the signal trials for the calculation of the discovery potential for the time integrated analysis at different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the discovery potential at $\SI{50}{\percent}$.}
     \label{fig:cdf_disc}
 \end{figure}
-The sensitivities and discovery potentials from the CDFs can be seen in figure \ref{fig:sens_disc_time_int} and additionally in table \ref{tab:sens_disc_time_int}.
+The sensitivities and discovery potentials calculated via the formulas \eqref{eq:sens} and \eqref{eq:disc} from the CDFs can be seen in figure \ref{fig:sens_disc_time_int} and additionally in table \ref{tab:sens_disc_time_int}.
 The values rise for higher spectral indices since the signal looks more background like the closer the spectral index is to $\gamma = 3$.
 This result is about one order of magnitude below the results of the all-sky scan \cite{all_sky_paper} referenced in figure \ref{fig:all_sky_plot}.
 \begin{figure}

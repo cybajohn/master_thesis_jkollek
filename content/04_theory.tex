@@ -44,7 +44,7 @@ The expected number of background events $\langle\lambda_{k,B}\rangle$ is estima
 The further form of the test statistic depends on the choice of probability models $S$ and $B$.
 If a time-integrated search or a search in which the sources are independent of each other in terms of different temporal intervals is carried out, the formula simplifies to
 \begin{equation}
-    TS = -2\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S} + 2\sum_{i=1}^{N_{\text{evts}}}\sum_{k=1}^{N_{\text{srcs}}}\ln{\Gb{\frac{\hat\lambda_{k,S}S_{i,k}}{\langle\lambda_{k,B}\rangle B_{i,k}}+1}}.
+    TS = -2\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S} + 2\sum_{i=1}^{N_{\text{evts}}}\sum_{k=1}^{N_{\text{srcs}}}\ln{\Gb{\frac{\hat\lambda_{k,S}S_{i,k}}{\langle\lambda_{k,B}\rangle B_{i,k}}+1}}. \label{eq:ts_simple}
 \end{equation}
 This makes it possible to form per-event probability density functions (PDF) ratios directly in the calculation, which reduces the computational effort.
 
@@ -74,13 +74,13 @@ However, the temporal PDF is only important for time-dependent searches,
   \CS(\Vx|\Vmu)
   &= \CS_S(\delta,\alpha)
   \cdot \CS_E(E|\Vmu)
-  \cdot \CS_T(t|\Vmu);
+  \cdot \CS_T(t|\Vmu), \label{eq:signal_pdfs}
   \\
   \CB(\Vx)
   &= \CB_S(\delta)
   \cdot \CB_E(E)
   \cdot \CB_T(t).
-  \label{eq:pdf}
+  \label{eq:background_pdfs}
 \end{align}
 The energy PDF can be constructed of a 2d histogram of energy and declination and is generated directly from the data for the background $\CB_E(E)$ and from simulations weighted with the spectral index $\gamma$ for the signal $\CS_E(E|\Vmu)$.
 Its ratio does not depent on individual event properties and is calculated a priori.
