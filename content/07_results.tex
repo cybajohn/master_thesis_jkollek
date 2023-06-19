@@ -5,7 +5,7 @@
 This thesis presented two types of analyses in the field of neutrino point source searches of time-integrated and time-dependent nature using the software \texttt{csky} and gave insight into the difficulties of time-dependent stacking.
 Both main analyses provided preliminary results on the contribution of neutrinos at neutrino alert positions of the gamma-ray-followup gold type.
 $\num{9}$ years of IceCube data were used for this.
-The simulation data has been cleaned of GFU-gold like events to prevent a bias, since all events of the GFU-gold like events counted as source events.
+The simulation data has been cleaned of GFU-gold events to prevent a bias, since all events of GFU-gold nature counted as source events.
 
 The first analysis is time-integrated and examined the stacked contribution of $\num{72}$ sources.
 For this purpose, the implementation of the analysis was checked in the form of background and signal trials.
@@ -80,7 +80,7 @@ The main goal of this thesis was to perform a point source search at neutrino al
 
 The next step would be to unblind the results.
 Although this step does not require any further work in the analysis, the unblinding process requires a group of reviewers from the IceCube collaboration to work meticulously through the analysis and question the analysis in a very time-consuming process.
-At this stage, however, this step was beyond the scope of the Master's thesis and was therefore not be carried out.
+At this stage, however, this step was beyond the scope of the Master's thesis and was therefore not carried out.
 
 In addition, the trial correction via post-trials is missing for the time-dependent search.
 The reason for the trial correction is that only one source position was examined at a time on the basis of a GFU-gold event from a selected number of events, although the signal can also come from another GFU-gold event position.
@@ -95,7 +95,10 @@ However, these sets are impacted by a known bug.
 Although the effects of this bug are expected to be small, it is advised to be cautious when comparing these sets to data.
 This bug is addressed in the SnowStorm project \cite{snowstorm}.
 
-The most striking observation of this work, however, is the strong scattering of the results of sensitivities and discovery potentials, which can be seen in figure \ref{fig:sens_disc_time_dep_dec}.
+More importantly, though, the energy distributions of the real GFU-gold alerts and the ones identified in the simulations shown in figure \ref{fig:gfu_gold_comp_energy} do not match.
+The reason for this could not be found due to time constraints.
+
+The most striking observation of this work, apart from the energy missmatch however, is the strong scattering of the results of sensitivities and discovery potentials, which can be seen in figure \ref{fig:sens_disc_time_dep_dec}.
 Normally, the sources would roughly follow a line corresponding to the all-sky survey, see figure \ref{fig:all_sky_plot}.
 This scatter can be due to several causes.
 One reason could be the spatial inaccuracy of the source positions, but this does not show a clear trend.

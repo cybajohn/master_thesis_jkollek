@@ -2,14 +2,14 @@
 \chapter{Time-Dependent Stacking Software Approach} \label{sec:tdepps}
 
 As already indicated in chapter \ref{sec:csky_time_dep}, a different likelihood must be used to calculate time-dependent stacking.
-The test statistic shown in chapter \ref{sec:theory} benefits from the fact that each event is independent of each other and thus pdf ratios can be used directly to calculate the likelihood ratio.
+The test statistic shown in chapter \ref{sec:theory} benefits from the fact that each event is independent of each other and thus PDF ratios can be used directly to calculate the likelihood ratio.
 This also benefits the computational capacity.
 If, on the other hand, there are several events in the same time window from different sources, these are counted several times and the background is also overestimated.
 For a correct calculation, the original test statistic derived in \eqref{eq:TS_general}, which is again shown in equation \eqref{eq:general_ts}, must be considered,
 \begin{equation}
-    -2\ln{\hat{\Lambda}} = -2\sum_{k=1}^{N_{srcs}}\hat{\lambda}_{k,S} + 2\sum_{i=1}^{N_{evts}}\ln{\left(\frac{\sum_{k=1}^{N_{srcs}}\hat{\lambda}_{k,S}S_{i,k}}{\sum_{k=1}^{N_{srcs}}\langle\lambda_{k,B}\rangle B_{i,k}}+1\right)} \label{eq:general_ts}, \\
+    -2\ln{\hat{\Lambda}} = -2\sum_{k=1}^{N_{\text{srcs}}}\hat{\lambda}_{k,S} + 2\sum_{i=1}^{N_{evts}}\ln{\left(\frac{\sum_{k=1}^{N_{\text{srcs}}}\hat{\lambda}_{k,S}S_{i,k}}{\sum_{k=1}^{N_{\text{srcs}}}\langle\lambda_{k,B}\rangle B_{i,k}}+1\right)} \label{eq:general_ts}, \\
 \end{equation}
-with the expected values for the number of background events $\langle\lambda_{k,B}\rangle$ and signal events  $\hat{\lambda}_{k,S}$ and the pdfs for background $B$ and signal $S$ dependent on the source $k$ and event $i$.
+with the expected values for the number of background events $\langle\lambda_{k,B}\rangle$ and signal events  $\hat{\lambda}_{k,S}$ and the PDFs for background $B$ and signal $S$ dependent on the source $k$ and event $i$.
 The diagram in figure \ref{fig:new_method} illustrates the problem and the approach to solving it.
 
 \begin{figure}
@@ -123,7 +123,7 @@ The diagram in figure \ref{fig:new_method} illustrates the problem and the appro
     %thingie
     %\draw[thick, ->] (-5) -- (10);
   \end{tikzpicture}}
-  \caption{Scheme illustrating the event attribution of an orange event $i$ and three sources $k$ over time (green, red and blue). The shaded areas of the sources represent their time windows. The grey line symbolises the rate of background events with their seasonal variations. The black interval on top indicates which sources with their timewindows must be considered for the event $i$.}
+  \caption{Scheme illustrating the event attribution of an orange event $i$ and three sources $k$ over time (green, red and blue). The shaded areas of the sources represent their time windows. The grey line symbolises the rate of background events with their seasonal variations. The black interval on top indicates which sources with their time windows must be considered for the event $i$.}
   \label{fig:new_method}
 \end{figure}
 
@@ -265,18 +265,18 @@ The figure \ref{fig:activation} shows qualitatively the activation regions accor
     % arrow to picture
     \draw[very thick, ->, color=black] (-5.5,2.5) -- (-7,2.5);
   \end{tikzpicture}}
-  \caption{This figure shows a scenario of $\num{4}$ sources $k$ with their timewindows (dashed areas). Each unique temporal position translates into a green area on the left, so does a source with a red line. Each green interval is the activation region indicating that an event falling into that region gets compared to an estimated background created in the underlying light blue temporal interval. The scenario therefore generates $\num{7}$ different models. The grey line shows the background rate with its seasonal variations.}
+  \caption{This figure shows a scenario of $\num{4}$ sources $k$ with their time windows (dashed areas). Each unique temporal position translates into a green area on the left, so does a source with a red line. Each green interval is the activation region indicating that an event falling into that region gets compared to an estimated background created in the underlying light blue temporal interval. The scenario therefore generates $\num{7}$ different models. The grey line shows the background rate with its seasonal variations.}
   \label{fig:activation}
 \end{figure}
 The number of models $\mathcal{B}$ to be calculated in advance can be estimated as,
 \begin{equation}
-  N_{srcs} \leq \mathcal{B}\leq 2N_{srcs}-1, \label{eq:number_of_models}
+  N_{\text{srcs}} \leq \mathcal{B}\leq 2N_{\text{srcs}}-1, \label{eq:number_of_models}
 \end{equation}
-with the number of sources $N_{srcs}$.
+with the number of sources $N_{\text{srcs}}$.
 So in the worst case scenario this calculation may become about two times slower.
-Fortunately, this only affects the spatial pdf and not the energy distribution, as the spatial background depends on the position of the time window due to seasonal variations.
+Fortunately, this only affects the spatial PDF and not the energy distribution, as the spatial background depends on the position of the time window due to seasonal variations.
 The energy distribution can be extracted from the summation of events and calculated as before.
-The time pdf is effectively a Heaviside function that attributes the events to the sources weighted by the number of sources they can be attributed to.
+The temporal PDF is effectively a Heaviside function that attributes the events to the sources weighted by the number of sources they can be attributed to.
 With these thoughts in mind, a new injection model needs to be built that injects the right number of background events depending on the temporal position.
 
 To achieve all of the above, the point source software \texttt{tdepps} \cite{tdepps_1} was modified.
@@ -295,17 +295,17 @@ The \texttt{skylab} result can be seen in figure \ref{fig:skylab}.
     \subfloat[\centering Background trials using the reworked \texttt{tdepps} software.]{{\includegraphics[width=6cm]{Plots/06_tdepps/tdepps_version3_single_bg_pdfs_close.png} }}%
     \qquad
     \subfloat[\centering Background trials using the \texttt{tdepps} software.]{{\includegraphics[width=6cm]{Plots/06_tdepps/torben_bg_pdfs_close_real.png} }}%
-    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set.}%
+    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set. The y-axis shows the density of trials.}%
     \label{fig:fail_example}%
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=10cm]{Plots/06_tdepps/skylab_bg_pdf_one_source.pdf}
-    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set using the software \texttt{skylab} version $\num{2.2}$. The vertical red line indicates the beginning of the straightest possible tail of the statistic determined by various statistical criteria.}
+    \caption{Background trials for $\num{1}$ source with a timewindow expanding over the whole used data set using the software \texttt{skylab} version $\num{2.2}$. The y-axis shows the density of trials. The vertical red line indicates the beginning of the straightest possible tail of the statistic determined by various statistical criteria.}
     \label{fig:skylab}
 \end{figure}
 
 The main focus of the subsequent research was on the weights that distribute the contribution of the events among the individual sources.
 However, this feature works as intended.
-Suspicions that this unexpected behaviour could be due to mistakes in the original tdepps software could not be confirmed.
+Suspicions that this unexpected behaviour could be due to mistakes in the original \texttt{tdepps} software could not be confirmed.
 However, as no solution was found to alleviate these problems, the usage of modified \texttt{tdepps} was abandoned.

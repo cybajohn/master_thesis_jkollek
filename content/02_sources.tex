@@ -18,8 +18,8 @@ There are various approaches to examining different areas of the sky for neutrin
 While all-sky scans examine entire declination bands of the sky \cite{all_sky_paper}, there is also the alternative of examining individual points in the sky.
 This is done via a predefined source catalogue, which is either motivated by the prior knowledge of the position of specific objects or untriggered via special signals coming from certain directions, such as high-energy photons or, as in this thesis, neutrinos, which have a high probability of being of astrophysical origin.
 IceCube has a realtime alert system that reports and collects such special events.
-Originally, neutrino alerts were divided into High Energy Starting Event (HESE) and Extremely High Energy (EHE) signatures.
-The HESE filter rejects the atmospheric muon background by selecting high energy events interacting directly in the detector, while EHE events target throughgoing events and rejects the atmospheric background by a very high energy threshold.
+Originally, neutrino alerts were divided into High Energy Starting Events (HESE) and Extremely High Energy (EHE) signatures.
+The HESE filter rejects the atmospheric muon background by selecting high energy events interacting directly in the detector, while EHE events target throughgoing events and reject the atmospheric background by a very high energy threshold.
 
 However, this old system has been improved.
 Besides a few tweaks to the HESE and EHE channels, the new alert system introduced a breakdown into two different categories of events based on their probability of being of atrophysical origin.
@@ -30,16 +30,17 @@ This hierarchy is based on studies on angular resolution and astrophysical purit
 
 \section{Gamma-Ray-Followup}
 
-The Gamma-Ray-Followup track selection, GFU for short, is a pretrained boosted decision tree (BDT) identifying through going single track events from all directions that are likely neutrino induced.
-The required astrophysical purity of at least $\SI{50}{\percent}$ for the gold selection is obtained by tight cuts on muon energy and deposited charge.\\
+The Gamma-Ray-Followup track selection, GFU for short, is a pretrained boosted decision tree (BDT) identifying throughgoing single track events from all directions that are likely neutrino-induced.
+The required astrophysical purity of at least $\SI{50}{\percent}$ for the gold selection is obtained by tight cuts on muon energy and deposited charge.
+
 The BDT consists of two basic cuts different for each hemisphere.
 For both up- and downgoing events, a precut is used which is more like a sanity check outruling invalid events.
 All events having a tracklength greater than $\SI{0}{\meter}$ and a truncated energy greater than $\SI{0}{\electronvolt}$ pass this selection.
 Additionally all events have to be between $\SI{82}{\degree}$ and $\SI{-82}{\degree}$ zenith.
-Events from the northern sky must have a truncated energy higher than $\SI{1e5.14}{\giga\electronvolt}$ to pass the GFU selection.
-In the southern hemisphere, the deposited charge ($qtot$) of the events must meet the following condition as a function $d=\sin{(\delta)}$,
+Events from the northern sky must have a truncated energy higher than $\SI{e5.14}{\giga\electronvolt}$ to pass the GFU selection.
+In the southern hemisphere, the deposited charge ($q_\text{tot}$) of the events must meet the following condition as a function $d=\sin{(\delta)}$,
 \begin{equation}
-  \log_{10}(qtot) > -4.06580\cdot d^3 - 10.60906\cdot d^2  -9.61048\cdot d + 3.01219,
+  \log_{10}(q_\text{tot}) > -4.06580\cdot d^3 - 10.60906\cdot d^2  -9.61048\cdot d + 3.01219,
 \end{equation}
 where $\delta$ is the declination of the events.
 The individual signalness is obtained through a grid interpolation based on the position of these events \cite{track_alert_paper}.
@@ -51,20 +52,20 @@ The GFU-gold alerts used as sources are displayed in the tables \ref{tab:sources
 These events are also visible in figure \ref{fig:skymap_1}.
 All events used are in an energy range from $\SI{174}{\tera\electronvolt}$ to $\SI{5960}{\tera\electronvolt}$.
 The sources used in the later introduced time-dependent analysis are shown in figure \ref{fig:skymap_2}.
-It is worth mentioning that the time integrated analysis uses all sources listed in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2}, regardless of the time interval of the dataset used.
+It is worth mentioning that the time-integrated analysis uses all sources listed in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2}, regardless of the time interval of the dataset used.
 The sources of the time-dependent analysis, on the other hand, are all temporally located in the dataset presented in the chapter \ref{sec:data} and are highlighted in the source tables in the appendix.
 
 \begin{figure}
     \centering
     \includegraphics[draft=false,width=\linewidth]{Plots/02_sources/gfu_gold_skymap.png} %change to pdf in final
-    \caption{Skymap showing the GFU-gold events used as sourcepositions in the time integrated analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix. The grey dot represents the centre of the galactic plane.}
+    \caption{Skymap showing the GFU-gold events used as source positions in the time-integrated analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix. The grey dot represents the centre of the galactic plane.}
     \label{fig:skymap_1}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[draft=false,width=\linewidth]{Plots/02_sources/gfu_gold_skymap_time_dep.png} %change to pdf in final
-    \caption{Skymap showing the $\num{10}$ GFU-gold events used as sourcepositions in the time-dependent analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix highlighted in red. The grey dot represents the centre of the galactic plane.}
+    \caption{Skymap showing the $\num{10}$ GFU-gold events used as source positions in the time-dependent analysis. In addition, the probability of the individual events being of astrophysical origin is given in colour by the \textbf{signalness} parameter. The exact coordinates are shown in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix highlighted in red. The grey dot represents the centre of the galactic plane.}
     \label{fig:skymap_2}
 \end{figure}
 

@@ -8,14 +8,14 @@ The search covers different spectral indices for the signal event emission.
 
 This section shows some of the underlying PDFs \texttt{csky} uses to calculate the test statistic values.
 Since \texttt{csky} is based on PDF ratios for practical reasons, not all individual PDFs can be shown clearly.
-Consequently, here are a few basic PDFs and ratios from equations \eqref{eq:signal_pdfs} and \eqref{eq:background_pdfs} whose form is a priori important for the quality of the analysis.
+Consequently, a few basic PDFs and ratios from equations \eqref{eq:signal_pdfs} and \eqref{eq:background_pdfs} whose form is a priori important for the quality of the analysis are shown here.
 
 \subsection{Background space PDF}
 
 The background space PDF $\CB_S(\delta)$ is generated with data and only depends on the declination $\delta$ of the events, because the IceCube detector is almost symmetric with regard to right ascension due to its position at the geographic South Pole.
 It is normalized over the whole sky, hence satisfying the condition
 \begin{align}
-  \int d\Omega f = \int d\alpha \int d(\sin(\delta)) f = 1
+  \int d\Omega \CB_S = \int d\alpha \int d(\sin(\delta)) \CB_S = 1
 \end{align}
 and is shown in figure \ref{fig:bg_param_time_int}.
 Lastly a spline, interpolating between the bin centers, is used to evaluate the events.
@@ -52,11 +52,11 @@ The time-integrated search contains all $\num{72}$ sources in a stacked form.
 The background test statistic values are generated via formula \eqref{eq:ts_simple} without signal events being injected.
 The histogram of the background test statistic values can be seen in figure \ref{fig:bg_ts_time_int}.
 The number of trials processed is $\num{974000}$\footnote{Originally $\num{e6}$, but some jobs fail due to various technical reasons.}.
-Important features of the plot should first be that the $\chi^2$-distribution has as straight a tail as possible.
+Important features of the plot should first be that the tail of the $\chi^2$-distribution is as straight as possible.
 This is reflected in the number of degrees of freedom $dof$ in the $\chi^2$ distribution.
 This should be as close to 1 as possible, which corresponds to a pure background statistic without signal.
-The test statistic should also be symmetrical around the zero point.
-A shift around the zero point is an indication of an undesired bias of the statistic.
+The test statistic should also be symmetrical around zero.
+A shift around zero is an indication of an undesired bias of the statistic.
 Therefore, the value of the quotient of the number of positive and negative events should ideally be $\eta = \num{0.5}$.
 Apart from the fit parameters, the median and $5\sigma$ deviation value of the test statistic are necessary for the subsequent calculation of the sensitivity and the discovery potential shown in the equations \eqref{eq:sens} and \eqref{eq:disc}.
 
@@ -68,14 +68,14 @@ The fit parameters of the background test statistic are
 These parameters meet the requirements that were described previously.
 The key values later to be processed are as follows\footnote{Some analyses use the $3\sigma$ value for the discovery potential.}
 \begin{align}
-  median &= \num{0.140},\\
+  \text{median} &= \num{0.140},\\
   3\sigma &= \num{10.651},\\
   5\sigma &= \num{28.060}.
 \end{align}
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_bg_new.pdf}
-    \caption{Histogram of the background test statistic for the time integrated analysis. Shown are also the number of degrees of freedom $dof$ and the ratio of positive and negative values $\eta$.}
+    \caption{Histogram of the background test statistic for the time-integrated analysis. Shown are also the number of degrees of freedom $dof$ and the ratio of positive and negative values $\eta$.}
     \label{fig:bg_ts_time_int}
 \end{figure}
 
@@ -88,7 +88,7 @@ Although there is a relatively flat maximum, the likelihood environment does not
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan_time_int.pdf}
-    \caption{Scan of one likelihood space for the time integrated analysis in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{100}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$.}
+    \caption{Scan of one likelihood space for the time-integrated analysis in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{100}$ with a spectral index of $\gamma = 2$. The maximum of the test statistic is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$.}
     \label{fig:llh_scan_time_int}
 \end{figure}
 The method of the calculation of the contours comes from \cite{Blobel} and corresponds to the maximum of the negative log-likelihood after subtracting $\num{0.5}$ and $\num{2}$ accordingly to get the $1\sigma$ and $2\sigma$ range, respectively.
@@ -97,12 +97,12 @@ After the fit behaviour has been checked, the signal can be injected.
 With a higher number of signal events, the test statistic shifts to higher values, eventually reaching the thresholds set for the sensitivity and discovery potential.
 Conveniently \texttt{csky} provides methods to a priori get an estimation of the number of signal events that have to be injected to satisfy certain thresholds without having to run a lot of trials on a cluster first.
 The determined list of the number of signal events injected for the trials can be seen in table \ref{tab:trials_sig_time_int_table}.
-The resulting CDFs for the time integrated sensitivities and discovery potentials can be seen in figure \ref{fig:cdf_sens} and \ref{fig:cdf_disc}.
-Each point corresponds to the percentage of the test statistic being passed the thresholds mentioned in chapter \ref{sec:theory}.
+The resulting CDFs for the time-integrated sensitivities and discovery potentials can be seen in figure \ref{fig:cdf_sens} and \ref{fig:cdf_disc}.
+Each point corresponds to the percentage of the test statistic passing the thresholds mentioned in chapter \ref{sec:theory}.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_cdf_sens.pdf}
-    \caption{Quantiles of the signal trials for the calculation of the sensitivity for the time integrated analysis at different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the sensitivity condition at $\SI{90}{\percent}$.}
+    \caption{Quantiles of the signal trials for the calculation of the sensitivity for the time-integrated analysis at different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the sensitivity condition at $\SI{90}{\percent}$.}
     \label{fig:cdf_sens}
 \end{figure}
 Note that all plots in figure \ref{fig:cdf_sens} start at about $\SI{50}{\percent}$ with a signal parameter of $n_\text{S} = 0$.
@@ -110,7 +110,7 @@ Since the absence of a signal parameter produces the background test statistic, 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_cdf_disc.pdf}
-    \caption{Quantiles of the signal trials for the calculation of the discovery potential for the time integrated analysis at different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the discovery potential at $\SI{50}{\percent}$.}
+    \caption{Quantiles of the signal trials for the calculation of the discovery potential for the time-integrated analysis at different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the discovery potential at $\SI{50}{\percent}$.}
     \label{fig:cdf_disc}
 \end{figure}
 The sensitivities and discovery potentials calculated via the formulas \eqref{eq:sens} and \eqref{eq:disc} from the CDFs can be seen in figure \ref{fig:sens_disc_time_int} and additionally in table \ref{tab:sens_disc_time_int}.
@@ -119,12 +119,12 @@ This result is about one order of magnitude below the results of the all-sky sca
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_int_sens_gfu_gold_9_years_new.pdf}
-    \caption{Sensitivities and discovery potentials of the time integrated analysis for different spectral indices $\gamma$. The reference energy is $E_0 = \SI{1}{\tera\electronvolt}$.}
+    \caption{Sensitivities and discovery potentials of the time-integrated analysis for different spectral indices $\gamma$. The reference energy is $E_0 = \SI{1}{\tera\electronvolt}$.}
     \label{fig:sens_disc_time_int}
 \end{figure}
 \begin{table}
   \centering
-  \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time integrated analysis. Additionally the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
+  \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time-integrated analysis. Additionally the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
   \begin{tabular}{crcrc}
     \toprule
     $\gamma$ & $N_\text{sig,sens}$ &  sens in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ & $N_\text{sig,disc}$ & disc in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ \\
@@ -146,7 +146,7 @@ This result is about one order of magnitude below the results of the all-sky sca
 Several cross-checks can be made to examine the quality of the analysis results.
 One of them is to check the fit of the parameters $\gamma$ and $n_\text{S}$ for bias.
 The fit behaviour of the analysis can be seen in figure \ref{fig:fit_bias_gamma} for $\gamma$ and in figure \ref{fig:fit_bias_ns} for $n_\text{S}$.
-The fitted spectral index is generally larger than the injected one and starts of at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events, because no signal events are equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
+The fitted spectral index is generally larger than the injected one and starts off at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events, because no signal events are equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
 The larger fitted spectral index makes the analysis more conservative and therefore is not harmful for the overall results at spectral indices up to $\gamma = \num{2.5}$.
 For higher spectral indices the fitted $\hat\gamma$ starts to sink below the set spectral index, since it is hard to fit for signal events that look like background.
 On the contrary this is harmful to the conservative analysis approach by creating a bias towards better results.
@@ -154,14 +154,14 @@ Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/gamma_fit_auto_3.pdf}
-    \caption{Fitted spectral index $\hat\gamma$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$, shown with a horizontal black dashed line, for the trials used in the time integrated analysis.}
+    \caption{Fitted spectral index $\hat\gamma$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$, shown with a horizontal black dashed line, for the trials used in the time-integrated analysis.}
     \label{fig:fit_bias_gamma}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/ns_fit_auto_4.pdf}
-    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$ for the time integrated analysis. The black dashed line shows the equality of fitted and injected number of signal events.}
+    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$ for the time-integrated analysis. The black dashed line shows the equality of fitted and injected number of signal events.}
     \label{fig:fit_bias_ns}
 \end{figure}
 
@@ -180,13 +180,14 @@ The maximum length of the time window is allowed to be $\SI{200}{\day}$.
 This conservative approach results from the fact that no assumptions are made about the temporal emission behaviour of the source.
 The maximum length of the time window of $\SI{200}{\day}$ is based on the $\SI{158}{\day}$ time window of the TXS 0506+056 analysis \cite{_txs}.
 
-The figures shown for this analysis refer to source number $\num{11}$ and the figures for all sources are shown in the appendix in chapter \ref{sec:time_dep_search_appendix}, as the plots of all sources are quite similar and thus a better representation is ensured.
+The figures shown for this analysis refer to source number $\num{11}$ and the figures for all sources are shown in the appendix in chapter \ref{sec:time_dep_search_appendix}, as the plots of all sources are quite similar.
+This ensures that the analysis is easier to follow.
 
 \section{Background Trials}
 
 The background trials for source number $\num{11}$ are shown in figure \ref{fig:bg_trials_time_dep_1} and additionally for all $\num{10}$ sources in figure \ref{fig:bg_trials_time_dep} in the appendix.
-Since the length $dt$ of the time windows is fitted, the number of degrees of freedom is generally greater than in the time integrated analysis.
-The $\chi^2$ distribution generated via the trials is thus somewhat more convex.
+Since the length $dt$ of the time windows is fitted, the number of degrees of freedom is generally greater than in the time-integrated analysis.
+The $\chi^2$ distribution generated via the trials is thus more convex.
 The values to calculate the fluences can be seen in table \ref{tab:sigma_time_dep}.
 In addition to the test statistics values, the time windows of the background trials can be examined.
 These are shown in figure \ref{fig:bg_trials_time_dep_time_windows_1} and \ref{fig:bg_trials_time_dep_time_windows} respectively.
@@ -205,7 +206,7 @@ Altogether, many possible numbers of signal events are represented in the backgr
 \end{figure}
 \begin{table}
   \centering
-  \caption[]{Table of number of trials, degrees of freedom $dof$, symmetry parameter $\eta$, median, $\num{3}\sigma$ and $\num{5}\sigma$ values of the background test statistics for the time-dependent analysis for all $\num{10}$ sources seen in figure \ref{fig:bg_trials_time_dep}. Some median values are very close or equal to $\num{0}$.}
+  \caption[]{Number of trials, degrees of freedom $dof$, symmetry parameter $\eta$, median, $\num{3}\sigma$ and $\num{5}\sigma$ values of the background test statistics for the time-dependent analysis for all $\num{10}$ sources seen in figure \ref{fig:bg_trials_time_dep}. Some median values are very close or equal to $\num{0}$.}
   \begin{tabular}{crccccc}
     \toprule
     Nr. & trials & $dof$ & $\eta$ & median & $\num{3}\sigma$ & $\num{5}\sigma$ \\
@@ -218,13 +219,13 @@ Altogether, many possible numbers of signal events are represented in the backgr
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_bg_dt_1.pdf}
-    \caption{Histogram of the background time window lengths $dt$ in days of source number $\num{11}$ for the time-dependent analysis.}
+    \caption{Histogram of the background time window lengths $dt$ of source number $\num{11}$ for the time-dependent analysis.}
     \label{fig:bg_trials_time_dep_time_windows_1}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_window_ns_bg_time_dep_1.pdf}
-    \caption{Histogram of the fitted number of signal events $\hat{n}_\text{S}$ in dependence of the time window lengths $dt$ in days of the background trials for the time-dependent analysis for source number $\num{11}$.}
+    \caption{Histogram of the fitted number of signal events $\hat{n}_\text{S}$ in dependence of the time window lengths $dt$ of the background trials for the time-dependent analysis for source number $\num{11}$.}
     \label{fig:bg_trials_time_dep_time_windows_ns_1}
 \end{figure}
 
@@ -235,12 +236,12 @@ This scan is shown for source number $\num{11}$ in figure \ref{fig:llh_scan_time
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/llh_scan_1.pdf}
-    \caption{Scan of the likelihood space for source number $\num{11}$ with a time window of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.}
+    \caption{Scan of the likelihood space for source number $\num{11}$ with a time window of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum of the test statistic is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$.}
     \label{fig:llh_scan_time_dep}
 \end{figure}
 After a proper likelihood environment is ensured, the signal trials can be started.
 The number of trials per source and the corresponding number of injected signal events can be seen in table \ref{tab:trials_sig_time_dep_table}.
-The resulting CDFs in terms of sensitivity and discovery potential are shown in figure \ref{fig:time_dep_cdf_sens_disc_1}.
+The resulting cumulative density functions (CDFs) in terms of sensitivity and discovery potential are shown in figure \ref{fig:time_dep_cdf_sens_disc_1}.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_time_dep_cdf_1.pdf}
@@ -307,7 +308,7 @@ The time window length distributions can be seen in figure \ref{fig:sens_disc_dt
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_disc_sens_time_dep_dt_1.pdf}
-    \caption{Histograms of the time window lengths $dt$ in days of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potential on the right.}
+    \caption{Histograms of the time window lengths $dt$ of source number $\num{11}$ for the time-dependent analysis. Shown is the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potential on the right.}
     \label{fig:sens_disc_dt_1}
 \end{figure}
 It can be seen that more small to medium time windows are possible for the calculation of the sensitivity.
@@ -317,14 +318,14 @@ The fitted signal parameter in dependence of the time window length can be seen 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/time_window_ns_disc_sens_time_dep_1.pdf}
-    \caption{Histograms of the time window lengths $dt$ in days in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of source number $\num{11}$ for the time-dependent analysis for the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potential on the right.}
+    \caption{Histograms of the time window lengths $dt$ in dependence of the fitted signal parameter $\hat{n}_\text{S}$ of source number $\num{11}$ for the time-dependent analysis. Shown is the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the sensitivity on the left and discovery potential on the right.}
     \label{fig:sens_disc_ns_dt_1}
 \end{figure}
 As expected, it can be seen that the determination of sensitivity requires less signal than the determination of the discovery potential.
 The distribution of sensitivity shows a clear tendency towards smaller signal parameters, whereas the distribution of discovery potential is much broader.
 It is interesting to note, however, that for both distributions an arc around signal parameters just above $\hat{n}_\text{S}=0$ can be observed for medium time windows.
 Larger time windows allow for more signal, but the fact that the possible signal parameter decreases again towards the maximum length is unexpected.
-This could have something to do with the combinatorics of the length of the time window and the signal or with the time window fit in general, since signal parameter and the setting of the time window are not independent of each other.
+This may involve the combinatorics of the length of the time window and the signal or the time window fit in general, since signal parameter and the setting of the time window are not independent of each other.
 
 \section{Examination of Fit Bias}
 

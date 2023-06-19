@@ -50,7 +50,7 @@ Everything is arranged chronologically according to occurrence in the main secti
 
 \begin{table}
   \centering
-  \caption{Table of the number of injected signal events used for the time integrated analysis.}
+  \caption{Table of the number of injected signal events used for the time-integrated analysis.}
   \label{tab:sig_time_int_table}
   \begin{tabular}{r}
     \toprule
@@ -161,7 +161,7 @@ In this chapter the complete results for all $\num{10}$ sources can be found.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/appendix/9_years_gfu_gold_time_dep_sig_disc_ts.pdf}
-    \caption{Histogram of the background trials for the time-dependent analysis for all $\num{10}$ sources. Shown is also the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the discovery potential. The grey dashed lines represent $\num{3}\sigma$ and $\num{5}\sigma$ of the background teststatistic.}
+    \caption{Histogram of the background trials for the time-dependent analysis for all $\num{10}$ sources. Shown is also the set of signal trials with the number of injected signal events closest to satisfying the condition to calculate the discovery potential. The grey dashed lines represent $\num{3}\sigma$ and $\num{5}\sigma$ of the background test statistic.}
     \label{fig:time_dep_sig_disc_ts}
 \end{figure}
 
@@ -219,7 +219,8 @@ In this chapter the complete results for all $\num{10}$ sources can be found.
 
 \section{Conclusion and Outlook}
 
-This chapter contains figures for attempts that did not make it into the main analysis.
+This chapter contains the figure for the attempted trial correction.
+Adding this into the main part would hurt the reading flow too much, thus its positioning here.
 
 \begin{figure}
     \centering
@@ -253,14 +254,15 @@ The analysis should be done in three main steps, the data preparation, the time-
 The first step is to create the source files for the neutrino sources through the \texttt{make\_source\_files\_from\_fits.py} file.
 The skymaps are created by the file \texttt{make\_skymap.py}.
 This is followed by the creation of the preprocessed datasets.
-The script \texttt{check\_gold\_filter\_jobs.py} creates job files which can be processed on the server condor, these use the script \texttt{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor (here: \texttt{bash ehe\_transient\_stacking.dag.start.sh}).
+The script \texttt{check\_gold\_filter\_jobs.py} creates job files which can be processed on the server condor, these use the script \texttt{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor,\\ (here: \texttt{bash ehe\_transient\_stacking.dag.start.sh}).
 Once the scripts have run, they can be collected via \texttt{check\_gold\_filter\_combine.py} and the actual prepared datasets can be created via the \texttt{remove\_gold\_from\_data.py} script.
 These datasets can now be inserted into \texttt{csky} into the \texttt{selections.py} file via creating a new dataset class.
 
 \begin{verbatim}
 class my_cleaned_data(PSDataSpec):
-    _user_path = os.path.join("/data","user","jkollek","csky_ehe_stacking",
-                              "rawout_tests","cleaned_datasets_new")
+    _user_path = os.path.join("/data","user","jkollek",
+                              "csky_ehe_stacking","rawout_tests",
+                              "cleaned_datasets_new")
     _path_sig = os.path.join(_user_path,'IC86_2016_MC.npy')
     _path_data = [os.path.join(_user_path,'IC86_2011_exp.npy'),
                   os.path.join(_user_path,'IC86_2012_exp.npy'),
@@ -308,6 +310,6 @@ The scripts with the \texttt{inspect*} prefix are used to create additional plot
 \section{Time-Dependent Stacking Software Approach}
 
 The repository for the attempted analysis can be found at \url{https://github.com/cybajohn/ehe_transient_stacking_analysis_tests} and the modified \texttt{tdepps} software at \url{https://github.com/cybajohn/tdepps}.
-The order of the scripts can be inferred from their name, other than that, formalities like adjusting path names need to be done first like explained in the other analyses.
+The order of the scripts can be inferred from their name, other than that, technicalities like adjusting path names need to be done first like explained in the other analyses.
 This analysis repository was formed by the constant tests of the performance of the new \texttt{tdepps} software and is therefore unfortunately not so clearly comprehensible.
-An important point worth mentioning is that the analysis parameters can be adjusted in the script .
+An important point worth mentioning is that the analysis parameters can be adjusted in the script.
