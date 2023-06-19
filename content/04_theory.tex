@@ -36,7 +36,7 @@ In the case of stacking several sources $k$, the number of expected events is di
 is obtained.
 If the likelihoods are inserted into formula \eqref{eq:TS}, the general formula for the test statistic is derived,
 \begin{equation}
-    TS = -2\ln{\hat\Lambda} = -2\sum_{k=1}^{N_{srcs}}\hat\lambda_{k,S} + 2\sum_{i=1}^{N_{\text{evts}}}\ln{\Gb{\frac{\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S}S_{i,k}}{\sum_{k=1}^{N_{\text{srcs}}}\langle\lambda_{k,B}\rangle B_{i,k}}+1}}, \label{eq:TS_general}
+    TS = -2\ln{\hat\Lambda} = -2\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S} + 2\sum_{i=1}^{N_{\text{evts}}}\ln{\Gb{\frac{\sum_{k=1}^{N_{\text{srcs}}}\hat\lambda_{k,S}S_{i,k}}{\sum_{k=1}^{N_{\text{srcs}}}\langle\lambda_{k,B}\rangle B_{i,k}}+1}}, \label{eq:TS_general}
 \end{equation}
 where $\hat\lambda$ maximizes the test statistic value.
 The expected number of background events $\langle\lambda_{k,B}\rangle$ is estimated a priori integrated over the rate of background events.
