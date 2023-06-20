@@ -88,7 +88,7 @@ Everything is arranged chronologically according to occurrence in the main secti
 
 \section{Time-Dependent Search} \label{sec:time_dep_search_appendix}
 
-In this chapter the complete results for all $\num{10}$ sources can be found.
+In this chapter, the complete results for all $\num{10}$ sources can be found.
 
 \subsection{Background Trials}
 
@@ -133,7 +133,7 @@ In this chapter the complete results for all $\num{10}$ sources can be found.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/appendix/llh_scan.pdf}
-    \caption{Scan of the likelihoodspace for all $\num{10}$ sources with a timewindow of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and source number corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.}
+    \caption{Scan of the likelihood space for all $\num{10}$ sources with a time window of $\SI{200}{\day}$ for the time-dependent analysis. The scan is in the spectral index $\gamma$ and the signal parameter $n_\text{S}$. The number of induced signal events is $n_S = \num{10}$ with a spectral index of $\gamma = 2$. The maximum test statistic value is marked in the plot including the contours of $\num{1}\sigma$ and $\num{2}\sigma$ and the source number corresponds to the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix.}
     \label{fig:llh_scan_time_dep_all}
 \end{figure}
 
@@ -168,7 +168,7 @@ In this chapter the complete results for all $\num{10}$ sources can be found.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/appendix/time_dep_sens_disc_dec_time_2.pdf}
-    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependece of their position at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ for the time-dependent analysis. The colour represents the arrival time of the source event and the errorbars the uncertainty in declination.}
+    \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependence of their position at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ for the time-dependent analysis. The colour represents the arrival time of the source event and the errorbars the uncertainty in declination.}
     \label{fig:sens_disc_time_dep_dec}
 \end{figure}
 
@@ -213,7 +213,7 @@ In this chapter the complete results for all $\num{10}$ sources can be found.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/appendix/ns_fit_time_dep.pdf}
-    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$ for the time-dependent analysis. The black dashed line shows the equality of fitted and injected number of signal events.}
+    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$ for the time-dependent analysis. The black dashed line shows the equality of the fitted and the injected number of signal events.}
     \label{fig:ns_fit_time_dep}
 \end{figure}
 
@@ -254,7 +254,7 @@ The analysis should be done in three main steps, the data preparation, the time-
 The first step is to create the source files for the neutrino sources through the \texttt{make\_source\_files\_from\_fits.py} file.
 The skymaps are created by the file \texttt{make\_skymap.py}.
 This is followed by the creation of the preprocessed datasets.
-The script \texttt{check\_gold\_filter\_jobs.py} creates job files which can be processed on the server condor, these use the script \texttt{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor,\\ (here: \texttt{bash ehe\_transient\_stacking.dag.start.sh}).
+The script \texttt{check\_gold\_filter\_jobs.py} creates job files that can be processed on the server condor, these use the script \texttt{check\_gold\_mc\_ids.py} and can be started in the job folder with the bash command on condor,\\ (here: \texttt{bash ehe\_transient\_stacking.dag.start.sh}).
 Once the scripts have run, they can be collected via \texttt{check\_gold\_filter\_combine.py} and the actual prepared datasets can be created via the \texttt{remove\_gold\_from\_data.py} script.
 These datasets can now be inserted into \texttt{csky} into the \texttt{selections.py} file via creating a new dataset class.
 
@@ -293,7 +293,7 @@ class my_cleaned_data(PSDataSpec):
 \subsection{Time-Integrated Analysis}
 
 Both analyses are basically structured in the same way.
-First the background trials are calculated and then the signal trials.
+First, the background trials are calculated and then the signal trials.
 Before the actual background trials, the trials can be tested with the help of the \texttt{bg\_trial.py} script.
 This is a simple setup to see how the trials work.
 However, this script is not required for the analysis.
@@ -310,6 +310,21 @@ The scripts with the \texttt{inspect*} prefix are used to create additional plot
 \section{Time-Dependent Stacking Software Approach}
 
 The repository for the attempted analysis can be found at \url{https://github.com/cybajohn/ehe_transient_stacking_analysis_tests} and the modified \texttt{tdepps} software at \url{https://github.com/cybajohn/tdepps}.
-The order of the scripts can be inferred from their name, other than that, technicalities like adjusting path names need to be done first like explained in the other analyses.
+The order of the scripts can be inferred from their name, other than that, technicalities like adjusting path names need to be done first as explained in the other analyses.
 This analysis repository was formed by the constant tests of the performance of the new \texttt{tdepps} software and is therefore unfortunately not so clearly comprehensible.
 An important point worth mentioning is that the analysis parameters can be adjusted in the script.
+
+%\chapter{Acknowledgements}
+%
+%This thesis took me a long time and it would not have been possible for me to perform the work or finish it without the help of many people.
+%First I would like to thank prof. dr. dr. Wolfgang Rhode for the opportunity to write my thesis and both them and dr. Johannes Erdmann for grading it.
+%
+%Then I want to thank my inner circle consisting of dr. Jan Soedingrekso, dr. Alexander Sandrock, dr. Thorben Menne and Jean-Marco Alameddine for holding %weekly meetings with me for such a long time always keeping me motivated and helping me with all their knowledge and insights.
+%
+%Keeping on track with insights, I would like to thank the IceCube collaboration and more precisely the people from realtime, pont source searches and %csky for their help and cooperation in answering questions.
+%
+%Then of course a huge thanks also to the Prüfungsverwaltung for their good cooperation.
+%
+%Also I would like to mention my good friends Max Pernklau, David Müller and soonish doctor Robin Denz for proofreading this thesis and always keeping me %in high spirits.
+%
+%Finally a huge thanks to my family and my cat for keeping me alive and well so I could finish my studies even though you may never know how much I have %struggled with this.

@@ -135,7 +135,7 @@ assuming that $\SI{50}{\percent}$ of the event is attributed evenly to the two s
 Of course, this ratio could be adjusted to the temporary proximity to the sources, but without further assumptions, the distribution is simply the same.
 The basic idea now is that the time interval from which the background is estimated now corresponds to the union of the time windows of the two sources, $B_{\{k=1\cup k=2\}}$ and for the expected number of background events respectively $\langle\lambda_{B,\{k=1\cup k=2\}}\rangle$.
 This means that for each possible constellation of time windows and overlaps, a background model must be set up.
-The figure \ref{fig:activation} shows qualitatively the activation regions according to which a background model is selected.
+Figure \ref{fig:activation} shows qualitatively the activation regions according to which a background model is selected.
 \begin{figure}
   \scalebox{0.5}{
   \begin{tikzpicture}[scale=1]
@@ -265,7 +265,7 @@ The figure \ref{fig:activation} shows qualitatively the activation regions accor
     % arrow to picture
     \draw[very thick, ->, color=black] (-5.5,2.5) -- (-7,2.5);
   \end{tikzpicture}}
-  \caption{This figure shows a scenario of $\num{4}$ sources $k$ with their time windows (dashed areas). Each unique temporal position translates into a green area on the left, so does a source with a red line. Each green interval is the activation region indicating that an event falling into that region gets compared to an estimated background created in the underlying light blue temporal interval. The scenario therefore generates $\num{7}$ different models. The grey line shows the background rate with its seasonal variations.}
+  \caption{This figure shows a scenario of $\num{4}$ sources $k$ with their time windows (dashed areas). Each unique temporal position translates into a green area on the left, and so does a source with a red line. Each green interval is the activation region indicating that an event falling into that region gets compared to an estimated background created in the underlying light blue temporal interval. Therefore, the scenario generates $\num{7}$ different models. The grey line shows the background rate with its seasonal variations.}
   \label{fig:activation}
 \end{figure}
 The number of models $\mathcal{B}$ to be calculated in advance can be estimated as,
@@ -273,7 +273,7 @@ The number of models $\mathcal{B}$ to be calculated in advance can be estimated 
   N_{\text{srcs}} \leq \mathcal{B}\leq 2N_{\text{srcs}}-1, \label{eq:number_of_models}
 \end{equation}
 with the number of sources $N_{\text{srcs}}$.
-So in the worst case scenario this calculation may become about two times slower.
+So in the worst-case scenario, this calculation may become about two times slower.
 Fortunately, this only affects the spatial PDF and not the energy distribution, as the spatial background depends on the position of the time window due to seasonal variations.
 The energy distribution can be extracted from the summation of events and calculated as before.
 The temporal PDF is effectively a Heaviside function that attributes the events to the sources weighted by the number of sources they can be attributed to.
@@ -283,10 +283,10 @@ To achieve all of the above, the point source software \texttt{tdepps} \cite{tde
 The modified version can be found at \cite{tdepps_2}.
 
 However, after the implementation was completed, test results showed unexpected behaviour compared to other software.
-The biggest issue are the large values of the test statistics.
+The biggest issue is the large values of the test statistics.
 A simple example is shown in figure \ref{fig:fail_example}.
 Since the correctness of the shape of the test statistic is difficult to assess in the case of a specific time window, in the example the time window is extended over a single complete data set with only one source being investigated.
-The behaviour should therefore correspond to a time-integrated search, a $\chi^2$-distribution with only one degree of freedom would be expected, in other words a flat, straight distribution.
+The behaviour should therefore correspond to a time-integrated search, a $\chi^2$-distribution with only one degree of freedom would be expected, in other words, a flat, straight distribution.
 However, the modified software still produces too high, signal-like test statistic values, comparable to these of figure \ref{fig:time_dep_sig_sens_ts} in the appendix.
 In addition, the behaviour of the \texttt{skylab} software was considered, which is similar to the original behaviour of the unmodified \texttt{tdepps} software.
 The \texttt{skylab} result can be seen in figure \ref{fig:skylab}.

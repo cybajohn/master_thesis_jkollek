@@ -4,13 +4,13 @@
 This chapter describes the time-integrated stacking search, starting with the properties of the analysis, followed by a description of the background trials and finally the signal trials with the result of the sensitivity and the discovery potential.
 The search covers different spectral indices for the signal event emission.
 
-\section{Analysis properties}
+\section{Analysis Properties}
 
 This section shows some of the underlying PDFs \texttt{csky} uses to calculate the test statistic values.
 Since \texttt{csky} is based on PDF ratios for practical reasons, not all individual PDFs can be shown clearly.
 Consequently, a few basic PDFs and ratios from equations \eqref{eq:signal_pdfs} and \eqref{eq:background_pdfs} whose form is a priori important for the quality of the analysis are shown here.
 
-\subsection{Background space PDF}
+\subsection{Background Space PDF}
 
 The background space PDF $\CB_S(\delta)$ is generated with data and only depends on the declination $\delta$ of the events, because the IceCube detector is almost symmetric with regard to right ascension due to its position at the geographic South Pole.
 It is normalized over the whole sky, hence satisfying the condition
@@ -18,7 +18,7 @@ It is normalized over the whole sky, hence satisfying the condition
   \int d\Omega \CB_S = \int d\alpha \int d(\sin(\delta)) \CB_S = 1
 \end{align}
 and is shown in figure \ref{fig:bg_param_time_int}.
-Lastly a spline, interpolating between the bin centers, is used to evaluate the events.
+Lastly, a spline, interpolating between the bin centers, is used to evaluate the events.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/bg_space_pdf.pdf}
@@ -29,7 +29,7 @@ The background space parametrization results in only one PDF because all dataset
 The PDF shows a lower contribution for downgoing events and a higher one for upgoing events coming from the sides.
 %This result is compatible with other analyses, for example ...
 
-\subsection{Energy ratio PDF}
+\subsection{Energy Ratio PDF}
 
 The energy PDF ratios $\CS_E(E|\Vmu)/\CB_E(E)$ for different spectral indices $\gamma$ can be seen in figure \ref{fig:energy_ratio_time_int}.
 
@@ -114,7 +114,7 @@ Since the absence of a signal parameter produces the background test statistic, 
     \label{fig:cdf_disc}
 \end{figure}
 The sensitivities and discovery potentials calculated via the formulas \eqref{eq:sens} and \eqref{eq:disc} from the CDFs can be seen in figure \ref{fig:sens_disc_time_int} and additionally in table \ref{tab:sens_disc_time_int}.
-The values rise for higher spectral indices since the signal looks more background like the closer the spectral index is to $\gamma = 3$.
+The values rise for higher spectral indices since the signal looks more background-like the closer the spectral index is to $\gamma = 3$.
 This result is about one order of magnitude below the results of the all-sky scan \cite{all_sky_paper} referenced in figure \ref{fig:all_sky_plot}.
 \begin{figure}
     \centering
@@ -124,7 +124,7 @@ This result is about one order of magnitude below the results of the all-sky sca
 \end{figure}
 \begin{table}
   \centering
-  \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time-integrated analysis. Additionally the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
+  \caption{Sensitivities and discovery potentials for different spectral indices $\gamma$ at a reference energy of $E_0 = \SI{1}{\tera\electronvolt}$ for the time-integrated analysis. Additionally, the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
   \begin{tabular}{crcrc}
     \toprule
     $\gamma$ & $N_\text{sig,sens}$ &  sens in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ & $N_\text{sig,disc}$ & disc in $\si{\tera\electronvolt\tothe{-1}\centi\meter\tothe{-2}\second\tothe{-1}}$ \\
@@ -146,10 +146,10 @@ This result is about one order of magnitude below the results of the all-sky sca
 Several cross-checks can be made to examine the quality of the analysis results.
 One of them is to check the fit of the parameters $\gamma$ and $n_\text{S}$ for bias.
 The fit behaviour of the analysis can be seen in figure \ref{fig:fit_bias_gamma} for $\gamma$ and in figure \ref{fig:fit_bias_ns} for $n_\text{S}$.
-The fitted spectral index is generally larger than the injected one and starts off at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events, because no signal events are equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
-The larger fitted spectral index makes the analysis more conservative and therefore is not harmful for the overall results at spectral indices up to $\gamma = \num{2.5}$.
-For higher spectral indices the fitted $\hat\gamma$ starts to sink below the set spectral index, since it is hard to fit for signal events that look like background.
-On the contrary this is harmful to the conservative analysis approach by creating a bias towards better results.
+The fitted spectral index is generally larger than the injected one and starts at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events because no signal events are equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
+The larger fitted spectral index makes the analysis more conservative and therefore is not harmful to the overall results at spectral indices up to $\gamma = \num{2.5}$.
+For higher spectral indices the fitted $\hat\gamma$ starts to sink below the set spectral index since it is hard to fit for signal events that look like background.
+On the contrary, this is harmful to the conservative analysis approach by creating a bias towards better results.
 Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{S}$.
 \begin{figure}
     \centering
@@ -161,7 +161,7 @@ Equivalent behaviour can be seen for the fitted signal parameter $\hat{n}_\text{
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/ns_fit_auto_4.pdf}
-    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$ for the time-integrated analysis. The black dashed line shows the equality of fitted and injected number of signal events.}
+    \caption{Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma$ for the time-integrated analysis. The black dashed line shows the equality of the fitted and the injected number of signal events.}
     \label{fig:fit_bias_ns}
 \end{figure}
 
@@ -174,7 +174,7 @@ Chapter \ref{sec:tdepps} contains more detailed information on the technical det
 Therefore, only the $\num{10}$ alerts with the highest \textbf{signalness} parameter in the set are used as sources.
 These can be seen in the tables \ref{tab:sources_v2} and \ref{tab:sources_v2_2} in the appendix highlighted in red.
 
-This analysis uses an untriggered flare procedure in which the time window of the flare is centered around the time $t_0$ of the source while the length $dt$ of the flare in shape of a box is fitted.
+This analysis uses an untriggered flare procedure in which the time window of the flare is centered around the time $t_0$ of the source while the length $dt$ of the flare in the shape of a box is fitted.
 The time window is qualitatively expanded between two events at which the test statistic is maximised.
 The maximum length of the time window is allowed to be $\SI{200}{\day}$.
 This conservative approach results from the fact that no assumptions are made about the temporal emission behaviour of the source.
@@ -195,7 +195,7 @@ The shape of the time window distribution results from the fact that the time wi
 Therefore, there are more short time windows, fewer in the middle range, and again more closing in at the maximum time window limit of $\num{200}$ days.
 This behaviour can be additionally observed in figure \ref{fig:bg_trials_time_dep_time_windows_ns_1} or \ref{fig:bg_trials_time_dep_time_windows_ns} for all sources, showing the fitted signal parameter $\hat{n}_\text{sig}$ in dependence of the fitted time window length $dt$.
 Larger time windows allow for more potential signal events.
-Generally a time window gets defined by the temporal space between $\num{2}$ events, which means a time window already consists of at least $\num{2}$ events.
+Generally, a time window gets defined by the temporal space between $\num{2}$ events, which means a time window already consists of at least $\num{2}$ events.
 However, this does not mean the fitted value of the signal parameter is at least $2$, but it explains why the majority of trials are above a signal parameter of zero, especially for extremely short time windows.
 Altogether, many possible numbers of signal events are represented in the background trials, but most of them are logically in the lower range.
 \begin{figure}
@@ -266,7 +266,7 @@ Furthermore, the temporal position of the sources in relation to the individual 
 \end{figure}
 \begin{table}
   \centering
-  \caption{Sensitivities and discovery potentials for different sources at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ and a spectral index $\gamma=2$ for the time-dependent analysis. Additionally the sine of the source declination $\delta$ and the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
+  \caption{Sensitivities and discovery potentials for different sources at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ and a spectral index $\gamma=2$ for the time-dependent analysis. Additionally, the sine of the source declination $\delta$ and the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
   \begin{tabular}{ccrcrc}
     \toprule
     Nr. & $\sin{(\delta)}$ & $N_\text{sig,sens}$ &  sens in $\si{\giga\electronvolt\centi\meter\tothe{-2}}$ & $N_\text{sig,disc}$ & disc in $\si{\giga\electronvolt\centi\meter\tothe{-2}}$ \\
@@ -288,7 +288,7 @@ The burst rate $R$ can be calculated with the total lifetime $T$ taken from tabl
 \begin{align}
   R &= \frac{N_\text{srcs}}{4\pi\cdot T}
 \end{align}
-and the fluence at a refernece energy of $\SI{100}{\tera\electronvolt}$ is about
+and the fluence at a reference energy of $\SI{100}{\tera\electronvolt}$ is about
 \begin{align}
   E^2_\nu\Phi_0^{\nu_\mu + \bar{\nu}_\mu} &\approx \SI{1.44e-8}{\giga\electronvolt\centi\meter\tothe{-2}\second\tothe{-1}\steradian\tothe{-1}}.
 \end{align}
@@ -325,13 +325,13 @@ As expected, it can be seen that the determination of sensitivity requires less 
 The distribution of sensitivity shows a clear tendency towards smaller signal parameters, whereas the distribution of discovery potential is much broader.
 It is interesting to note, however, that for both distributions an arc around signal parameters just above $\hat{n}_\text{S}=0$ can be observed for medium time windows.
 Larger time windows allow for more signal, but the fact that the possible signal parameter decreases again towards the maximum length is unexpected.
-This may involve the combinatorics of the length of the time window and the signal or the time window fit in general, since signal parameter and the setting of the time window are not independent of each other.
+This may involve the combinatorics of the length of the time window and the signal or the time window fit in general since the signal parameter and the setting of the time window are not independent of each other.
 
 \section{Examination of Fit Bias}
 
 To check the correctness of the fits, the fitted spectral index $\hat\gamma$ and the number of signal events $\hat{n}_\text{S}$ are again checked for bias.
 The plots used to examine the fit bias are shown in figure \ref{fig:ns_gamma_fit_time_dep_1} for source number $\num{11}$ and for all sources in the appendix \ref{sec:fit_bias_time_dep}.
-Here, as well, the minimum fitted signal parameter $\hat{n}_\text{S}$ is approximately $\num{2}$, since the time windows are expanded between two events.
+Here, as well, the minimum fitted signal parameter $\hat{n}_\text{S}$ is approximately $\num{2}$ since the time windows are expanded between two events.
 In the environment of sensitivity and discovery potential ($2 < n_\text{S} < 10$), the signal parameter is somewhat overestimated.
 Above this, the fit slowly approaches the true value.
 This shifts the final results to higher values, but this only makes the analysis more conservative.
@@ -341,6 +341,6 @@ A higher spectral index gives the individual signal events a smaller weight, whi
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/ns_gamma_fit_time_dep_1.pdf}
-    \caption{On the left: Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma = 2$ for the time-dependent analysis. The black dashed line shows the equality of fitted and injected number of signal events. On the right: Fitted spectral index $\hat\gamma$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma = 2$, shown with a horizontal black dashed line, for the trials used in the time-dependent analysis.}
+    \caption{On the left: Fitted number of signal events $\hat{n}_{\text{S}}$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma = 2$ for the time-dependent analysis. The black dashed line shows the equality of the fitted and the injected number of signal events. On the right: Fitted spectral index $\hat\gamma$ in dependence of the injected number of signal events $n_\text{inj}$ with spectral index $\gamma = 2$, shown with a horizontal black dashed line, for the trials used in the time-dependent analysis.}
     \label{fig:ns_gamma_fit_time_dep_1}
 \end{figure}

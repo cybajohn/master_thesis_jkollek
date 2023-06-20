@@ -1,12 +1,12 @@
 %theory
 \chapter{Point Source Searches in IceCube} \label{sec:theory}
 
-This chapter provides an insight into the theoretical formulas, principles and softwares used to perform a point source analysis.
+This chapter provides an insight into the theoretical formulas, principles and software used to perform a point source analysis.
 The theoretical background gives a basic impression of the calculation and is necessary for understanding chapter \ref{sec:tdepps}, where the general calculation of the test statistic is discussed.
 
 \section{Modelling the Test Statistic}
 
-Basically, a point source search consists of a hypothesis test based on two hypotheses \cite{likelihood_method}.
+A point source search consists of a hypothesis test based on two hypotheses \cite{likelihood_method}.
 The null hypothesis $H_0$ states that the examined data consist only of atmospheric background, while the hypothesis $H_\text{S}$ states that the data consist of background and astrophysical neutrino events, the latter emitted by a source of certain properties.
 The hypothesis $H_\text{S}$ uses the parameter space $\Theta$ while the null hypothesis only uses a subset of this parameter space $\Theta_0$.
 The hypothesis test is the quotient of the underlying likelihoods $\CL$ of the hypotheses,
@@ -87,13 +87,13 @@ Its ratio does not depend on individual event properties and is a priori calcula
 The spatial PDF of the signal $\CS_S(\delta,\alpha)$ depends on the declination and right ascension of the event and corresponds to a Kent distribution around the position of the source.
 The Kent distribution is the equivalent of a normal distribution on a sphere \cite{kent}.
 The background PDF $\CB_S(\delta)$, on the other hand, is obtained directly from the spatial distribution of the data, since most events are background events.
-It depends only on the declination, since the background is generally uniformly distributed in the sky and the distribution depends merely on the absorption of the earth.
-The temporal PDF in case of this thesis is a simple box function, equal for both signal and background, that corresponds to $\CS_T(t|\Vmu)=1$ over a certain time interval.
-Only events that fall within this time window make a contribution.
+It depends only on the declination since the background is generally uniformly distributed in the sky and the distribution depends merely on the absorption of the earth.
+The temporal PDF in the case of this thesis is a simple box function, equal for both signal and background, that corresponds to $\CS_T(t|\Vmu)=1$ over a certain time interval.
+Only events that fall within this time window contribute.
 
 \section{Calculating Sensitivity and Discovery Potential}
 
-Sensitivity and discovery potential are defined by the number of signal events that must be injected, so that the resulting test statistic is $\SI{90}{\percent}$ above the median of the background statistic or $\SI{50}{\percent}$ above $\num{5}\sigma$ of the latter respectively.
+Sensitivity and discovery potential are defined by the number of signal events that must be injected so that the resulting test statistic is $\SI{90}{\percent}$ above the median of the background statistic or $\SI{50}{\percent}$ above $\num{5}\sigma$ of the latter respectively.
 These conditions can be seen schematically in figure \ref{fig:sens_disc_schem}.
 \begin{figure}\centering
   \begin{tikzpicture}[
@@ -125,7 +125,7 @@ grid = major]
 \node[green] at (2.7,4) {$\text{sensitivity}$};
 \node[red] at (6,4) {$\text{discovery}$};
 \end{tikzpicture}
-\caption{Schematic showing the conditions to calculate the sensitivity and discovery potential. The background test statistic is shown in black, the signal test statistic satisfying the sensitivity conditions in green and the one for the discovery potential in red. Note that the curves do not actually look like these shown here. They have been simplified for explanatory purposes.}
+\caption{Schematic showing the conditions to calculate the sensitivity and discovery potential. The background test statistic is shown in black, the signal test statistic satisfying the sensitivity conditions in green and the one for the discovery potential in red. Note that the curves do not actually look like those shown here. They have been simplified for explanatory purposes.}
 \label{fig:sens_disc_schem}
 \end{figure}
 Let the number of sufficient signal events then be $N_\text{sig}$, the sensitivity $sens$ and discovery potential $disc p$ then are

@@ -19,10 +19,10 @@ While all-sky scans examine entire declination bands of the sky \cite{all_sky_pa
 This is done via a predefined source catalogue, which is either motivated by the prior knowledge of the position of specific objects or untriggered via special signals coming from certain directions, such as high-energy photons or, as in this thesis, neutrinos, which have a high probability of being of astrophysical origin.
 IceCube has a realtime alert system that reports and collects such special events.
 Originally, neutrino alerts were divided into High Energy Starting Events (HESE) and Extremely High Energy (EHE) signatures.
-The HESE filter rejects the atmospheric muon background by selecting high energy events interacting directly in the detector, while EHE events target throughgoing events and reject the atmospheric background by a very high energy threshold.
+The HESE filter rejects the atmospheric muon background by selecting high-energy events interacting directly in the detector, while EHE events target throughgoing events and reject the atmospheric background by a very high energy threshold.
 
 However, this old system has been improved.
-Besides a few tweaks to the HESE and EHE channels, the new alert system introduced a breakdown into two different categories of events based on their probability of being of atrophysical origin.
+Besides a few tweaks to the HESE and EHE channels, the new alert system introduced a breakdown into two different categories of events based on their probability of being of astrophysical origin.
 These are called gold and bronze events, with gold having at least a $\SI{50}{\percent}$ astrophysical purity in comparison to $\SI{30}{\percent}$ for bronze events.
 The latter were introduced to satisfy the demand for even more alerts.
 This new system also features a new event type, the Gamma-Ray-Followup (GFU), which is highest in the event categorization hierarchy, meaning that if an event is classified as a GFU event it is also possible for the event to be a HESE or EHE event additionally.
@@ -30,12 +30,12 @@ This hierarchy is based on studies on angular resolution and astrophysical purit
 
 \section{Gamma-Ray-Followup}
 
-The Gamma-Ray-Followup track selection, GFU for short, is a pretrained boosted decision tree (BDT) identifying throughgoing single track events from all directions that are likely neutrino-induced.
+The Gamma-Ray-Followup track selection, GFU for short, is a pretrained boosted decision tree (BDT) identifying throughgoing single-track events from all directions that are likely neutrino-induced.
 The required astrophysical purity of at least $\SI{50}{\percent}$ for the gold selection is obtained by tight cuts on muon energy and deposited charge.
 
 The BDT consists of two basic cuts different for each hemisphere.
 For both up- and downgoing events, a precut is used which is more like a sanity check outruling invalid events.
-All events having a tracklength greater than $\SI{0}{\meter}$ and a truncated energy greater than $\SI{0}{\electronvolt}$ pass this selection.
+All events having a track length greater than $\SI{0}{\meter}$ and a truncated energy greater than $\SI{0}{\electronvolt}$ pass this selection.
 Additionally all events have to be between $\SI{82}{\degree}$ and $\SI{-82}{\degree}$ zenith.
 Events from the northern sky must have a truncated energy higher than $\SI{e5.14}{\giga\electronvolt}$ to pass the GFU selection.
 In the southern hemisphere, the deposited charge ($q_\text{tot}$) of the events must meet the following condition as a function $d=\sin{(\delta)}$,
