@@ -33,7 +33,7 @@ The PDF shows a lower contribution for downgoing events and a higher one for upg
 
 The energy PDF ratios $\CS_E(E|\Vmu)/\CB_E(E)$ for different spectral indices $\gamma$ can be seen in figure \ref{fig:energy_ratio_time_int}.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/energy_pdf_ratio.pdf}
     \caption{Energy PDF ratios used in this analysis in $\sin{(\delta)}$ and $\log_{10}{(E)}$ for all $\num{9}$ years, 2011-2019, for different spectral indices $\gamma$.}
@@ -99,7 +99,7 @@ Conveniently \texttt{csky} provides methods to a priori get an estimation of the
 The determined list of the number of signal events injected for the trials can be seen in table \ref{tab:trials_sig_time_int_table}.
 The resulting CDFs for the time-integrated sensitivities and discovery potentials can be seen in figure \ref{fig:cdf_sens} and \ref{fig:cdf_disc}.
 Each point corresponds to the percentage of the test statistic passing the thresholds mentioned in chapter \ref{sec:theory}.
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_cdf_sens.pdf}
     \caption{Quantiles of the signal trials for the calculation of the sensitivity for the time-integrated analysis at different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the sensitivity condition at $\SI{90}{\percent}$.}
@@ -107,7 +107,7 @@ Each point corresponds to the percentage of the test statistic passing the thres
 \end{figure}
 Note that all plots in figure \ref{fig:cdf_sens} start at about $\SI{50}{\percent}$ with a signal parameter of $n_\text{S} = 0$.
 Since the absence of a signal parameter produces the background test statistic, the statistics share the same median, hence there will always be $\SI{50}{\percent}$ of the signal test statistic above the median of the background test statistic.
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{Plots/05_csky/9_years_gfu_gold_cdf_disc.pdf}
     \caption{Quantiles of the signal trials for the calculation of the discovery potential for the time-integrated analysis at different spectral indices $\gamma$. A $\chi^2$ CDF fit provides a more accurate estimate of the sought signal parameter $n_\text{S}$ which satisfies the condition of the discovery potential at $\SI{50}{\percent}$.}
@@ -146,7 +146,9 @@ This result is about one order of magnitude below the results of the all-sky sca
 Several cross-checks can be made to examine the quality of the analysis results.
 One of them is to check the fit of the parameters $\gamma$ and $n_\text{S}$ for bias.
 The fit behaviour of the analysis can be seen in figure \ref{fig:fit_bias_gamma} for $\gamma$ and in figure \ref{fig:fit_bias_ns} for $n_\text{S}$.
-The fitted spectral index is generally larger than the injected one and starts at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events because no signal events are equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
+The fitted spectral index is generally larger than the injected one.
+It starts at a spectral index of around $\hat\gamma = \num{3}$ with no injected signal events.
+This is due to no signal events being equivalent to the statement that only background exists which has a spectral index of $\gamma = \num{3}$.
 The larger fitted spectral index makes the analysis more conservative and therefore is not harmful to the overall results at spectral indices up to $\gamma = \num{2.5}$.
 For higher spectral indices the fitted $\hat\gamma$ starts to sink below the set spectral index since it is hard to fit for signal events that look like background.
 On the contrary, this is harmful to the conservative analysis approach by creating a bias towards better results.
@@ -229,6 +231,7 @@ Altogether, many possible numbers of signal events are represented in the backgr
     \label{fig:bg_trials_time_dep_time_windows_ns_1}
 \end{figure}
 
+\clearpage
 \section{Signal Trials}
 
 As in the time-integrated analysis, a likelihood scan is first considered to ensure a well-defined maximum and a generally smooth environment, so that a problem with the fit and the set parameters can be excluded.
@@ -264,7 +267,7 @@ Furthermore, the temporal position of the sources in relation to the individual 
     \caption{Sensitivities and discovery potentials for all $\num{10}$ sources in dependence of their temporal position at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ for the time-dependent analysis. The marker colour represents the declination of the source event and the errorbars have a total length of $\SI{200}{\day}$ corresponding to the maximum injection interval. The alternating colour represents the temporal intervals of the different data sets.}
     \label{fig:sens_disc_time_dep_dec}
 \end{figure}
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Sensitivities and discovery potentials for different sources at a reference energy of $E_0 = \SI{100}{\tera\electronvolt}$ and a spectral index $\gamma=2$ for the time-dependent analysis. Additionally, the sine of the source declination $\delta$ and the fitted number of signal events $N_\text{sig}$ satisfying the thresholds are shown.}
   \begin{tabular}{ccrcrc}
